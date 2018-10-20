@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo+Git搭建博客初具模样]]></title>
+    <url>%2F2018%2F10%2F21%2FHexo-Git%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%88%9D%E5%85%B7%E6%A8%A1%E6%A0%B7%2F</url>
+    <content type="text"><![CDATA[利用Hexo+Git+GitHub搭建个人博客，博客已经初具模样：]]></content>
+      <categories>
+        <category>Picture, Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog, Hexo, Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Categories&Tags]]></title>
     <url>%2F2018%2F10%2F20%2FCategories-Tags%2F</url>
     <content type="text"></content>
