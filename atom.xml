@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xu&#39;s Blog</title>
+  
+  <subtitle>Live&amp;Learn</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zsx-cup.top/"/>
+  <updated>2018-10-23T16:36:05.917Z</updated>
+  <id>http://zsx-cup.top/</id>
+  
+  <author>
+    <name>ZhaoShengxu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>玩转Sci-Hub</title>
+    <link href="http://zsx-cup.top/2018/10/24/%E7%8E%A9%E8%BD%ACSci-Hub/"/>
+    <id>http://zsx-cup.top/2018/10/24/玩转Sci-Hub/</id>
+    <published>2018-10-23T16:00:56.000Z</published>
+    <updated>2018-10-23T16:36:05.917Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="玩转Sci-Hub"><a href="#玩转Sci-Hub" class="headerlink" title="玩转Sci-Hub"></a>玩转Sci-Hub</h1><p><img src="/2018/10/24/玩转Sci-Hub/sci-hub.jpg" alt="Sci-Hub"></p><blockquote><p>挣扎许久，终于下定决心给看看英文文献，可是搜了一篇又一篇SCI文献，学校图书馆都没有购买，怎么破？假如你也遇到如此尬境，可以尝试一下SCI免费下载神器：<a href="https://sci-hub.tw/" target="_blank" rel="noopener"><strong>Sci-Hub</strong></a>，如不可用，可尝试以下网址，或前往维基百科查看最新可用网址<a href="https://zh.m.wikipedia.org/wiki/Sci-Hub" target="_blank" rel="noopener">Sci-hub(维基百科)</a></p></blockquote><blockquote><p>Sci-Hub可用网址(2018.10.24测试可用)</p><ol><li><a href="http://sci-hub.tw/" target="_blank" rel="noopener">sci-hub.tw</a></li><li><a href="http://80.82.77.83/" target="_blank" rel="noopener">80.82.77.83</a></li><li><a href="http://80.82.77.84/" target="_blank" rel="noopener">80.82.77.84</a></li></ol></blockquote><p>首先需要说明的是：</p><p>Sci-Hub只支持精确匹配，不支持模糊匹配。这就意味着，搜索结果只有两种：返回目标文献或搜索结果为空。而不会像度娘或谷歌那样支持模糊匹配，返回多个搜索结果。这就要求查找文献之前，必须要提前知道目标查找文献的下列信息之一：</p><blockquote><ol><li>文献标题(String)</li><li>文献地址(URL)</li><li><a href="https://baike.baidu.com/item/doi/6776783?fr=aladdin" target="_blank" rel="noopener">文献DOI(数字对象唯一标识符)</a>：</li><li><a href="http://baike.baidu.com/link?url=0P0iFw84YBoFPTCyfELFuXa0gX5OFRAuXuKHVFgUgr9RTbw6JWjL4IqVPbR-Ype0gXmWhjAwBclO4vbQ3O7HFq" target="_blank" rel="noopener">文献PMID(PubMed唯一标识码，生命科学或医学领域)</a></li></ol></blockquote><p>以下面这篇文献为例，进行介绍：</p><blockquote><p>Kubiak W. Completion time variance minimization on a single machine is difficult [J]. Operations Research Letters, 1993, 14(1):49-59.</p></blockquote><h2 id="1-使用文献标题搜索"><a href="#1-使用文献标题搜索" class="headerlink" title="1. 使用文献标题搜索"></a>1. 使用文献标题搜索</h2><p>Sci-Hub搜索框键入文章标题：</p><blockquote><p>Completion time variance minimization on a single machine is difficult</p></blockquote><p>返回结果如下图，即没有搜索到我想要的文献。不过，别急着放弃，再尝试使用文献地址(URL)、DOI、PMID进行搜索。<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-bug.jpg" alt="Sci-Hub-bug"></p><h2 id="2-使用文献地址-DOI搜索"><a href="#2-使用文献地址-DOI搜索" class="headerlink" title="2. 使用文献地址|DOI搜索"></a>2. 使用文献地址|DOI搜索</h2><p>首先，用度娘查找文献地址、DOI等信息：</p><ul><li>在度娘输入文献标题搜索，并在搜索页面依次进入：<br>百度学术-&gt;爱思唯尔(Elsevier)，即可抵达如下页面</li><li>页面最下方即为文献地址：<a href="https://doi.org/10.1016/0167-6377(93)90019-D" target="_blank" rel="noopener">https://doi.org/10.1016/0167-6377(93)90019-D</a><br>(及文献DOI：10.1016/0167-6377(93)90019-D)<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-sd1.jpg" alt="Sci-Hub-SD"></li><li>文献在百度学术通常有多个文献来源，通常任意文献来源进入之后都可以找到文献DOI，如下图所示：<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-3.jpg" alt="ref"></li></ul><p>然后，在Sci-Hub搜索框输入文献地址(URL)或DOI等信息，开始搜索，返回结果页如下，成功返回我想要的文献。<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-result.jpg" alt="Sci-Hub-result"></p><p>最后，点击右上角的下载箭头，下载文献即可。</p><h2 id="3-可能涉及科学上网"><a href="#3-可能涉及科学上网" class="headerlink" title="3. 可能涉及科学上网"></a>3. 可能涉及科学上网</h2><p>Sci-Hub网站涉及版权问题，某些网址可能无法使用，如遇此情况，可访问sci-hub维基百科词条查看可用网址。</p><blockquote><p>如需科学上网，出门左转访问<a href="https://github.com/getlantern/forum" target="_blank" rel="noopener">getlantern(蓝灯)</a>下载安装即可使用。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;玩转Sci-Hub&quot;&gt;&lt;a href=&quot;#玩转Sci-Hub&quot; class=&quot;headerlink&quot; title=&quot;玩转Sci-Hub&quot;&gt;&lt;/a&gt;玩转Sci-Hub&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2018/10/24/玩转Sci-Hub/sci-hub.jp
+      
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://zsx-cup.top/categories/Tool/"/>
+    
+    
+      <category term="Sci-Hub" scheme="http://zsx-cup.top/tags/Sci-Hub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo+Git搭建博客初具模样</title>
+    <link href="http://zsx-cup.top/2018/10/21/Hexo-Git%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%88%9D%E5%85%B7%E6%A8%A1%E6%A0%B7/"/>
+    <id>http://zsx-cup.top/2018/10/21/Hexo-Git搭建博客初具模样/</id>
+    <published>2018-10-20T17:33:03.000Z</published>
+    <updated>2018-10-23T15:45:10.012Z</updated>
+    
+    <content type="html"><![CDATA[<p>利用Hexo+Git+GitHub搭建个人博客，博客已经初具模样：<br><img src="/2018/10/21/Hexo-Git搭建博客初具模样/myblog_v1.0.jpg" alt="myblog_v1.0"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;利用Hexo+Git+GitHub搭建个人博客，博客已经初具模样：&lt;br&gt;&lt;img src=&quot;/2018/10/21/Hexo-Git搭建博客初具模样/myblog_v1.0.jpg&quot; alt=&quot;myblog_v1.0&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Picture" scheme="http://zsx-cup.top/categories/Picture/"/>
+    
+    
+      <category term="Blog" scheme="http://zsx-cup.top/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Categories&amp;Tags</title>
+    <link href="http://zsx-cup.top/2018/10/20/Categories-Tags/"/>
+    <id>http://zsx-cup.top/2018/10/20/Categories-Tags/</id>
+    <published>2018-10-20T15:00:24.000Z</published>
+    <updated>2018-10-20T15:07:09.877Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Test" scheme="http://zsx-cup.top/categories/Test/"/>
+    
+    
+      <category term="Test" scheme="http://zsx-cup.top/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Test</title>
+    <link href="http://zsx-cup.top/2018/10/18/Test/"/>
+    <id>http://zsx-cup.top/2018/10/18/Test/</id>
+    <published>2018-10-18T15:20:28.000Z</published>
+    <updated>2018-10-23T15:46:32.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>Just a test.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Just a test.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Test" scheme="http://zsx-cup.top/categories/Test/"/>
+    
+    
+      <category term="Test" scheme="http://zsx-cup.top/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello</title>
+    <link href="http://zsx-cup.top/2018/10/18/Hello/"/>
+    <id>http://zsx-cup.top/2018/10/18/Hello/</id>
+    <published>2018-10-18T12:04:01.000Z</published>
+    <updated>2018-10-23T15:45:32.564Z</updated>
+    
+    <content type="html"><![CDATA[<p>Winter is coming!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Winter is coming!&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Test" scheme="http://zsx-cup.top/categories/Test/"/>
+    
+    
+      <category term="Test" scheme="http://zsx-cup.top/tags/Test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://zsx-cup.top/2018/10/17/hello-world/"/>
+    <id>http://zsx-cup.top/2018/10/17/hello-world/</id>
+    <published>2018-10-17T15:20:00.156Z</published>
+    <updated>2018-10-23T15:45:52.861Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+      <category term="QuickStart" scheme="http://zsx-cup.top/categories/QuickStart/"/>
+    
+    
+      <category term="Hexo" scheme="http://zsx-cup.top/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
