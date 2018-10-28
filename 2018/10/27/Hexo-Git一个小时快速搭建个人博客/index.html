@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, Git, GitHub," />
 
 
 
@@ -90,17 +90,18 @@
 
 
 
-<meta name="description" content="Hope is a good thing">
+<meta name="description" content="什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）。 Hexo安装 本文是基于Windows7系统安装，如果是其他系统可参见Hexo官方文档。  Hexo安装的前提是电脑">
+<meta name="keywords" content="Hexo, Git, GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Git一个小时快速搭建个人博客">
 <meta property="og:url" content="http://zsx-cup.top/2018/10/27/Hexo-Git一个小时快速搭建个人博客/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
-<meta property="og:description" content="Hope is a good thing">
+<meta property="og:description" content="什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）。 Hexo安装 本文是基于Windows7系统安装，如果是其他系统可参见Hexo官方文档。  Hexo安装的前提是电脑">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-27T09:41:01.477Z">
+<meta property="og:updated_time" content="2018-10-28T03:18:37.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Git一个小时快速搭建个人博客">
-<meta name="twitter:description" content="Hope is a good thing">
+<meta name="twitter:description" content="什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）。 Hexo安装 本文是基于Windows7系统安装，如果是其他系统可参见Hexo官方文档。  Hexo安装的前提是电脑">
 
 
 
@@ -390,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  647
                 </span>
               
 
@@ -406,7 +407,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -427,7 +428,44 @@
       
 
       
-        
+        <h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用<a href="https://daringfireball.net/projects/markdown" target="_blank" rel="noopener">Markdown</a>解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）。</p>
+<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><blockquote>
+<p>本文是基于Windows7系统安装，如果是其他系统可参见<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官方文档</a>。</p>
+</blockquote>
+<p>Hexo安装的前提是电脑预安装Node.js和Git。如果你的电脑已安装Node.js和Git，直接跳到第三步开始安装Hexo；如果未安装则需要先按照前两步提示进行安装，下载安装非常快。</p>
+<ol>
+<li><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>下载安装，默认安装即可。</li>
+<li><p><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a>下载安装，Git官网下载速度非常慢，建议在腾讯软件中心下载<a href="https://pc.qq.com/detail/13/detail_22693.html" target="_blank" rel="noopener">Git</a>，默认安装即可。用作将本地的内容提交到GitHub仓库，后续会介绍如何操作。<br>成功安装Node.js和Git后，可用以下命令查看相应版本：</p>
+<p> $ node -v        #查看node版本<br> $ npm -v         #查看npm版本<br> $ git –version  #查看git版本</p>
+</li>
+</ol>
+<p>其中，<a href="https://www.npmjs.com.cn/" target="_blank" rel="noopener">npm</a> 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。</p>
+<ol start="3">
+<li><p>利用 npm 命令即可安装Hexo。在任意位置右击鼠标，选择Git Bash输入以下命令即可安装。安装 Hexo 顺利的话只需要几分钟，如果在安装过程中遇到问题，可重新安装，通常安装第一遍不一定成功。</p>
+<p> $ npm install -g hexo-cli</p>
+</li>
+</ol>
+<p>安装配置 Hexo</p>
+<p>更换并配置主题 Next</p>
+<p>博客根目录下的配置文件：blog/_config.yml</p>
+<p>博客主题目录下的配置文件：themes/next/_config.yml</p>
+<p>文件修改：themes/next/layout/_partials/footer.swig</p>
+<p>修改文件：themes/next/layout/_layout.swig</p>
+<p>修改文件：themes/next/languages/zh-Hans.yml</p>
+<p>连接重置至个人网站<br>“D:\blog\blog\source\CNAME”</p>
+<p>字数统计：wordcount</p>
+<p>阅读次数:leancloud获取appid 和appkey，leancloud_visitors</p>
+<p>评论：leancloud获取appid 和appkey，主题配置文件直接配置</p>
+<p>访客数、访问量busuanzi</p>
+<p><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><br>文件修改：themes/next/layout/_partials/footer.swig</p>
+<p>本地搜索 Local search</p>
+<p>添加侧栏友情链接</p>
+<p>进度条、网页动画<br>彩带，Only fit scheme Pisces</p>
+<p>GitHub关注按钮<br>然后粘贴刚才复制的代码到themes/next/layout/_layout.swig文件中(放在<div class="headband"></div>的下面)，并把href改为你的github地址<br>修改文件：themes/next/layout/_layout.swig</p>
+<p>中文显示<br>author: 赵胜绪<br>totalcount: 博客总字数<br>“D:\blog\blog\themes\next\languages\zh-Hans.yml”</p>
+<p>网站名称图标: easyiocn</p>
+<p>Git bash 清屏：reset</p>
+
       
     </div>
     
@@ -459,6 +497,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo-Git-GitHub/" rel="tag"># Hexo, Git, GitHub</a>
+          
+        </div>
       
 
       
@@ -532,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,7 +616,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -574,7 +627,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -647,6 +700,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Hexo？"><span class="nav-number">1.</span> <span class="nav-text">什么是 Hexo？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo安装"><span class="nav-number">2.</span> <span class="nav-text">Hexo安装</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -686,7 +755,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">744</span>
+    <span title="Site words total count">1.4k</span>
   
 </div>
 

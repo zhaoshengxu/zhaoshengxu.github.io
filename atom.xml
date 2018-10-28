@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zsx-cup.top/"/>
-  <updated>2018-10-27T09:41:01.477Z</updated>
+  <updated>2018-10-28T03:18:37.769Z</updated>
   <id>http://zsx-cup.top/</id>
   
   <author>
@@ -21,12 +21,23 @@
     <link href="http://zsx-cup.top/2018/10/27/Hexo-Git%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%97%B6%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://zsx-cup.top/2018/10/27/Hexo-Git一个小时快速搭建个人博客/</id>
     <published>2018-10-27T09:41:01.000Z</published>
-    <updated>2018-10-27T09:41:01.477Z</updated>
+    <updated>2018-10-28T03:18:37.769Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用<a href="https://daringfireball.net/projects/markdown" target="_blank" rel="noopener">Markdown</a>解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）。</p><h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><blockquote><p>本文是基于Windows7系统安装，如果是其他系统可参见<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官方文档</a>。</p></blockquote><p>Hexo安装的前提是电脑预安装Node.js和Git。如果你的电脑已安装Node.js和Git，直接跳到第三步开始安装Hexo；如果未安装则需要先按照前两步提示进行安装，下载安装非常快。</p><ol><li><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>下载安装，默认安装即可。</li><li><p><a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a>下载安装，Git官网下载速度非常慢，建议在腾讯软件中心下载<a href="https://pc.qq.com/detail/13/detail_22693.html" target="_blank" rel="noopener">Git</a>，默认安装即可。用作将本地的内容提交到GitHub仓库，后续会介绍如何操作。<br>成功安装Node.js和Git后，可用以下命令查看相应版本：</p><p> $ node -v        #查看node版本<br> $ npm -v         #查看npm版本<br> $ git –version  #查看git版本</p></li></ol><p>其中，<a href="https://www.npmjs.com.cn/" target="_blank" rel="noopener">npm</a> 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。</p><ol start="3"><li><p>利用 npm 命令即可安装Hexo。在任意位置右击鼠标，选择Git Bash输入以下命令即可安装。安装 Hexo 顺利的话只需要几分钟，如果在安装过程中遇到问题，可重新安装，通常安装第一遍不一定成功。</p><p> $ npm install -g hexo-cli</p></li></ol><p>安装配置 Hexo</p><p>更换并配置主题 Next</p><p>博客根目录下的配置文件：blog/_config.yml</p><p>博客主题目录下的配置文件：themes/next/_config.yml</p><p>文件修改：themes/next/layout/_partials/footer.swig</p><p>修改文件：themes/next/layout/_layout.swig</p><p>修改文件：themes/next/languages/zh-Hans.yml</p><p>连接重置至个人网站<br>“D:\blog\blog\source\CNAME”</p><p>字数统计：wordcount</p><p>阅读次数:leancloud获取appid 和appkey，leancloud_visitors</p><p>评论：leancloud获取appid 和appkey，主题配置文件直接配置</p><p>访客数、访问量busuanzi</p><p><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><br>文件修改：themes/next/layout/_partials/footer.swig</p><p>本地搜索 Local search</p><p>添加侧栏友情链接</p><p>进度条、网页动画<br>彩带，Only fit scheme Pisces</p><p>GitHub关注按钮<br>然后粘贴刚才复制的代码到themes/next/layout/_layout.swig文件中(放在<div class="headband"></div>的下面)，并把href改为你的github地址<br>修改文件：themes/next/layout/_layout.swig</p><p>中文显示<br>author: 赵胜绪<br>totalcount: 博客总字数<br>“D:\blog\blog\themes\next\languages\zh-Hans.yml”</p><p>网站名称图标: easyiocn</p><p>Git bash 清屏：reset</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h2 id=&quot;什么是-Hexo？&quot;&gt;&lt;a href=&quot;#什么是-Hexo？&quot; class=&quot;headerlink&quot; title=&quot;什么是 Hexo？&quot;&gt;&lt;/a&gt;什么是 Hexo？&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/index.
+      
+    
     </summary>
     
+      <category term="QucikStart" scheme="http://zsx-cup.top/categories/QucikStart/"/>
+    
+    
+      <category term="Hexo, Git, GitHub" scheme="http://zsx-cup.top/tags/Hexo-Git-GitHub/"/>
     
   </entry>
   
@@ -35,15 +46,17 @@
     <link href="http://zsx-cup.top/2018/10/24/%E7%8E%A9%E8%BD%ACSci-Hub/"/>
     <id>http://zsx-cup.top/2018/10/24/玩转Sci-Hub/</id>
     <published>2018-10-23T16:00:56.000Z</published>
-    <updated>2018-10-27T06:46:59.931Z</updated>
+    <updated>2018-10-27T15:54:14.720Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="玩转Sci-Hub"><a href="#玩转Sci-Hub" class="headerlink" title="玩转Sci-Hub"></a>玩转Sci-Hub</h1><p><img src="/2018/10/24/玩转Sci-Hub/sci-hub.jpg" alt="Sci-Hub"></p><blockquote><p>挣扎许久，终于下定决心给看看英文文献，可是搜了一篇又一篇SCI文献，学校图书馆都没有购买，怎么破？假如你也遇到如此尬境，可以尝试一下SCI免费下载神器：<a href="https://sci-hub.tw/" target="_blank" rel="noopener"><strong>Sci-Hub</strong></a>，如不可用，可尝试以下网址，或前往维基百科查看最新可用网址<a href="https://zh.m.wikipedia.org/wiki/Sci-Hub" target="_blank" rel="noopener">Sci-hub(维基百科)</a></p></blockquote><blockquote><p>Sci-Hub可用网址(2018.10.24测试可用)</p><ol><li><a href="http://sci-hub.tw/" target="_blank" rel="noopener">sci-hub.tw</a></li><li><a href="http://80.82.77.83/" target="_blank" rel="noopener">80.82.77.83</a></li><li><a href="http://80.82.77.84/" target="_blank" rel="noopener">80.82.77.84</a></li></ol></blockquote><p>首先需要说明的是：</p><p>Sci-Hub只支持精确匹配，不支持模糊匹配。这就意味着，搜索结果只有两种：返回目标文献或搜索结果为空。而不会像度娘或谷歌那样支持模糊匹配，返回多个搜索结果。这就要求查找文献之前，必须要提前知道目标查找文献的下列信息之一：</p><blockquote><ol><li>文献标题(String)</li><li>文献地址(URL)</li><li><a href="https://baike.baidu.com/item/doi/6776783?fr=aladdin" target="_blank" rel="noopener">文献DOI(数字对象唯一标识符)</a>：</li><li><a href="http://baike.baidu.com/link?url=0P0iFw84YBoFPTCyfELFuXa0gX5OFRAuXuKHVFgUgr9RTbw6JWjL4IqVPbR-Ype0gXmWhjAwBclO4vbQ3O7HFq" target="_blank" rel="noopener">文献PMID(PubMed唯一标识码，生命科学或医学领域)</a></li></ol></blockquote><p>以下面这篇文献为例，进行介绍：</p><blockquote><p>Kubiak W. Completion time variance minimization on a single machine is difficult [J]. Operations Research Letters, 1993, 14(1):49-59.</p></blockquote><h2 id="使用文献标题搜索"><a href="#使用文献标题搜索" class="headerlink" title="使用文献标题搜索"></a>使用文献标题搜索</h2><p>Sci-Hub搜索框键入文章标题：</p><blockquote><p>Completion time variance minimization on a single machine is difficult</p></blockquote><p>返回结果如下图，即没有搜索到我想要的文献。不过，别急着放弃，再尝试使用文献地址(URL)、DOI、PMID进行搜索。<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-bug.jpg" alt="Sci-Hub-bug"></p><h2 id="使用文献地址或DOI搜索"><a href="#使用文献地址或DOI搜索" class="headerlink" title="使用文献地址或DOI搜索"></a>使用文献地址或DOI搜索</h2><p>首先，用度娘查找文献地址、DOI等信息：</p><ul><li>在度娘输入文献标题搜索，并在搜索页面依次进入：<br>百度学术-&gt;爱思唯尔(Elsevier)，即可抵达如下页面</li><li>页面最下方即为文献地址：<a href="https://doi.org/10.1016/0167-6377(93)90019-D" target="_blank" rel="noopener">https://doi.org/10.1016/0167-6377(93)90019-D</a><br>(及文献DOI：10.1016/0167-6377(93)90019-D)<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-sd1.jpg" alt="Sci-Hub-SD"></li><li>文献在百度学术通常有多个文献来源，通常任意文献来源进入之后都可以找到文献DOI，如下图所示：<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-3.jpg" alt="ref"></li></ul><p>然后，在Sci-Hub搜索框输入文献地址(URL)或DOI等信息，开始搜索，返回结果页如下，成功返回我想要的文献。<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-result.jpg" alt="Sci-Hub-result"></p><p>最后，点击右上角的下载箭头，下载文献即可。</p><h2 id="可能涉及科学上网"><a href="#可能涉及科学上网" class="headerlink" title="可能涉及科学上网"></a>可能涉及科学上网</h2><p>Sci-Hub网站涉及版权问题，某些网址可能无法使用，如遇此情况，可访问sci-hub维基百科词条查看可用网址。</p><blockquote><p>如需科学上网，出门左转访问<a href="https://github.com/getlantern/forum" target="_blank" rel="noopener">getlantern(蓝灯)</a>下载安装即可使用。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2018/10/24/玩转Sci-Hub/sci-hub.jpg" alt="Sci-Hub"></p><blockquote><p>挣扎许久，终于下定决心给看看英文文献，可是搜了一篇又一篇SCI文献，学校图书馆都没有购买，怎么破？假如你也遇到如此尬境，可以尝试一下SCI免费下载神器：<a href="https://sci-hub.tw/" target="_blank" rel="noopener"><strong>Sci-Hub</strong></a>，如不可用，可尝试以下网址，或前往维基百科查看最新可用网址<a href="https://zh.m.wikipedia.org/wiki/Sci-Hub" target="_blank" rel="noopener">Sci-hub(维基百科)</a></p></blockquote><blockquote><p>Sci-Hub可用网址(2018.10.24测试可用)</p><ol><li><a href="http://sci-hub.tw/" target="_blank" rel="noopener">sci-hub.tw</a></li><li><a href="http://80.82.77.83/" target="_blank" rel="noopener">80.82.77.83</a></li><li><a href="http://80.82.77.84/" target="_blank" rel="noopener">80.82.77.84</a></li></ol></blockquote><p>首先需要说明的是：</p><p>Sci-Hub只支持精确匹配，不支持模糊匹配。这就意味着，搜索结果只有两种：返回目标文献或搜索结果为空。而不会像度娘或谷歌那样支持模糊匹配，返回多个搜索结果。这就要求查找文献之前，必须要提前知道目标查找文献的下列信息之一：</p><blockquote><ol><li>文献标题(String)</li><li>文献地址(URL)</li><li><a href="https://baike.baidu.com/item/doi/6776783?fr=aladdin" target="_blank" rel="noopener">文献DOI(数字对象唯一标识符)</a>：</li><li><a href="http://baike.baidu.com/link?url=0P0iFw84YBoFPTCyfELFuXa0gX5OFRAuXuKHVFgUgr9RTbw6JWjL4IqVPbR-Ype0gXmWhjAwBclO4vbQ3O7HFq" target="_blank" rel="noopener">文献PMID(PubMed唯一标识码，生命科学或医学领域)</a></li></ol></blockquote><p>以下面这篇文献为例，进行介绍：</p><blockquote><p>Kubiak W. Completion time variance minimization on a single machine is difficult [J]. Operations Research Letters, 1993, 14(1):49-59.</p></blockquote><h2 id="使用文献标题搜索"><a href="#使用文献标题搜索" class="headerlink" title="使用文献标题搜索"></a>使用文献标题搜索</h2><p>Sci-Hub搜索框键入文章标题：</p><blockquote><p>Completion time variance minimization on a single machine is difficult</p></blockquote><p>返回结果如下图，即没有搜索到我想要的文献。不过，别急着放弃，再尝试使用文献地址(URL)、DOI、PMID进行搜索。<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-bug.jpg" alt="Sci-Hub-bug"></p><h2 id="使用文献地址或DOI搜索"><a href="#使用文献地址或DOI搜索" class="headerlink" title="使用文献地址或DOI搜索"></a>使用文献地址或DOI搜索</h2><p>首先，用度娘查找文献地址、DOI等信息：</p><ul><li>在度娘输入文献标题搜索，并在搜索页面依次进入：<br>百度学术-&gt;爱思唯尔(Elsevier)，即可抵达如下页面</li><li>页面最下方即为文献地址：<a href="https://doi.org/10.1016/0167-6377(93)90019-D" target="_blank" rel="noopener">https://doi.org/10.1016/0167-6377(93)90019-D</a><br>(及文献DOI：10.1016/0167-6377(93)90019-D)<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-sd1.jpg" alt="Sci-Hub-SD"></li><li>文献在百度学术通常有多个文献来源，通常任意文献来源进入之后都可以找到文献DOI，如下图所示：<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-3.jpg" alt="ref"></li></ul><p>然后，在Sci-Hub搜索框输入文献地址(URL)或DOI等信息，开始搜索，返回结果页如下，成功返回我想要的文献。<br><img src="/2018/10/24/玩转Sci-Hub/sci-hub-result.jpg" alt="Sci-Hub-result"></p><p>最后，点击右上角的下载箭头，下载文献即可。</p><h2 id="可能涉及科学上网"><a href="#可能涉及科学上网" class="headerlink" title="可能涉及科学上网"></a>可能涉及科学上网</h2><p>Sci-Hub网站涉及版权问题，某些网址可能无法使用，如遇此情况，可访问sci-hub维基百科词条查看可用网址。</p><blockquote><p>如需科学上网，出门左转访问<a href="https://github.com/getlantern/forum" target="_blank" rel="noopener">getlantern(蓝灯)</a>下载安装即可使用。</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;玩转Sci-Hub&quot;&gt;&lt;a href=&quot;#玩转Sci-Hub&quot; class=&quot;headerlink&quot; title=&quot;玩转Sci-Hub&quot;&gt;&lt;/a&gt;玩转Sci-Hub&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2018/10/24/玩转Sci-Hub/sci-hub.jp
+        &lt;p&gt;&lt;img src=&quot;/2018/10/24/玩转Sci-Hub/sci-hub.jpg&quot; alt=&quot;Sci-Hub&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;挣扎许久，终于下定决心给看看英文文献，可是搜了一篇又一篇SCI文献，学校图书馆都没有购买，怎么破？假如你也遇到如此
       
     
     </summary>
