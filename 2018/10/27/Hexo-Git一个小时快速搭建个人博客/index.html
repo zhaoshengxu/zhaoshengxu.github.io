@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="myblog_v1.1 搭建本地环境：Hexo框架Hexo为何物 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）如下图所示。markdown  Hexo安装本文是基于Windows7系">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-28T11:30:49.883Z">
+<meta property="og:updated_time" content="2018-10-28T12:07:46.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Git一个小时快速搭建个人博客">
 <meta name="twitter:description" content="myblog_v1.1 搭建本地环境：Hexo框架Hexo为何物 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）如下图所示。markdown  Hexo安装本文是基于Windows7系">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.2k
+                  1.3k
                 </span>
               
 
@@ -463,7 +463,7 @@
 <p>如果使用了 –global 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 –global 选项的命令来配置。</p>
 </blockquote>
 <h3 id="使用SSH连接到GitHub"><a href="#使用SSH连接到GitHub" class="headerlink" title="使用SSH连接到GitHub"></a>使用SSH连接到GitHub</h3><ol>
-<li><p>查看存在的SSH公/私钥，通常私钥保存在文件id_rsa，私钥保存在文件id_rsa.pub。</p>
+<li><p>查看存在的SSH公/私钥。通常私钥保存在文件id_rsa，私钥保存在文件id_rsa.pub。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>生成SSH公/私钥</p>
@@ -482,9 +482,16 @@
 <li><p>安装 hexo-deployer-git:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修改根目录中_config.yml配置文件的部署</p>
+<li><p>配置Deployment。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:git<span class="meta">@github</span>.com:githubname/githubname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>找到根目录中_config.yml中Deployment，按照以下代码格式，将其中的githubname更换为你的Github注册用户名即可。</p>
+<ol start="3">
+<li>将博客发布到Github<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  <span class="comment">//清除缓存文件 (db.json) 和已生成的静态文件 (public)。</span></span><br><span class="line">$ hexo generate  <span class="comment">// 生成静态文件</span></span><br><span class="line">$ hexo deploy  <span class="comment">// 部署网站</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样就实现了Hexo本地环境与Github的关联，即可通过<a href="http://githubname.github.io访问你部署在Github上的博客了。" target="_blank" rel="noopener">http://githubname.github.io访问你部署在Github上的博客了。</a></p>
 
       
     </div>
@@ -765,7 +772,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.9k</span>
+    <span title="Site words total count">2k</span>
   
 </div>
 
