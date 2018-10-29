@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zsx-cup.top/"/>
-  <updated>2018-10-28T17:26:59.263Z</updated>
+  <updated>2018-10-29T04:44:57.606Z</updated>
   <id>http://zsx-cup.top/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://zsx-cup.top/2018/10/29/Hexo%E9%85%8D%E7%BD%AENext%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%82%AB%E9%85%B7%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/"/>
     <id>http://zsx-cup.top/2018/10/29/Hexo配置Next主题搭建炫酷博客主页/</id>
     <published>2018-10-28T17:25:08.000Z</published>
-    <updated>2018-10-28T17:26:59.263Z</updated>
+    <updated>2018-10-29T04:44:57.606Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="安装配置-Hexo"><a href="#安装配置-Hexo" class="headerlink" title="安装配置 Hexo"></a>安装配置 Hexo</h2><h2 id="配置主题-Next"><a href="#配置主题-Next" class="headerlink" title="配置主题 Next"></a>配置主题 Next</h2><p>博客根目录下的配置文件：blog/_config.yml</p><p>博客主题目录下的配置文件：themes/next/_config.yml</p><p>文件修改：themes/next/layout/_partials/footer.swig</p><p>修改文件：themes/next/layout/_layout.swig</p><p>修改文件：themes/next/languages/zh-Hans.yml</p><p>连接重置至个人网站<br>“D:\blog\blog\source\CNAME”</p><p>字数统计：wordcount</p><p>阅读次数:leancloud获取appid 和appkey，leancloud_visitors</p><p>评论：leancloud获取appid 和appkey，主题配置文件直接配置</p><p>访客数、访问量busuanzi</p><p><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><br>文件修改：themes/next/layout/_partials/footer.swig</p><p>本地搜索 Local search</p><p>添加侧栏友情链接</p><p>进度条、网页动画<br>彩带，Only fit scheme Pisces</p><p>GitHub关注按钮<br>然后粘贴刚才复制的代码到themes/next/layout/_layout.swig文件中(放在<div class="headband"></div>的下面)，并把href改为你的github地址<br>修改文件：themes/next/layout/_layout.swig</p><p>中文显示<br>author: 赵胜绪<br>totalcount: 博客总字数<br>“D:\blog\blog\themes\next\languages\zh-Hans.yml”</p><p>网站名称图标: easyiocn</p><p>Git bash 清屏：reset</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="更换NexT主题"><a href="#更换NexT主题" class="headerlink" title="更换NexT主题"></a>更换NexT主题</h2><p>如果觉得Hexo默认的主题不好看和炫酷，可以参照本教程及<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT官方使用文档</a>，将您的博客主题更换为比较流行的NexT主题，用来打造炫酷博客主页。</p><ol><li><p>下载NexT主题</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定位到 Hexo 站点根目录，打开Git Bash Here终端窗口，执行以下命令，下载next主题</span></span><br><span class="line">$ git clone https:<span class="comment">//github.com/iissnan/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure></li><li><p>启用NexT主题。<br>定位到 Hexo 站点根目录，找到站点配置文件_config.yml中的 theme 字段，并将其值更改为 next。</p></li><li><p>验证主题</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ol><h2 id="配置主题-Next"><a href="#配置主题-Next" class="headerlink" title="配置主题 Next"></a>配置主题 Next</h2><p>博客根目录下的配置文件：blog/_config.yml</p><p>博客主题目录下的配置文件：themes/next/_config.yml</p><p>文件修改：themes/next/layout/_partials/footer.swig</p><p>修改文件：themes/next/layout/_layout.swig</p><p>修改文件：themes/next/languages/zh-Hans.yml</p><p>连接重置至个人网站<br>“D:\blog\blog\source\CNAME”</p><p>字数统计：wordcount</p><p>阅读次数:leancloud获取appid 和appkey，leancloud_visitors</p><p>评论：leancloud获取appid 和appkey，主题配置文件直接配置</p><p>访客数、访问量busuanzi</p><p><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><br>文件修改：themes/next/layout/_partials/footer.swig</p><p>本地搜索 Local search</p><p>添加侧栏友情链接</p><p>进度条、网页动画<br>彩带，Only fit scheme Pisces</p><p>GitHub关注按钮<br>然后粘贴刚才复制的代码到themes/next/layout/_layout.swig文件中(放在<div class="headband"></div>的下面)，并把href改为你的github地址<br>修改文件：themes/next/layout/_layout.swig</p><p>中文显示<br>author: 赵胜绪<br>totalcount: 博客总字数<br>“D:\blog\blog\themes\next\languages\zh-Hans.yml”</p><p>网站名称图标: easyiocn</p><p>Git bash 清屏：reset</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安装配置-Hexo&quot;&gt;&lt;a href=&quot;#安装配置-Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装配置 Hexo&quot;&gt;&lt;/a&gt;安装配置 Hexo&lt;/h2&gt;&lt;h2 id=&quot;配置主题-Next&quot;&gt;&lt;a href=&quot;#配置主题-Next&quot; class
+        &lt;h2 id=&quot;更换NexT主题&quot;&gt;&lt;a href=&quot;#更换NexT主题&quot; class=&quot;headerlink&quot; title=&quot;更换NexT主题&quot;&gt;&lt;/a&gt;更换NexT主题&lt;/h2&gt;&lt;p&gt;如果觉得Hexo默认的主题不好看和炫酷，可以参照本教程及&lt;a href=&quot;http://th
       
     
     </summary>
