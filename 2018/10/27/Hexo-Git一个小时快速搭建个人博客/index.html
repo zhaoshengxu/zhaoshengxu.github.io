@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://zsx-cup.top/2018/10/27/Hexo-Git一个小时快速搭建个人博客/github_page.jpg">
 <meta property="og:image" content="http://zsx-cup.top/2018/10/27/Hexo-Git一个小时快速搭建个人博客/blog.jpg">
 <meta property="og:image" content="http://zsx-cup.top/2018/10/27/Hexo-Git一个小时快速搭建个人博客/CNAME.jpg">
-<meta property="og:updated_time" content="2018-10-28T17:41:12.367Z">
+<meta property="og:updated_time" content="2018-10-30T04:29:27.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Git一个小时快速搭建个人博客">
 <meta name="twitter:description" content="搭建本地环境：Hexo框架Hexo为何物 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown解析文章，并瞬间利用靓丽的主题生成静态网页。其中，Markdown是一个用于将普通文本转换为HTML的工具，它以易于阅读和编写的纯文本格式进行编写，然后将其转换为的HTML（或XHTML）。  Hexo安装本文是基于Windows7系统安装，如果是其他系统可参见Hexo官方文档。">
@@ -526,17 +526,12 @@
 <td style="text-align:center">www</td>
 <td style="text-align:center">IPV4地址1</td>
 </tr>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">www</td>
-<td style="text-align:center">IPV4地址2</td>
-</tr>
 </tbody>
 </table>
 <ul>
 <li>记录类型选择CNAME，则记录值填写githubname.github.io（GitHub Pages 对应域名）。</li>
-<li>记录类型选择A，则记录值填写IPV4地址，通过ping上述GitHub Pages 域名获取IPV4地址，即下表的185.199.108.153，通常会获取到2个不同IPV4地址，最好都加进去。</li>
-<li>主机记录填写@，则直接解析主域名，即购买的域名，前边没有www，如aliyun.com。</li>
+<li>记录类型选择A，则记录值填写IPV4地址，通过ping上述GitHub Pages 域名获取IPV4地址，即下表的185.199.108.153，每次ping获取得到的IPV4地址可能都不相同，所以可以不采用这种方式。</li>
+<li>主机记录填写@，则直接解析主域名，前边没有www，如aliyun.com，无论你在浏览器地址栏输入的网址是否加www。</li>
 <li>主机记录填写www，则解析后的域名含有www，如<a href="http://www.aliyun.com。" target="_blank" rel="noopener">www.aliyun.com。</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ping zhaoshengxu.github.io <span class="comment">//ping操作</span></span><br><span class="line">正在 Ping zhaoshengxu.github.io [<span class="number">185.199</span>.108.153] 具有 <span class="number">32</span> 字节的数据: <span class="comment">//返回结果第1行</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -839,7 +834,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.8k</span>
+    <span title="Site words total count">3k</span>
   
 </div>
 
