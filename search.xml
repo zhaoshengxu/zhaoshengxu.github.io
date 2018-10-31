@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[常用DOS命令]]></title>
+    <url>%2F2018%2F10%2F31%2F%E5%B8%B8%E7%94%A8DOS%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[本文汇总一些常用的DOS命令，更加全面的DOS命令详见：DOS命令 1234567891011121314151617181920212223242526272829cd // 显示或更改当前目录cd / // 返回根目录cd .. // 返回上一级目录dir // 显示当前目录下的文件信息md // 新建文件夹rd // 删除文件start // 新建窗口查看文件或文件夹type // 显示文件内容ren // 文件重命名del // 删除文件cls // 清屏ctrl + shift + T // 打开命令行net start 服务名称 // 启动某服务net stop 服务名称 // 关闭某服务命令行右击“标记”选定内容，点击enter键即可复制命令行右击“粘贴”把剪切板上内容粘贴到提示符下命令 /? // 查看命令的帮助文档echo 文本内容 &gt; 文件路径 //新建文件并写入内容，示例：echo 百度一下 &gt; c:baidu.txtpydoc &lt;name&gt; // 直接查看python模块函数的帮助文档，而不需要进入python。]]></content>
+      <categories>
+        <category>Wins</category>
+      </categories>
+      <tags>
+        <tag>Shortcuts, DOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[常用Wins技巧]]></title>
     <url>%2F2018%2F10%2F31%2F%E5%B8%B8%E7%94%A8Wins%E6%8A%80%E5%B7%A7%2F</url>
     <content type="text"><![CDATA[虫部落：一个神奇的部落，纯粹的搜索经验、技术交流和分享平台，同时为虫友提供众多方便好用的搜索引擎。 本文整理的这些常用Windows技巧均来自于虫部落：你知道Windows上有哪些奇技淫巧吗？（Windows技巧大全） 微软官网：Windows 中的快捷键及MS Word 在 Windows 上的快捷键 Win键相关的常用快捷键 Win + E 打开计算机 Win + D 返回桌面 Win + F 打开系统搜索 Win+数字键（0~9） 快速启动锁定在任务栏中的前10个对应的程序 Win+Home 最小化当前窗口以外的其他所有程序，节约系统资源。 Win+Tab 3D动画挺炫 “Win+方向键” “Win+↑” 最大化 “Win+↓” 最小化 “Win+←” 窗口占左半边屏幕 “Win+→” 窗口占左半边屏幕 Ctrl和Shift键相关的常用快捷键 ctrl + shift + N 新建文件夹 Ctrl + Shift + Esc 任务管理器 Ctrl + Shift + T 立即重启刚刚关闭的页面 CTRL + Z 撤销上一步操作，还可以快速恢复被删除的文件（彻底删除文件无法恢复） 快速复制复制文件或文件夹磁盘路径：按住Shift键，右键点击文件或文件夹，选择“复制为路径”即可。 F系列功能键相关的常用快捷键 F5在记事本程序中一键快速插入当前日期和时间 F11全屏显示网页，一个有意思的网站：航班追踪。 F2批量重命名文件：同时选中多个文件或文件夹，按F2键，重命名其中一个文件或文件夹，其他的都会被重命名，在文件名末尾加上递增的数字。 2345好压 也可以右键批量修改文件名 前后任意添加/删除/替换 其他技巧 取消电脑开机时的倒计时 右键计算机“属性” 打开“高级系统设置”在启动和故障恢复那里点击“设置” 把“显示操作系统列表的时间”前面的钩钩去掉]]></content>

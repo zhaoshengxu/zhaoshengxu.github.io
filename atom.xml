@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zsx-cup.top/"/>
-  <updated>2018-10-30T16:22:13.046Z</updated>
+  <updated>2018-10-31T13:11:37.107Z</updated>
   <id>http://zsx-cup.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用DOS命令</title>
+    <link href="http://zsx-cup.top/2018/10/31/%E5%B8%B8%E7%94%A8DOS%E5%91%BD%E4%BB%A4/"/>
+    <id>http://zsx-cup.top/2018/10/31/常用DOS命令/</id>
+    <published>2018-10-31T12:51:28.000Z</published>
+    <updated>2018-10-31T13:11:37.107Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文汇总一些常用的DOS命令，更加全面的DOS命令详见：<a href="http://baike.baidu.com/link?url=zCZ4Z9Jl2hspPmoNslENIU7ZaUVhXOhA8EqCscorRZujgxocuNsyFq42W1MWVgsVgmNDnn6Yek_3QBzrJYtlGU38AnYEhO_7unT0Zf7emz7//6" target="_blank" rel="noopener">DOS命令</a></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">cd   <span class="comment">// 显示或更改当前目录</span></span><br><span class="line">cd /  <span class="comment">// 返回根目录</span></span><br><span class="line">cd ..  <span class="comment">// 返回上一级目录</span></span><br><span class="line"></span><br><span class="line">dir  <span class="comment">// 显示当前目录下的文件信息</span></span><br><span class="line">md  <span class="comment">// 新建文件夹</span></span><br><span class="line">rd  <span class="comment">// 删除文件</span></span><br><span class="line">start <span class="comment">// 新建窗口查看文件或文件夹</span></span><br><span class="line">type  <span class="comment">// 显示文件内容</span></span><br><span class="line">ren  <span class="comment">// 文件重命名</span></span><br><span class="line">del  <span class="comment">// 删除文件</span></span><br><span class="line"></span><br><span class="line">cls  <span class="comment">// 清屏</span></span><br><span class="line"></span><br><span class="line">ctrl + shift + T  <span class="comment">// 打开命令行</span></span><br><span class="line"></span><br><span class="line">net start 服务名称  <span class="comment">// 启动某服务</span></span><br><span class="line">net stop 服务名称  <span class="comment">// 关闭某服务</span></span><br><span class="line"></span><br><span class="line">命令行右击“标记”选定内容，点击enter键即可复制</span><br><span class="line"></span><br><span class="line">命令行右击“粘贴”把剪切板上内容粘贴到提示符下</span><br><span class="line"></span><br><span class="line">命令 /?  <span class="comment">// 查看命令的帮助文档</span></span><br><span class="line"></span><br><span class="line">echo 文本内容 &gt; 文件路径 <span class="comment">//新建文件并写入内容，示例：</span></span><br><span class="line">echo 百度一下 &gt; c:baidu.txt</span><br><span class="line"></span><br><span class="line">pydoc &lt;name&gt; <span class="comment">// 直接查看python模块函数的帮助文档，而不需要进入python。</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文汇总一些常用的DOS命令，更加全面的DOS命令详见：&lt;a href=&quot;http://baike.baidu.com/link?url=zCZ4Z9Jl2hspPmoNslENIU7ZaUVhXOhA8EqCscorRZujgxocuNsyFq42W1MWVgsVgmND
+      
+    
+    </summary>
+    
+      <category term="Wins" scheme="http://zsx-cup.top/categories/Wins/"/>
+    
+    
+      <category term="Shortcuts, DOS" scheme="http://zsx-cup.top/tags/Shortcuts-DOS/"/>
+    
+  </entry>
   
   <entry>
     <title>常用Wins技巧</title>
