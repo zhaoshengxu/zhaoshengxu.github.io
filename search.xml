@@ -8,7 +8,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Ubuntu, Shortcuts, Atom</tag>
+        <tag>Ubuntu</tag>
+        <tag>Shortcuts</tag>
+        <tag>Atom</tag>
       </tags>
   </entry>
   <entry>
@@ -30,7 +32,8 @@
         <category>Wins</category>
       </categories>
       <tags>
-        <tag>Shortcuts, DOS</tag>
+        <tag>Shortcuts</tag>
+        <tag>DOS</tag>
       </tags>
   </entry>
   <entry>
@@ -74,7 +77,9 @@
         <category>QucikStart</category>
       </categories>
       <tags>
-        <tag>Hexo, Git, GitHub</tag>
+        <tag>Hexo</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -82,7 +87,7 @@
     <url>%2F2018%2F10%2F24%2F%E7%8E%A9%E8%BD%ACSci-Hub%2F</url>
     <content type="text"><![CDATA[挣扎许久，终于下定决心给看看英文文献，可是搜了一篇又一篇SCI文献，学校图书馆都没有购买，怎么破？假如你也遇到如此尬境，可以尝试一下SCI免费下载神器：Sci-Hub，如不可用，可尝试以下网址，或前往维基百科查看最新可用网址Sci-hub(维基百科) Sci-Hub可用网址(2018.10.24测试可用) sci-hub.tw 80.82.77.83 80.82.77.84 首先需要说明的是： Sci-Hub只支持精确匹配，不支持模糊匹配。这就意味着，搜索结果只有两种：返回目标文献或搜索结果为空。而不会像度娘或谷歌那样支持模糊匹配，返回多个搜索结果。这就要求查找文献之前，必须要提前知道目标查找文献的下列信息之一： 文献标题(String) 文献地址(URL) 文献DOI(数字对象唯一标识符)： 文献PMID(PubMed唯一标识码，生命科学或医学领域) 以下面这篇文献为例，进行介绍： Kubiak W. Completion time variance minimization on a single machine is difficult [J]. Operations Research Letters, 1993, 14(1):49-59. 使用文献标题搜索Sci-Hub搜索框键入文章标题： Completion time variance minimization on a single machine is difficult 返回结果如下图，即没有搜索到我想要的文献。不过，别急着放弃，再尝试使用文献地址(URL)、DOI、PMID进行搜索。 使用文献地址或DOI搜索首先，用度娘查找文献地址、DOI等信息： 在度娘输入文献标题搜索，并在搜索页面依次进入：百度学术-&gt;爱思唯尔(Elsevier)，即可抵达如下页面 页面最下方即为文献地址：https://doi.org/10.1016/0167-6377(93)90019-D(及文献DOI：10.1016/0167-6377(93)90019-D) 文献在百度学术通常有多个文献来源，通常任意文献来源进入之后都可以找到文献DOI，如下图所示： 然后，在Sci-Hub搜索框输入文献地址(URL)或DOI等信息，开始搜索，返回结果页如下，成功返回我想要的文献。 最后，点击右上角的下载箭头，下载文献即可。 可能涉及科学上网Sci-Hub网站涉及版权问题，某些网址可能无法使用，如遇此情况，可访问sci-hub维基百科词条查看可用网址。 如需科学上网，出门左转访问getlantern(蓝灯)下载安装即可使用。]]></content>
       <categories>
-        <category>Tool</category>
+        <category>Research</category>
       </categories>
       <tags>
         <tag>Sci-Hub</tag>
