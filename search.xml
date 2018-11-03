@@ -8,6 +8,7 @@
         <category>JavaWeb</category>
       </categories>
       <tags>
+        <tag>Test</tag>
         <tag>HTML</tag>
       </tags>
   </entry>
@@ -113,39 +114,6 @@
       </categories>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Categories&Tags]]></title>
-    <url>%2F2018%2F10%2F20%2FCategories-Tags%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Test</category>
-      </categories>
-      <tags>
-        <tag>Test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Test]]></title>
-    <url>%2F2018%2F10%2F18%2FTest%2F</url>
-    <content type="text"><![CDATA[Just a test.]]></content>
-      <categories>
-        <category>Test</category>
-      </categories>
-      <tags>
-        <tag>Test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello]]></title>
-    <url>%2F2018%2F10%2F18%2FHello%2F</url>
-    <content type="text"><![CDATA[Winter is coming!]]></content>
-      <categories>
-        <category>Test</category>
-      </categories>
-      <tags>
-        <tag>Test</tag>
       </tags>
   </entry>
   <entry>
