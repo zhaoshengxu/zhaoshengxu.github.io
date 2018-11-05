@@ -93,15 +93,15 @@
 <meta name="description" content="HTML的定义及作用超文本标记语言（Hyper Text Markup Language），超越普通文本，以标签记号描述网页的非编程语言。HTML文件被浏览器加载读取，以网页的形式展示。 HTML文件格式1. html 文件都是以.html 或者.htm 结尾的，推荐使用.html。 2. html 文件由头部&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;和主题&amp;lt;body&amp;gt;&amp;lt">
 <meta name="keywords" content="div,span,table,form,input,select">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML入门">
+<meta property="og:title" content="HTML快速入门">
 <meta property="og:url" content="http://zsx-cup.top/2018/11/01/HTML入门/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="HTML的定义及作用超文本标记语言（Hyper Text Markup Language），超越普通文本，以标签记号描述网页的非编程语言。HTML文件被浏览器加载读取，以网页的形式展示。 HTML文件格式1. html 文件都是以.html 或者.htm 结尾的，推荐使用.html。 2. html 文件由头部&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;和主题&amp;lt;body&amp;gt;&amp;lt">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://zsx-cup.top/2018/11/01/HTML入门/html.jpg">
-<meta property="og:updated_time" content="2018-11-04T15:58:47.456Z">
+<meta property="og:updated_time" content="2018-11-05T11:08:14.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML入门">
+<meta name="twitter:title" content="HTML快速入门">
 <meta name="twitter:description" content="HTML的定义及作用超文本标记语言（Hyper Text Markup Language），超越普通文本，以标签记号描述网页的非编程语言。HTML文件被浏览器加载读取，以网页的形式展示。 HTML文件格式1. html 文件都是以.html 或者.htm 结尾的，推荐使用.html。 2. html 文件由头部&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;和主题&amp;lt;body&amp;gt;&amp;lt">
 <meta name="twitter:image" content="http://zsx-cup.top/2018/11/01/HTML入门/html.jpg">
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>HTML入门 | Xu's Blog</title>
+  <title>HTML快速入门 | Xu's Blog</title>
   
 
 
@@ -263,26 +263,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -332,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTML入门</h1>
+          <h1 class="post-title" itemprop="name headline">HTML快速入门</h1>
         
 
         <div class="post-meta">
@@ -362,7 +358,7 @@
 
           
           
-             <span id="/2018/11/01/HTML入门/" class="leancloud_visitors" data-flag-title="HTML入门">
+             <span id="/2018/11/01/HTML入门/" class="leancloud_visitors" data-flag-title="HTML快速入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -656,7 +652,7 @@ POST与GET方式区别:
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://zsx-cup.top/2018/11/01/HTML入门/" title="HTML入门">http://zsx-cup.top/2018/11/01/HTML入门/</a>
+    <a href="http://zsx-cup.top/2018/11/01/HTML入门/" title="HTML快速入门">http://zsx-cup.top/2018/11/01/HTML入门/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -971,7 +967,7 @@ POST与GET方式区别:
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.2k</span>
+    <span title="Site words total count">10.6k</span>
   
 </div>
 
@@ -1466,7 +1462,7 @@ POST与GET方式区别:
             }
           }
 
-          if ('auto' === 'manual') {
+          if ('auto' === 'auto') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);
@@ -1510,19 +1506,6 @@ POST与GET方式区别:
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

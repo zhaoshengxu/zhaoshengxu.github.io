@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-05T04:55:17.492Z">
+<meta property="og:updated_time" content="2018-11-05T11:10:10.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS快速入门">
 <meta name="twitter:description" content="CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和">
@@ -261,26 +261,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -385,7 +381,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  241
+                  553
                 </span>
               
 
@@ -401,7 +397,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -431,7 +427,13 @@
 <li>css对大小写不敏感，如果涉及到与html文档一起使用时，class与id名称对大小写敏感</li>
 </ol>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">text-align</span>:center;</span><br><span class="line"><span class="attribute">font-family</span>:arial;</span><br><span class="line"><span class="attribute">color</span>:black;&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">p 为元素选择器</span></span><br><span class="line"><span class="comment">&#123;&#125; 中内容为样式的声明</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="导入CSS的方式"><a href="#导入CSS的方式" class="headerlink" title="导入CSS的方式"></a>导入CSS的方式</h2>
+<h2 id="导入CSS的方式"><a href="#导入CSS的方式" class="headerlink" title="导入CSS的方式"></a>导入CSS的方式</h2><h3 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h3><p>内联样式，是在相关的标签内使用样式（style）属性。style 属性可以包含任何 CSS 属性，代码示例如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">”border:1px</span> <span class="attr">solid</span> <span class="attr">black</span>”&gt;</span>这是一个DIV<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>提示：慎用内联样式表，它将html的内容与表现混在一起，没有发挥样式表的优势。一般情况下，只有在一个标签上只应用一次样式时才会使用，这种方式使用的仅仅是标签的一个样式属性。</p>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>内部样式表，是使用style标签在html文档的head中来定义样式表。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>这种方式，样式只适合应用于一个页面</p>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>如果想要在多个页面使用同一个样式表，可以使用外部样式表来导入。<br>我们可以在html页面上使用<link>标签来导入外部样式表。<br>例如:</p>
+<p>浏览器会从mystyle.css文件中读取样式，并对页面上的html进行修饰。<br>外部样式表，应该以css为后缀来保存，可以使用任意文本编辑器对css文件进行<br>编辑。<br>下面是mystyle.css文件的内容:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -479,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/01/HTML入门/" rel="next" title="HTML入门">
-                <i class="fa fa-chevron-left"></i> HTML入门
+              <a href="/2018/11/01/HTML入门/" rel="next" title="HTML快速入门">
+                <i class="fa fa-chevron-left"></i> HTML快速入门
               </a>
             
           </div>
@@ -716,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定义及作用"><span class="nav-number">1.</span> <span class="nav-text">CSS定义及作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS基本语法"><span class="nav-number">2.</span> <span class="nav-text">CSS基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入CSS的方式"><span class="nav-number">3.</span> <span class="nav-text">导入CSS的方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定义及作用"><span class="nav-number">1.</span> <span class="nav-text">CSS定义及作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS基本语法"><span class="nav-number">2.</span> <span class="nav-text">CSS基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入CSS的方式"><span class="nav-number">3.</span> <span class="nav-text">导入CSS的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联样式表"><span class="nav-number">3.1.</span> <span class="nav-text">内联样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部样式表"><span class="nav-number">3.2.</span> <span class="nav-text">内部样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部样式表"><span class="nav-number">3.3.</span> <span class="nav-text">外部样式表</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -752,7 +754,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.2k</span>
+    <span title="Site words total count">10.6k</span>
   
 </div>
 
@@ -1247,7 +1249,7 @@
             }
           }
 
-          if ('auto' === 'manual') {
+          if ('auto' === 'auto') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);
@@ -1291,19 +1293,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
