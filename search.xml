@@ -3,12 +3,14 @@
   <entry>
     <title><![CDATA[CSS快速入门]]></title>
     <url>%2F2018%2F11%2F04%2FCSS%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和声明。代码示例如下： 如果值为多个单词，则要给值加双引号 多个声明之间使用分号(;)隔开 css对大小写不敏感，如果涉及到与html文档一起使用时，class与id名称对大小写敏感 1234567p&#123;text-align:center;font-family:arial;color:black;&#125;/*p 为元素选择器&#123;&#125; 中内容为样式的声明*/ 导入CSS的方式内联样式表内联样式，是在相关的标签内使用样式（style）属性。style 属性可以包含任何 CSS 属性，代码示例如下:1&lt;div style=”border:1px solid black”&gt;这是一个DIV&lt;/div&gt; 提示：慎用内联样式表，它将html的内容与表现混在一起，没有发挥样式表的优势。一般情况下，只有在一个标签上只应用一次样式时才会使用，这种方式使用的仅仅是标签的一个样式属性。 内部样式表内部样式表，是使用style标签在html文档的head中来定义样式表。代码示例如下：12 这种方式，样式只适合应用于一个页面 外部样式表如果想要在多个页面使用同一个样式表，可以使用外部样式表来导入。我们可以在html页面上使用标签来导入外部样式表。例如: 浏览器会从mystyle.css文件中读取样式，并对页面上的html进行修饰。外部样式表，应该以css为后缀来保存，可以使用任意文本编辑器对css文件进行编辑。下面是mystyle.css文件的内容:12]]></content>
+    <content type="text"><![CDATA[CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和声明。代码示例如下： 如果值为多个单词，则要给值加双引号 多个声明之间使用分号(;)隔开 css对大小写不敏感，如果涉及到与html文档一起使用时，class与id名称对大小写敏感 123456789p&#123; text-align:center; font-family:arial; color:black;&#125;/*p 为元素选择器&#123;&#125; 中内容为样式的声明*/ 导入CSS的方式内联样式表内联样式，是在相关的标签内使用样式（style）属性。style 属性可以包含任何 CSS 属性，代码示例如下:12345678910111213&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt; &lt;meta charset="utf-8" /&gt; &lt;title&gt;Hello&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;!--内联样式表--&gt; &lt;p style="font-family: '黑体';color: yellowgreen;"&gt; CSS即层叠样式表（Cascading Style Sheets）&lt;/p&gt; &lt;/body&gt;&lt;/html&gt; 提示：慎用内联样式表，它将html的内容与表现混在一起，没有发挥层叠样式表的优势。一般情况下，只有在单个标签上只应用一次样式时才会使用，这种方式使用的仅仅是标签的一个样式属性。 内部样式表内部样式表，是使用style标签在html文档的head中来定义样式表。内部样式表只适应用于单个页面。代码示例如下：123456789101112131415161718&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt; &lt;meta charset="utf-8" /&gt; &lt;title&gt;Hello&lt;/title&gt; &lt;!--内部样式表--&gt; &lt;style type="text/css"&gt; p&#123; font-family: "微软雅黑"; color: red; &#125; &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;CSS即层叠样式表（Cascading Style Sheets）&lt;/p&gt; &lt;/body&gt;&lt;/html&gt; 外部样式表如果想要在多个页面使用同一层叠样式表，外部样式表是最合适的，可以在html页面上使用link标签来导入外部样式表。代码示例如下：12345678910111213&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt; &lt;meta charset="utf-8" /&gt; &lt;title&gt;Hello&lt;/title&gt; &lt;!--外部样式表--&gt; &lt;link rel="stylesheet" href="css/p.css" / &lt;/head&gt; &lt;body&gt; &lt;p&gt;CSS即层叠样式表（Cascading Style Sheets）&lt;/p&gt; &lt;/body&gt;&lt;/html&gt; 浏览器会从层叠样式表文件中读取样式，并对页面上的html进行渲染。外部样式表以css为后缀。外部样式表代码示例如下:123456p&#123; align-content: center; font-family: "楷体"; font-size: large; color: darkgreen;&#125; @import导入@import导入，也是外部导入，不推荐使用。代码示例如下：123456789101112131415&lt;!DOCTYPE html&gt;&lt;html&gt; &lt;head&gt; &lt;meta charset="utf-8" /&gt; &lt;title&gt;Hello&lt;/title&gt; &lt;!--@import导入--&gt; &lt;style type="text/css"&gt; @import url("css/p.css"); &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;p&gt;CSS即层叠样式表（Cascading Style Sheets）&lt;/p&gt; &lt;/body&gt;&lt;/html&gt; 不同样式表的优先级问题： 内联样式表 &gt; 内部样式表 &gt; 外部样式表 CSS选择器CSS选择器，主要是用于选择需要添加样式的html元素，用于精准定位到具体的想要添加样式的某个或某些元素.常用选择器有：id选择器、class选择器、元素选择器、属性选择器。 id选择器Id选择器使用#引入，它引用的是id属性中的值。代码示例如下：12345678910&lt;head&gt; &lt;style type="text/css"&gt; #p &#123; color: blue ; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;p id="p"&gt;hello world&lt;/p&gt;&lt;/body&gt; class选择器类选择器使用时，需要在类名前加一个点号(.)。代码示例如下：12345678910&lt;head&gt; &lt;style type="text/css"&gt; .c &#123; color: blue ; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;p class="c"&gt;hello world&lt;/p&gt;&lt;/body&gt; 元素选择器这是最常见的选择器，简单说，文档中的元素就是选择器。代码示例如下： 12345678910&lt;head&gt; &lt;style type="text/css"&gt; p&#123; color: blue ; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;p&gt;hello world&lt;/p&gt;&lt;/body&gt; 属性选择器如果需要选择有某个属性的元素，而不论属性是什么，可以使用属性选择器。代码示例如下：12345678910&lt;head&gt; &lt;style type="text/css"&gt; a[href] &#123; color: red ; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;a href="http://zsx-cup.top"&gt;Xu'Blog&lt;/a&gt;&lt;br /&gt;&lt;/body&gt; CSS属性所谓属性就像java类中定义的一些属性，用来描述一些具体的特性。 字体css字体属性定义文本的字体系列，大小，加粗，风格(如斜体)和变形(如小型大写字母)。常用属性: font:简写属性，所有针对字体的属性可设置在一个声明中。 font-family: 字体系列 font-size: 字体尺寸 font-style: 字体风格 文本CSS 文本属性可定义文本的外观。通过文本属性，可以改变文本颜色、字符间距、对齐方式、装饰文本、文本缩进等。常用属性： color: 文本颜色 text-align: 对齐方式 letter-spacing: 字符间隔 word-spacing: 字间隔 背景CSS 允许应用纯色，或使用图像作为背景。CSS 在这方面的能力远远在 HTML 之上。常用属性: background:简写属性，背景属性设置可在一个声明中 background-color: 背景颜色 background-image: 背景图片 background-position: 背景图片的起始位置 background-repeat: 背景图片是否及如何重复。 尺寸CSS 尺寸属性允许控制元素的高度和宽度。常用属性: width: 元素宽度 height: 元素高度 列表CSS 列表属性允许放置、改变列表项标志，或者将图像作为列表项标志。 常用属性: list-style: 简写属性。所有用于列表的属性可设置在一个声明中。 list-style-image: 列表项标志的图象 list-style-position: 列表项标志的位置 list-style-type: 列表项标志的类型。 表格CSS 表格属性可极大改善表格外观。常用属性: border-collapse: 是否把表格边框合并为单一的边框。 border-spacing: 分隔单元格边框的距离 caption-side: 表格标题的位置 轮廓轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。CSS轮廓属性规定元素轮廓的样式、颜色和宽度。常用属性: outline: 简写属性。可在一个声明中设置所有的轮廓属性 outline-color: 轮廓颜色 outline-style: 轮廓样式 outline-width: 轮廓宽度 定位CSS 定位 (Positioning) 属性允许对元素进行定位。定位的基本思想很简单，它允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素、另一个元素甚至浏览器窗口本身的位置。CSS 有三种基本的定位机制：普通流、浮动和绝对定位。常用属性: position: 把元素放置到一个静态的、相对的、绝对的、或固定的位置中。 top: 定位元素的上外边距边界与其包含块上边界之间的偏移量 right: 定位元素右外边距边界与其包含块右边界之间的偏移 left: 定位元素左外边距边界与其包含块左边界之间的偏移 bottom: 定位元素下外边距边界与其包含块下边界之间的偏移。 分类CSS 分类属性允许你控制如何显示元素，设置图像显示于另一元素中的何处，相对于其正常位置来定位元素，使用绝对值来定位元素，以及元素的可见度。常用属性： clear: 一个元素的侧面是否允许其它的浮动元素 float: 元素的浮动方向 cursor: 当指向某元素之上时显示的指针类型 display: 是否及如何显示元素 visibility: 元素是否可见或不可见。]]></content>
       <categories>
         <category>CSS</category>
       </categories>
       <tags>
-        <tag>stylesheet</tag>
+        <tag>QuickStart</tag>
+        <tag>Stylesheet</tag>
+        <tag>Style</tag>
       </tags>
   </entry>
   <entry>
@@ -19,22 +21,21 @@
         <category>HTML</category>
       </categories>
       <tags>
-        <tag>div</tag>
-        <tag>span</tag>
-        <tag>table</tag>
-        <tag>form</tag>
-        <tag>input</tag>
-        <tag>select</tag>
+        <tag>QuickStart</tag>
+        <tag>Div</tag>
+        <tag>Span</tag>
+        <tag>Form</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Linux命令及双系统安装配置]]></title>
     <url>%2F2018%2F11%2F01%2FLinux%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[linux基本命令 Ubuntu16.04 跟工作目录相关命令 cd 返回根目录 cd + dirpath 更改工作目录至dirpath cd .. 返回上一级目录 pwd 返回当前工作目录 ls 查看当前目录下的文件 ls -l 查看当前目录下的文件的详细信息 rm 删除文件 rmdir 删除文件夹 rm -rf 强制性删除非空目录 复制文件或目录: cp -r 文件或目录名称 指定目录 开启与关闭真正终端 Ctrl + Alt + T 打开虚拟终端 ctrl + alt + f6 开启真正的终端 ctrl + alt + f7 关闭真正的终端 超级管理员 sudo 即super do 超级管理员 sudo -i 直接进入超级管理员模式 su + username 退出超级管理员模式 nano+filename 在当前文件下新建文件，nano是ubuntu默认的编辑器 1234567$ cd /tmp/ $ nano hello.py # 在tmp/ 目录下创建文件hello.py$ print('hello world') # 向文件内写入一行代码$ ctrl + x # 退出文件$ y # 回复y保存所做的改变$ python hello.py # 运行py文件，并输出结果'hello world' 文件权限：r w x 12345$ cd /tmp/ $ ls -l # 查看文件详细信息-rw------- 1 zsx zsx 0 6月 9 20:34 config-err-pVx0cf-rw-rw-r-- 1 zsx zsx 20 6月 9 20:37 hello.pydrwx------ 3 root root 4096 6月 9 20:33 systemd-private r read 读的权限 w write 写的权限 x 执行的权限 r w x的值分别为4 2 1 rwx=7 r-w=6 r-x=5 w-x=3 以上述的hello.py文件为例说明文件权限及更改方法： 最前边的-代表文件，如果是d则代表是文件夹 最前边的rw 表示该文件或文件所属的用户对该文件的操作权限 中间的rw 表示该文件或文件所属的用户组对该文件的操作权限 最后边的r 表示其他用户或用户组对该文件的操作权限 以值的形式表示上述文件操作权限则是664-更改文件操作权限的命令是chmod123$ chmod 764 hello.py # 增加该文件所述用户对文件的执行权限$ ls -l-rwxrw-r-- 1 zsx zsx 20 6月 9 20:37 hello.py rm remove删除文件 tail -n filename 查看文件内容 1$ tail -10 test.py man 查看帮助 12$ man tail # 查看tail命令的帮助文档$ tail --help # 查看tail命令的帮助文档 从ubuntu终端进入Python和scrapy shell，再退回到终端的快捷键都是：Ctrl + D。 从终端中以窗口形式打开一个文件夹：nautilus dirname LINUX中常用操作命令 LINUX中常用操作命令 10 Basic Linux Commands That Every Linux Ubuntu Unity 桌面快捷键切换窗口技巧： 不同程序之间切换：alt + tab 同一程序不同窗口之间切换：alt + `（tab键上方按键） 长按Super键（Win键）显示键盘快捷键 Ubuntu双系统安装及配置 Ubuntu16.04.2 安装和卸载ubuntu双系统： Win7 U盘安装Ubuntu16.04 双系统详细教程 开始ubuntu安装，重启电脑，按F12而非F2并选择USB KEY启动。 启动器栏转换到桌面底部，只需要在终端如下代码，按下回车即可： 12# 更改代码最后一个表示位置的单词，即可更改启动器位置$ gsettings set com.canonical.Unity.Launcher launcher-position Bottom 双系统下卸载Ubuntu系统 安装软件 蓝色字体表示超链接，链接到软件安装页面 lantern：蓝灯，科学上网，使用谷歌浏览器登录账户同步信息。 chrome：谷歌浏览器，打开蓝灯下载安装登录账户同步信息。 sublime text 3：文本编辑器，可能需要购买许可证 atom：免费文本编辑器，输入带特效。安装插件代码：1$ apm install &lt;package_name&gt; atom常用插件及快捷键输入关键词搜索，如python，markdown 执行代码：atom-runner，快捷键Alt + R 自动补全代码：autocomplete python，快捷键Ctrl + Alt + G 输入带特效：activate-power-mode 定义跳转：python-tools 自动缩进：python-indent 语法检查：linter-flake8 和 linter-python markdown: markdown-writer，markdown-preview-plus(预览快捷键ctrl-shift-M), language-markdown(语法)]]></content>
+    <content type="text"><![CDATA[linux基本命令 Ubuntu16.04 跟工作目录相关命令 cd 返回根目录 cd + dirpath 更改工作目录至dirpath cd .. 返回上一级目录 pwd 返回当前工作目录 ls 查看当前目录下的文件 ls -l 查看当前目录下的文件的详细信息 rm 删除文件 rmdir 删除文件夹 rm -rf 强制性删除非空目录 复制文件或目录: cp -r 文件或目录名称 指定目录 开启与关闭真正终端 Ctrl + Alt + T 打开虚拟终端 ctrl + alt + f6 开启真正的终端 ctrl + alt + f7 关闭真正的终端 超级管理员 sudo 即super do 超级管理员 sudo -i 直接进入超级管理员模式 su + username 退出超级管理员模式 nano+filename 在当前文件下新建文件，nano是ubuntu默认的编辑器 1234567$ cd /tmp/ $ nano hello.py # 在tmp/ 目录下创建文件hello.py$ print('hello world') # 向文件内写入一行代码$ ctrl + x # 退出文件$ y # 回复y保存所做的改变$ python hello.py # 运行py文件，并输出结果'hello world' 文件权限：r w x 12345$ cd /tmp/ $ ls -l # 查看文件详细信息-rw------- 1 zsx zsx 0 6月 9 20:34 config-err-pVx0cf-rw-rw-r-- 1 zsx zsx 20 6月 9 20:37 hello.pydrwx------ 3 root root 4096 6月 9 20:33 systemd-private r read 读的权限 w write 写的权限 x 执行的权限 r w x的值分别为4 2 1 rwx=7 r-w=6 r-x=5 w-x=3 以上述的hello.py文件为例说明文件权限及更改方法： 最前边的-代表文件，如果是d则代表是文件夹 最前边的rw 表示该文件或文件所属的用户对该文件的操作权限 中间的rw 表示该文件或文件所属的用户组对该文件的操作权限 最后边的r 表示其他用户或用户组对该文件的操作权限 以值的形式表示上述文件操作权限则是664-更改文件操作权限的命令是chmod123$ chmod 764 hello.py # 增加该文件所述用户对文件的执行权限$ ls -l-rwxrw-r-- 1 zsx zsx 20 6月 9 20:37 hello.py rm remove删除文件 tail -n filename 查看文件内容 1$ tail -10 test.py man 查看帮助 12$ man tail # 查看tail命令的帮助文档$ tail --help # 查看tail命令的帮助文档 从ubuntu终端进入Python和scrapy shell，再退回到终端的快捷键都是：Ctrl + D。 从终端中以窗口形式打开一个文件夹：nautilus dirname LINUX中常用操作命令 LINUX中常用操作命令 10 Basic Linux Commands That Every Linux Ubuntu Unity 桌面快捷键切换窗口技巧： 不同程序之间切换：alt + tab 同一程序不同窗口之间切换：alt + `（tab键上方按键） 长按Super键（Win键）显示键盘快捷键 Ubuntu双系统安装及配置 Ubuntu16.04.2 安装和卸载ubuntu双系统： Win7 U盘安装Ubuntu16.04 双系统详细教程 开始ubuntu安装，重启电脑，按F12而非F2并选择USB KEY启动。 启动器栏转换到桌面底部，只需要在终端如下代码，按下回车即可： 12# 更改代码最后一个表示位置的单词，即可更改启动器位置$ gsettings set com.canonical.Unity.Launcher launcher-position Bottom 双系统下卸载Ubuntu系统 安装软件 蓝色字体表示超链接，链接到软件安装页面 lantern：蓝灯，科学上网，使用谷歌浏览器登录账户同步信息。 chrome：谷歌浏览器，腾讯软件中心下载源，打开蓝灯下载安装登录账户同步信息。 sublime text 3：文本编辑器，可能需要购买许可证 atom：免费文本编辑器，输入带特效。安装插件代码：1$ apm install &lt;package_name&gt; atom常用插件及快捷键输入关键词搜索，如python，markdown 执行代码：atom-runner，快捷键Alt + R 自动补全代码：autocomplete python，快捷键Ctrl + Alt + G 输入带特效：activate-power-mode 定义跳转：python-tools 自动缩进：python-indent 语法检查：linter-flake8 和 linter-python markdown: markdown-writer，markdown-preview-plus(预览快捷键ctrl-shift-M), language-markdown(语法)]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>QuickStart</tag>
         <tag>Ubuntu</tag>
         <tag>Shortcuts</tag>
         <tag>Atom</tag>
@@ -72,6 +73,7 @@
       </categories>
       <tags>
         <tag>Shortcuts</tag>
+        <tag>ChongBuLuo</tag>
       </tags>
   </entry>
   <entry>
@@ -79,10 +81,11 @@
     <url>%2F2018%2F10%2F29%2FMy-Queen%2F</url>
     <content type="text"><![CDATA[This Is My Queen!]]></content>
       <categories>
-        <category>Picture</category>
+        <category>MyQueen</category>
       </categories>
       <tags>
-        <tag>MyQueen</tag>
+        <tag>Picture</tag>
+        <tag>Music</tag>
       </tags>
   </entry>
   <entry>
@@ -90,9 +93,11 @@
     <url>%2F2018%2F10%2F29%2FHexo%E9%85%8D%E7%BD%AENext%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E7%82%AB%E9%85%B7%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%2F</url>
     <content type="text"><![CDATA[更换NexT主题如果觉得Hexo默认的主题不够炫酷，可以参照NexT官方使用文档，将您的博客主题更换为比较流行的NexT主题，从而打造炫酷博客主页。 需要注意的几点 Hexo插件安装 字数统计：wordcount 访客数、访问量统计：busuanzi 搜索功能：Algolia Search 搜索引擎优化：SEO 博文中插入图片、音乐 Hexo插件安装Hexo插件是功能实现的前提。想要博客实现某个功能，在Hexo和NexT的配置文件中配制完成后，如果该功能并没有实现，首先要确保安装了相应的插件，简单的方法就重新安装一遍。Hexo默认安装了一些插件，但不没有涵盖所有内置功能，可在Hexo官方文档查询所需插件详细信息：Hexo插件，插件安装命令如下：1$ npm install hexo-plugin-name --save //hexo-plugin-name为Hexo插件名称 字数统计：wordcount1$ npm install hexo-wordcount --save //安装字数统计插件 更改主题配置文件之前，确保安装字数统计插件hexo-wordcount。 访客数、访问量统计：busuanzi1234&lt;script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"&gt;&lt;/script&gt;//若使用busuanzi插件统计站点访客数和访问量，需在必须下面文件中添加上面一行代码方可实现。themes/next/layout/_partials/footer.swig 搜索：Algolia Search根据NexT官方文档： Algolia 提示进行配置，一步步操作到“更新Index”时，按照官方给出命令运行后报错，查找得知官方给出的说明有误，正确命令为：12//Search-Only API key为 Algolia网站上获取的相应API key$ export HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key 搜索引擎优化：SEO 搭建一个网站之后，如果没有做一些相关的搜索引擎优化SEO，那么我们的网站是很难获取来自搜索引擎的流量的，用户很难在搜索引擎上搜索到我们网站的内容，所以接下来我们要为Hexo网站做一些简单的搜索优化。 生成sitemapSitemap用于通知搜索引擎网站上有哪些可供抓取的网页，以便搜索引擎可以更加智能地抓取网站。 执行以下命令，安装插件hexo-generator-sitemap，用于生成sitemap：1$ npm install hexo-generator-sitemap --save 在站点配置文件 _config.yml中添加如下字段：12sitemap:path: sitemap.xml 然后执行如下命令，可查看在网站根目录下public文件夹中生成 sitemap.xml。1$ hexo g 开启百度自动推送在主题配置文件 _config.yml中，将baidu_push设置为true 1baidu_push: true 使用各大搜索引擎站长工具在搜索引擎搜索框输入site:your.domain可以查看域名是否被该搜索引擎收录。如未收录，可使用该搜索引擎的站长工具提交博客网址。 博文中插入图片 把博客根目录下_config.yml 中的post_asset_folder设置为true 下载安装一个可以上传本地图片的插件hexo-asset-image，安装命令如下：1$ npm install hexo-asset-image --save 博文中插入音乐以网易云音乐为例说明，直接在网页版网易云音乐查找喜欢的音乐，可获取如下的代码，直接贴到文档相应位置即可。1&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&amp;id=536264928&amp;auto=1&amp;height=66"&gt;&lt;/iframe&gt; 参考资料 NexT官方使用文档 使用hexo+github搭建个人博客(进阶篇)]]></content>
       <categories>
-        <category>QuickStart</category>
+        <category>Blog</category>
       </categories>
       <tags>
+        <tag>QuickStart</tag>
+        <tag>Hexo</tag>
         <tag>NexT</tag>
       </tags>
   </entry>
@@ -104,9 +109,11 @@
         <category>QucikStart</category>
       </categories>
       <tags>
+        <tag>QuickStart</tag>
         <tag>Hexo</tag>
         <tag>Git</tag>
         <tag>GitHub</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -117,7 +124,9 @@
         <category>Research</category>
       </categories>
       <tags>
+        <tag>QuickStart</tag>
         <tag>Sci-Hub</tag>
+        <tag>Lantern</tag>
       </tags>
   </entry>
   <entry>
@@ -125,10 +134,10 @@
     <url>%2F2018%2F10%2F21%2FHexo-Git%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%88%9D%E5%85%B7%E6%A8%A1%E6%A0%B7%2F</url>
     <content type="text"><![CDATA[利用Hexo+Git+GitHub搭建个人博客，博客已经初具模样：]]></content>
       <categories>
-        <category>Picture</category>
+        <category>Blog</category>
       </categories>
       <tags>
-        <tag>Blog</tag>
+        <tag>Picture</tag>
       </tags>
   </entry>
   <entry>
@@ -136,10 +145,10 @@
     <url>%2F2018%2F10%2F17%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
-        <category>QuickStart</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>QuickStart</tag>
       </tags>
   </entry>
 </search>

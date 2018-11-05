@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="stylesheet," />
+  <meta name="keywords" content="QuickStart,Stylesheet,Style," />
 
 
 
@@ -91,14 +91,14 @@
 
 
 <meta name="description" content="CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和">
-<meta name="keywords" content="stylesheet">
+<meta name="keywords" content="QuickStart,Stylesheet,Style">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS快速入门">
 <meta property="og:url" content="http://zsx-cup.top/2018/11/04/CSS快速入门/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-05T11:10:10.356Z">
+<meta property="og:updated_time" content="2018-11-05T14:04:41.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS快速入门">
 <meta name="twitter:description" content="CSS定义及作用层叠样式表（Cascading Style Sheets），样式定义如何显示html元素，多个样式可以叠加显示，样式通常保存在样式表中，即css文件。 将CSS添加到HTML中，解决了内容与表现分离的问题，更好的修饰HTML内容的样式，丰富页面，渲染显示效果，更好的规划页面布局。而且，外部CSS便于维护，极大提高工作效率。 CSS基本语法CSS 基本语法由两个主要部分构成：选择器和">
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  553
+                  2.1k
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  8
                 </span>
               
             </div>
@@ -426,14 +426,66 @@
 <li>多个声明之间使用分号(;)隔开</li>
 <li>css对大小写不敏感，如果涉及到与html文档一起使用时，class与id名称对大小写敏感</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">text-align</span>:center;</span><br><span class="line"><span class="attribute">font-family</span>:arial;</span><br><span class="line"><span class="attribute">color</span>:black;&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">p 为元素选择器</span></span><br><span class="line"><span class="comment">&#123;&#125; 中内容为样式的声明</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="导入CSS的方式"><a href="#导入CSS的方式" class="headerlink" title="导入CSS的方式"></a>导入CSS的方式</h2><h3 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h3><p>内联样式，是在相关的标签内使用样式（style）属性。style 属性可以包含任何 CSS 属性，代码示例如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">”border:1px</span> <span class="attr">solid</span> <span class="attr">black</span>”&gt;</span>这是一个DIV<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>提示：慎用内联样式表，它将html的内容与表现混在一起，没有发挥样式表的优势。一般情况下，只有在一个标签上只应用一次样式时才会使用，这种方式使用的仅仅是标签的一个样式属性。</p>
-<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>内部样式表，是使用style标签在html文档的head中来定义样式表。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>这种方式，样式只适合应用于一个页面</p>
-<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>如果想要在多个页面使用同一个样式表，可以使用外部样式表来导入。<br>我们可以在html页面上使用<link>标签来导入外部样式表。<br>例如:</p>
-<p>浏览器会从mystyle.css文件中读取样式，并对页面上的html进行修饰。<br>外部样式表，应该以css为后缀来保存，可以使用任意文本编辑器对css文件进行<br>编辑。<br>下面是mystyle.css文件的内容:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">	<span class="attribute">text-align</span>:center;</span><br><span class="line">	<span class="attribute">font-family</span>:arial;</span><br><span class="line">	<span class="attribute">color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">p 为元素选择器</span></span><br><span class="line"><span class="comment">&#123;&#125; 中内容为样式的声明</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="导入CSS的方式"><a href="#导入CSS的方式" class="headerlink" title="导入CSS的方式"></a>导入CSS的方式</h2><h3 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h3><p>内联样式，是在相关的标签内使用样式（style）属性。style 属性可以包含任何 CSS 属性，代码示例如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!--内联样式表--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-family: '黑体';color: yellowgreen;"</span>&gt;</span></span><br><span class="line">			CSS即层叠样式表（Cascading Style Sheets）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>提示：慎用内联样式表，它将html的内容与表现混在一起，没有发挥层叠样式表的优势。一般情况下，只有在单个标签上只应用一次样式时才会使用，这种方式使用的仅仅是标签的一个样式属性。</p>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>内部样式表，是使用style标签在html文档的head中来定义样式表。内部样式表只适应用于单个页面。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!--内部样式表--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			p&#123;</span></span><br><span class="line"><span class="undefined">				font-family: "微软雅黑";</span></span><br><span class="line"><span class="undefined">				color: red;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>CSS即层叠样式表（Cascading Style Sheets）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>如果想要在多个页面使用同一层叠样式表，外部样式表是最合适的，可以在html页面上使用link标签来导入外部样式表。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!--外部样式表--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/p.css"</span> /</span></span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>CSS即层叠样式表（Cascading Style Sheets）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>浏览器会从层叠样式表文件中读取样式，并对页面上的html进行渲染。外部样式表以css为后缀。外部样式表代码示例如下:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">	<span class="attribute">align-content</span>: center;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">"楷体"</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: large;</span><br><span class="line">	<span class="attribute">color</span>: darkgreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="import导入"><a href="#import导入" class="headerlink" title="@import导入"></a>@import导入</h3><p>@import导入，也是外部导入，不推荐使用。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">&lt;!--@import导入--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">			@<span class="keyword">import</span> url(<span class="string">"css/p.css"</span>);</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>CSS即层叠样式表（Cascading Style Sheets）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>不同样式表的优先级问题</strong>：<br>    内联样式表 &gt; 内部样式表 &gt; 外部样式表</p>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>CSS选择器，主要是用于选择需要添加样式的html元素，用于精准定位到具体的想要添加样式的某个或某些元素.<br>常用选择器有：id选择器、class选择器、元素选择器、属性选择器。</p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p>Id选择器使用#引入，它引用的是id属性中的值。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-id">#p</span> &#123;</span></span><br><span class="line"><span class="undefined">	         color: blue ;</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="class选择器"><a href="#class选择器" class="headerlink" title="class选择器"></a>class选择器</h3><p>类选择器使用时，需要在类名前加一个点号(.)。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.c</span> &#123;</span></span><br><span class="line"><span class="undefined">	         color: blue ;</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"c"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h3><p>这是最常见的选择器，简单说，文档中的元素就是选择器。代码示例如下：<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        p&#123;</span></span><br><span class="line"><span class="undefined">	         color: blue ;</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>如果需要选择有某个属性的元素，而不论属性是什么，可以使用属性选择器。代码示例如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-attr">[href]</span> &#123;</span></span><br><span class="line"><span class="undefined">	         color: red ;</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://zsx-cup.top"</span>&gt;</span>Xu'Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="CSS属性"><a href="#CSS属性" class="headerlink" title="CSS属性"></a>CSS属性</h2><p>所谓属性就像java类中定义的一些属性，用来描述一些具体的特性。</p>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><p>css字体属性定义文本的字体系列，大小，加粗，风格(如斜体)和变形(如小型大写字母)。<br>常用属性:</p>
+<pre><code>font:简写属性，所有针对字体的属性可设置在一个声明中。
+font-family: 字体系列
+font-size: 字体尺寸
+font-style: 字体风格
+</code></pre><h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><p>CSS 文本属性可定义文本的外观。通过文本属性，可以改变文本颜色、字符间距、对齐方式、装饰文本、文本缩进等。<br>常用属性：</p>
+<pre><code>color: 文本颜色
+text-align: 对齐方式
+letter-spacing: 字符间隔
+word-spacing: 字间隔
+</code></pre><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>CSS 允许应用纯色，或使用图像作为背景。CSS 在这方面的能力远远在 HTML 之上。<br>常用属性:</p>
+<pre><code>background:简写属性，背景属性设置可在一个声明中
+background-color: 背景颜色
+background-image: 背景图片
+background-position: 背景图片的起始位置
+background-repeat: 背景图片是否及如何重复。
+</code></pre><h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><p>CSS 尺寸属性允许控制元素的高度和宽度。<br>常用属性:</p>
+<pre><code>width: 元素宽度
+height: 元素高度         
+</code></pre><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>CSS 列表属性允许放置、改变列表项标志，或者将图像作为列表项标志。<br>  常用属性:</p>
+<pre><code>list-style: 简写属性。所有用于列表的属性可设置在一个声明中。
+list-style-image: 列表项标志的图象
+list-style-position: 列表项标志的位置
+list-style-type: 列表项标志的类型。
+</code></pre><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>CSS 表格属性可极大改善表格外观。<br>常用属性:</p>
+<pre><code>border-collapse: 是否把表格边框合并为单一的边框。
+border-spacing: 分隔单元格边框的距离
+caption-side: 表格标题的位置
+</code></pre><h3 id="轮廓"><a href="#轮廓" class="headerlink" title="轮廓"></a>轮廓</h3><p>轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。CSS轮廓属性规定元素轮廓的样式、颜色和宽度。<br>常用属性:</p>
+<pre><code>outline: 简写属性。可在一个声明中设置所有的轮廓属性
+outline-color: 轮廓颜色
+outline-style: 轮廓样式
+outline-width: 轮廓宽度
+</code></pre><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>CSS 定位 (Positioning) 属性允许对元素进行定位。定位的基本思想很简单，它允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素、另一个元素甚至浏览器窗口本身的位置。<br>CSS 有三种基本的定位机制：普通流、浮动和绝对定位。<br>常用属性:</p>
+<pre><code>position: 把元素放置到一个静态的、相对的、绝对的、或固定的位置中。
+top: 定位元素的上外边距边界与其包含块上边界之间的偏移量
+right: 定位元素右外边距边界与其包含块右边界之间的偏移
+left: 定位元素左外边距边界与其包含块左边界之间的偏移
+bottom: 定位元素下外边距边界与其包含块下边界之间的偏移。
+</code></pre><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>CSS 分类属性允许你控制如何显示元素，设置图像显示于另一元素中的何处，相对于其正常位置来定位元素，使用绝对值来定位元素，以及元素的可见度。<br>常用属性：</p>
+<pre><code>clear: 一个元素的侧面是否允许其它的浮动元素
+float: 元素的浮动方向
+cursor: 当指向某元素之上时显示的指针类型
+display: 是否及如何显示元素
+visibility: 元素是否可见或不可见。
+</code></pre>
       
     </div>
     
@@ -468,7 +520,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/stylesheet/" rel="tag"># stylesheet</a>
+            <a href="/tags/QuickStart/" rel="tag"># QuickStart</a>
+          
+            <a href="/tags/Stylesheet/" rel="tag"># Stylesheet</a>
+          
+            <a href="/tags/Style/" rel="tag"># Style</a>
           
         </div>
       
@@ -613,7 +669,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -624,7 +680,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -718,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定义及作用"><span class="nav-number">1.</span> <span class="nav-text">CSS定义及作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS基本语法"><span class="nav-number">2.</span> <span class="nav-text">CSS基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入CSS的方式"><span class="nav-number">3.</span> <span class="nav-text">导入CSS的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联样式表"><span class="nav-number">3.1.</span> <span class="nav-text">内联样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部样式表"><span class="nav-number">3.2.</span> <span class="nav-text">内部样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部样式表"><span class="nav-number">3.3.</span> <span class="nav-text">外部样式表</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS定义及作用"><span class="nav-number">1.</span> <span class="nav-text">CSS定义及作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS基本语法"><span class="nav-number">2.</span> <span class="nav-text">CSS基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入CSS的方式"><span class="nav-number">3.</span> <span class="nav-text">导入CSS的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联样式表"><span class="nav-number">3.1.</span> <span class="nav-text">内联样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部样式表"><span class="nav-number">3.2.</span> <span class="nav-text">内部样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部样式表"><span class="nav-number">3.3.</span> <span class="nav-text">外部样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import导入"><span class="nav-number">3.4.</span> <span class="nav-text">@import导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS选择器"><span class="nav-number">4.</span> <span class="nav-text">CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#id选择器"><span class="nav-number">4.1.</span> <span class="nav-text">id选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class选择器"><span class="nav-number">4.2.</span> <span class="nav-text">class选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素选择器"><span class="nav-number">4.3.</span> <span class="nav-text">元素选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性选择器"><span class="nav-number">4.4.</span> <span class="nav-text">属性选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS属性"><span class="nav-number">5.</span> <span class="nav-text">CSS属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体"><span class="nav-number">5.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本"><span class="nav-number">5.2.</span> <span class="nav-text">文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">5.3.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尺寸"><span class="nav-number">5.4.</span> <span class="nav-text">尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">5.5.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">5.6.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轮廓"><span class="nav-number">5.7.</span> <span class="nav-text">轮廓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位"><span class="nav-number">5.8.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">5.9.</span> <span class="nav-text">分类</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -754,7 +810,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.6k</span>
+    <span title="Site words total count">12.1k</span>
   
 </div>
 
