@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zsx-cup.top/"/>
-  <updated>2018-11-05T14:40:11.777Z</updated>
+  <updated>2018-11-06T11:52:45.943Z</updated>
   <id>http://zsx-cup.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编程三大利器及四步走战略</title>
+    <link href="http://zsx-cup.top/2018/11/06/%E7%BC%96%E7%A8%8B%E4%B8%89%E5%A4%A7%E5%88%A9%E5%99%A8%E5%8F%8A%E5%9B%9B%E6%AD%A5%E8%B5%B0%E6%88%98%E7%95%A5/"/>
+    <id>http://zsx-cup.top/2018/11/06/编程三大利器及四步走战略/</id>
+    <published>2018-11-06T11:41:08.000Z</published>
+    <updated>2018-11-06T11:52:45.943Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="编程三大利器"><a href="#编程三大利器" class="headerlink" title="编程三大利器"></a>编程三大利器</h2><h3 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h3><blockquote><ul><li>互联网时代，不学编程，搜索也应是必备技能。知之为知之，不知Google知</li><li><strong>Google + Wikipedia + English = Almost Everything</strong></li><li>科学上网，请自行百度蓝灯之类，或者可访问<a href="https://github.com/getlantern/forum" target="_blank" rel="noopener">getlantern</a></li></ul></blockquote><h3 id="Stack-Overflow"><a href="#Stack-Overflow" class="headerlink" title="Stack Overflow"></a><a href="http://stackoverflow.com/" target="_blank" rel="noopener">Stack Overflow</a></h3><p>Google编程问题，遇见的一直都是他。所以有新闻吐槽到，「计算机编程铁律」将会被正式命名为「Google 一下，然后 Stack Overflow」</p><blockquote><p>Stack Overflow（堆栈溢出）是一个面向程序员的问答网站，2015 年时每天有 760 万的访问量，是当时世界上访问量第 57 位的网站。对在编程中遇到困难的人来说，Stack Overflow 就是庇护所。无论新手还是老手，都把 Stack Overflow 作为一个主要的资源网站。不确定如何解决一个难题？把这个问题放在 Stack Overflow 上。一般来讲，半个小时之内这个问题就会被其他的用户解决（免费）。但切记，如果你不想让你的问题被草草地浏览，请把你的问题写清晰明了。（引自<a href="http://blog.jobbole.com/110437/" target="_blank" rel="noopener">Stack Overflow 与全民编程时代</a>）</p></blockquote><h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a><a href="https://github.com/" target="_blank" rel="noopener">Github</a></h3><blockquote><p>截止到2015年，GitHub已经有超过九百万注册用户和2110万代码库。事实上已经成为了世界上最大的代码存放网站和开源社区。GitHub除了托管代码功能之外，它也提供了一些协同开发的功能，包括允许追踪其他用户、组织、软件库的动态，对软件代码的改动和bug提出评论等。GitHub也提供了图表功能，用于概观显示开发者们怎样在代码库上工作以及软件的开发活跃程度。（引自<a href="https://zh.wikipedia.org/wiki/GitHub" target="_blank" rel="noopener">维基百科GitHub</a>）</p></blockquote><h2 id="编程四步走"><a href="#编程四步走" class="headerlink" title="编程四步走"></a>编程四步走</h2><ol><li>有问题Google一下</li><li>打开Stack Overflow找代码</li><li>复制&amp;粘贴代码</li><li>运行代码<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果代码不能运行：</span><br><span class="line">      返回第<span class="number">2</span>步</span><br><span class="line">否则：返回第<span class="number">1</span>步</span><br></pre></td></tr></table></figure></li></ol><p><strong>FAQ</strong></p><ul><li>Q：如果找不到代码咋办？</li><li>A：不可能，继续找。<br>(引自<a href="http://blog.jobbole.com/86184/" target="_blank" rel="noopener">漫画：如何编程？四步走，So easy！</a>)</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;编程三大利器&quot;&gt;&lt;a href=&quot;#编程三大利器&quot; class=&quot;headerlink&quot; title=&quot;编程三大利器&quot;&gt;&lt;/a&gt;编程三大利器&lt;/h2&gt;&lt;h3 id=&quot;Google&quot;&gt;&lt;a href=&quot;#Google&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="QucikStart" scheme="http://zsx-cup.top/categories/QucikStart/"/>
+    
+    
+      <category term="Google" scheme="http://zsx-cup.top/tags/Google/"/>
+    
+      <category term="Stack Overflow" scheme="http://zsx-cup.top/tags/Stack-Overflow/"/>
+    
+      <category term="Github" scheme="http://zsx-cup.top/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux下安装Python包</title>
