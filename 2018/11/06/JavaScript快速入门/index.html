@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="W3School:JavaScript 教程 Javascript概述Javascript是什么 JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。  JavaScript是因特">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-07T14:43:06.182Z">
+<meta property="og:updated_time" content="2018-11-07T16:35:30.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript快速入门">
 <meta name="twitter:description" content="W3School:JavaScript 教程 Javascript概述Javascript是什么 JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。  JavaScript是因特">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.1k
+                  2k
                 </span>
               
 
@@ -514,7 +514,7 @@ undefined转boolean：转为false;
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line">	alert(arr.length); <span class="comment">//输出数组长度</span></span><br><span class="line">	<span class="comment">//普通for循环</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		alert(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//增强for循环</span></span><br><span class="line">	<span class="keyword">for</span>(i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">		alert(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Javascript的方法（函数）"><a href="#Javascript的方法（函数）" class="headerlink" title="Javascript的方法（函数）"></a>Javascript的方法（函数）</h2><p>Javascript函数创建及调用方式如代码示例所示。与java相比，Javascript函数有返回值无需声明返回值类型，没有返回值也无需声明void。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="comment">//最常用创建函数的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建函数的方法2</span></span><br><span class="line">	<span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a + b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建函数的方法3</span></span><br><span class="line">	<span class="keyword">var</span> add = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"a"</span>, <span class="string">"b"</span>,<span class="string">"return a + b"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//调用函数</span></span><br><span class="line">	<span class="keyword">var</span> sum = add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">	alert(sum);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>使用add(1,2,3,4)调用上述代码示例中的add函数，如果在java中是会报错的，但是对于javascript来说，不会报错。也就是说，在javascript中，函数调用时传递的参数不一定要与函数声明时的参数个数一致。而且当调用函数时传递的参数与函数定义时参数个数不一致时，可以借助一个特殊对象arguments，来获取函数中的所有参数。<br>代码示例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="comment">//最常用创建函数的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">		<span class="comment">// return a + b;</span></span><br><span class="line">		alert(<span class="built_in">arguments</span>.length); <span class="comment">//返回传入参数个数</span></span><br><span class="line">		<span class="keyword">for</span>(i <span class="keyword">in</span> <span class="built_in">arguments</span>)&#123; <span class="comment">//逐个打印传入的参数</span></span><br><span class="line">			alert(<span class="built_in">arguments</span>[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//调用函数，依次返回传入参数个数，及各个参数值</span></span><br><span class="line">	add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><p>Javascript引用数据类型:</p>
+<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><p>Javascript引用数据类型如下，可以参考<a href="http://www.w3school.com.cn/js/js_objects.asp" target="_blank" rel="noopener">w3school：JavaScript 对象</a>，下面选取其中的Date和RegExp进行深入学习。</p>
 <pre><code>Javascript常用对象-Boolean
 Javascript常用对象-Number
 Javascript常用对象-Array
@@ -523,19 +523,13 @@ Javascript常用对象-Date
 Javascript常用对象-Math
 Javascript常用对象-RegExp
 </code></pre><ol>
-<li>Boolean</li>
-</ol>
-<p>在 JavaScript 中，布尔值是一种基本的数据类型。Boolean 对象是一个将布尔值打包的布尔对象。Boolean 对象主要用于提供将布尔值转换成字符串的 toString() 方法。</p>
-<p>创建 Boolean 对象的语法：</p>
-<pre><code>new Boolean(value);    //构造函数，将value转换成布尔值，并返回包含该值的 Boolean 对象
-Boolean(value);        //转换函数，把value参数转换成布尔值，并且返回。
-</code></pre><p>Boolean 对象表示两个值：”true” 或 “false”。 如果省略 value 参数，或者设置为 0、-0、null、””、false、undefined、NaN，则该对象设置为 false。否则设置为 true（即使 value 参数是字符串 “false”）。<br>代码示例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line">	<span class="keyword">var</span> c = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="string">"false"</span>);</span><br><span class="line"></span><br><span class="line">	alert(c); <span class="comment">// true</span></span><br><span class="line">	alert(<span class="keyword">typeof</span>(b)); <span class="comment">//boolean</span></span><br><span class="line">	alert(<span class="keyword">typeof</span>(c)); <span class="comment">//object</span></span><br><span class="line">	alert(<span class="keyword">typeof</span>(d)); <span class="comment">//object</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<ol start="2">
 <li>Date</li>
 </ol>
-<ol start="3">
+<p>Date 对象用于处理日期和时间。Date 对象具有很多方法，可参考<a href="http://www.w3school.com.cn/jsref/jsref_obj_date.asp" target="_blank" rel="noopener">JavaScript Date 对象参考手册</a>。代码示例如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1 id=<span class="string">"clock"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	function clock() &#123;</span></span><br><span class="line"><span class="string">		//Date 对象会自动把当前日期和时间保存为其初始值。</span></span><br><span class="line"><span class="string">		var d = new Date();</span></span><br><span class="line"><span class="string">		var h = d.getHours();</span></span><br><span class="line"><span class="string">		var m = d.getMinutes();</span></span><br><span class="line"><span class="string">		var s = d.getSeconds();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">		h = (h &lt; 10) ? "</span><span class="number">0</span><span class="string">" + h : h;</span></span><br><span class="line"><span class="string">		m = (m &lt; 10) ? "</span><span class="number">0</span><span class="string">" + m : m;</span></span><br><span class="line"><span class="string">		s = (s &lt; 10) ? "</span><span class="number">0</span><span class="string">" + s : s;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">		var h1 = document.getElementById("</span>clock<span class="string">");</span></span><br><span class="line"><span class="string">		h1.innerHTML = h + "</span>:<span class="string">" + m + "</span>:<span class="string">" + s;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	setInterval("</span>clock()<span class="string">", 1000);</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol start="2">
 <li>RegExp</li>
 </ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -587,6 +581,10 @@ Boolean(value);        //转换函数，把value参数转换成布尔值，并�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/07/Java开发环境配置/" rel="prev" title="Java开发环境配置">
+                Java开发环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -699,7 +697,7 @@ Boolean(value);        //转换函数，把value参数转换成布尔值，并�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -710,7 +708,7 @@ Boolean(value);        //转换函数，把value参数转换成布尔值，并�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -721,7 +719,7 @@ Boolean(value);        //转换函数，把value参数转换成布尔值，并�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -851,7 +849,7 @@ Boolean(value);        //转换函数，把value参数转换成布尔值，并�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.1k</span>
+    <span title="Site words total count">15.2k</span>
   
 </div>
 
