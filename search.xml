@@ -16,7 +16,7 @@
     <url>%2F2018%2F11%2F09%2F%E4%B8%83%E7%89%9B%E4%BA%91%E6%B5%8B%E8%AF%95%E5%9F%9F%E5%90%8D%E8%BF%87%E6%9C%9F%EF%BC%8C%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[作为免费图床，七牛云是很好选择之一。但是，自上个月起，七牛云开始回收测试域名，即便重新分配测试域名也是30天之后自动回收，详见七牛云官方通告：测试域名使用规范。 七牛云邮件提醒回收测试域名时，没有及时下载备份存储的图片？ 七牛云测试域名回收之后，原来通过外链引用的图片失效？ 想要更新外链，七牛云存储的图片 却无法直接下载？ 此情此景，百度一下，不少人像我一样有如此遭遇。下面根据查找的资料，给出解决方法： 新建存储空间(bucket)重新创建一个新的存储空间，会自动分配一个新的测试域名，选择的地区（如华北）应与原存储空间选择的地区相同。 批量复制(batchcopy)七牛云命令行工具(qshell)批量复制及下载均需要借助七牛云的命令行工具(qshell)，下载地址、使用指南及常用命令参见：命令行工具(qshell)。 根据系统下载命令行工具(qshell)，以win7系统为例进行详细说明，避免入坑： 下载命令行工具后，为了便于使用，将与系统对应的exe文件重命名为qshell.exe。 打开系统命令行工具，将qshell.exe文件所在目录设置为当前工作目录，才可以使用七牛云命令行工具(qshell)。如果不设置前两步而直接运行EXE文件则闪退。 设置秘钥。秘钥可在“个人面板/秘钥管理”页面查看12$ qshell account AccessKey SecretKey //设置秘钥$ qshell account //查看秘钥 获取仅有文件名的文件列表批量复制batchcopy命令，需要用到仅有文件名的文件列表。 获取原存储空间的完整文件列表（包含文件名、类型、日期等） 12//bucketname：原存储空间名称；list.txt：原存储空间文件列表的保存文件$ qshell listbucket bucketname list.txt 获取仅有文件名的文件列表。对于wins系统，简单粗暴的做法就是，将刚刚获取的list.txt粘到excel表格中，然后将第1列文件名粘贴到新的文件如name.txt。如果有文件名含中文，则需要将txt文件的编码方式转为UTF-8编码，否则复制名称含中文的文件时会报错。不过，其他文件并不受影响。 批量复制文件至新存储空间1234567/* -force 加入此选项不需要输入验证码&lt;SrcBucket&gt; 原存储空间名称&lt;DestBucket&gt; 新建存储空间名称&lt;SrcDestKeyMapFile&gt; 需要复制的文件列表，即上述得到的name.txt*/$ qshell batchcopy -force &lt;SrcBucket&gt; &lt;DestBucket&gt; &lt;SrcDestKeyMapFile&gt; 批量下载(qdownload)复制完成之后，可以进入新的存储空间进行确认复制是否成功。 123//[&lt;ThreadCount&gt;]: 同时下载文件数量（1-2000），默认为5//&lt;LocalDownloadConfig&gt;: 配置文件，如tmp.conf$ qshell qdownload [&lt;ThreadCount&gt;] &lt;LocalDownloadConfig&gt; 需要在上述qshell.exe文件所在目录新建配置文件，以.conf为后缀，如tmp.conf。配置文件的内容如下：123456789101112/*dest_dir 下载文件存储目录。wins下目录示例 D:\\jemy\\backup，尽量不要出现中文，否则涉及编码问题bucket 新建存储空间的名称suffixes 下载文件的后缀cdn_domain 新建存储空间的CDN测试域名，可在新存储空间页面查看*/&#123; "dest_dir" : "&lt;LocalBackupDir&gt;", "bucket" : "&lt;Bucket&gt;", "suffixes" : ".png,.jpg", "cdn_domain" : "down.example.com",&#125; 配置完成，就可以开始批量下载了，好运！]]></content>
       <categories>
-        <category>Other</category>
+        <category>Guide</category>
       </categories>
       <tags>
         <tag>七牛云</tag>
@@ -27,14 +27,11 @@
     <url>%2F2018%2F11%2F08%2F%E4%B8%93%E5%B1%9E%E4%BD%A0%E7%9A%84%E9%9D%92%E6%B5%B7%E6%B9%96%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5%2F</url>
     <content type="text"><![CDATA[本攻略包含两部分可供你参考的内容： 我们青海湖旅行的见闻及遇到的问题； 建议青海湖旅行路线及相关注意事项。 第一部分：我们青海湖旅行的见闻 从火车站出来，西宁给人的第一感觉：清爽。 环青海湖旅行主要有三种方式： 跟团(360/2天，来自去哪儿网和蚂蚁窝) 包车(600/天，1000/2天，来自火车站师傅报价) 自由行。 我们是乘坐大巴自由行，环青海湖旅行路线： 二郎剑景区–&gt; 黑马河乡 –&gt;茶卡盐湖 第一站：二郎剑景区（151基地） 交通：西宁火车站出站，左手边就是汽车站，有旅游大巴到青海湖，在二郎剑景区下车，3h车程，车票35/人。坐在大巴去青海湖的一路上，也能饱览青海地区的独特风景。（20170822，12:00-15:00） 门票价格：100/人，美团95/人，自助取票。 开放时间：全天开放 参观耗时：2h 观后感：置身二郎剑景区，近距离接触青海湖，近处的湖面在微风的吹拂下泛起阵阵涟漪，远处碧水蓝天，白云高山，相映成趣。 建议：总体而言，青海湖二郎剑景区本身并没有什么特别引人注目的地方。不过，从黑马河乡返回西宁时，途径二郎剑景区，如果有时间也不妨停下来看看，说不定有意外的收获。 第二站：黑马河乡 二郎剑景区到黑马河乡，1h车程，票价30/人。（17:00-18:00） 在宾馆稍作休息后，去超市买了些零食，然后伴着落日和晚霞，从宾馆后面向青海湖边走去。 穿过几道铁丝网，越靠近湖边草原上的水越多，以至于无法靠近湖边，只好远远眺望。 不幸的是，第二天早上下雨，所以并没有看到预想的日出。 第三站：茶卡盐湖 交通从黑马河乡徒步近2h，大概8km路程，终于拦到一辆西宁到乌兰的大巴，途径茶卡盐湖，车程1h左右，票价25/人。路上也拦了很多辆从西宁到敦煌、兰州的大巴，但司机都不停车。徒步过程中，沿途的风景非常美，手机拍照效果不佳，美景唯有留在心中。（20170823，10:00-11:50）从茶卡盐湖下车，步行3km，耗时50min，到达茶卡盐湖景区，如坐出租车，大概10min左右。 门票价格：70/人，有自助购票机。去哪儿或携程购买门票68/人，可直接扫二维码进入景区。 参观耗时：步行参观时长3h，路程约11km。 观后感：进入景区，到达天空之境广场，此时丝毫看不到茶卡盐湖的“天空之境”的踪迹，只看到游人如织，人在蓝天白云和连绵高山的衬托下如同蝼蚁。往前走，一代天骄成吉思汗的盐雕在蓝天白云巍然屹立。一步步走向茶卡盐湖，天空之境渐入眼帘，洁白的湖面，倒映着蓝天白云，周围的连绵高山与天相接。许多游人脱下鞋子，走到湖中拍照，以洁白湖面和蓝天白云为背景，游人显得愈发美丽，更加纯粹。 返回西宁：五点从茶卡盐湖景区出来，经过询问，乘坐出租车去茶卡镇坐大巴。出租车司机，飞一般的速度把我们送到汽车站，刚好赶上五点二十的最后一班返回西宁的大巴，预计耗时五个小时，于十点半到达西宁汽车站。不幸的是，大巴车档位错乱，中途停了两次，比预计晚了两个小时，十二点半到目的地。第一次停车期间，我快速爬到了一座山头，站在海拔3800m的山顶俯瞰青海湖。一路小跑上山，喘得很厉害，有点高原反应的意思，所以不得不降低速度，不过下山就快了许多，山坡比较舒缓，而且刚下山没多久，大巴就再次出发。 旅途虽有坎坷，却已留下我们的足迹，都将成为今后的回忆。 第二部分：建议青海湖旅行路线7-8月是环青海湖旅行的最佳季节，7月中旬到8月中旬则是青海湖看油菜花的绝好时机。建议青海湖旅行路线如下，并分别各景区的门票价格、参观耗时、交通及注意事项等进行简单介绍。 茶卡盐湖–&gt;|大巴|–&gt;黑马河乡–&gt;|徒步|–&gt;环湖西路 本攻略是青海湖两到三天的旅游路线规划，但涵盖内容有限。想了解更多详细内容可参考：蚂蜂窝旅游攻略——青海湖旅游。 茶卡盐湖：欣赏天空之境 交通： 火车：Y961(西宁-茶卡)，上午8:25开车，直达茶卡盐湖景区，硬座成人票价62.5，耗时4h，正点到达茶卡的时间是12:23。 大巴：汽车站(火车站旁)坐大巴，5h车程，直达茶卡镇，然后坐出租车到茶卡盐湖景区，下午参观茶卡盐湖(耗时3h)。 门票价格：70/人，去哪儿或携程购买门票68/人，可直接扫二维码进入景区。 开放时间：7:00～18:30 参观耗时：3小时 注意事项：从西宁到茶卡，如果乘大巴，最好坐8:00的大巴。因为西宁到茶卡镇有5h车程，参观景区耗时3h，坐出租往返茶卡镇和景区以及中途歇息吃饭还需要约1h，所以最快17:00才到茶卡镇汽车站，赶上从茶卡镇到黑马河乡的最晚一趟17:20的大巴。为了节省体力和时间，可坐小火车到茶卡盐湖中央，返回时徒步，慢慢欣赏沿途的美景。 黑马河乡：观赏日落日出最好赶在17:20之前，坐大巴去黑马河乡(耗时1h)，当晚在黑马河乡下榻。黑马河乡是位于青海湖西南部，是距离环湖西路最近的补给点，乘大巴去茶卡盐湖需从此翻越3800m的橡皮山。黑马河乡是青海湖观赏日出的最佳地点之一。 食宿：黑马河乡的马路两旁都是宾馆和小饭馆，所以吃饭和住宿很好解决。需要注意的是，当地的自来水很凉，宾馆可能是用太阳能提供热水，如遇阴雨天气，热水可能并不热，建议入住前试一下热水温度。 观赏日落和日出：订好宾馆后，可以走到宾馆后边的草原上看看日落，如果天还很亮，可以看到远处的青海湖。你可能想从草原上走到青海湖边，但由于越靠近湖边草原上的水越多，以至于根本无法到达湖边，正因为如此，使得青海湖可望而不可及。另外，当天晚上查一下共和县第二天的日出时间，以便第二天如约和日出相遇。 环湖西路：沿青海湖徒步 由于没能去亲自去环湖西路，所以该部分内容主要参考蚂蜂窝青海湖旅游攻略上面的介绍。 黑马河乡是环湖西路的起点，黑马河乡至石乃亥乡共41km的环湖西路是青海湖最美路段。 其中，环湖西路的13-16km处是距湖最近点，下了公路步行3-5min即可到达湖边亲手触摸到湖水，风景绝佳，环湖西路上的民宿是夜晚观看璀璨星空的绝佳地点。 而且，环湖西路在不同的季节呈现出不同的美景： 5月，野花绽放、群鸟飞翔； 8月，万亩油菜花在湖畔灿烂盛开； 10月，繁华过尽，草原归于平静，青海湖呈现出最朴素的自然美。 交通：从黑马河乡到石乃亥乡：有绿色班车，如果包车前往，费用在150左右。另外，从黑马河乡到西宁：有茶卡或乌兰至西宁的大巴路过黑马河乡，4h车程，40/人。 注意事项 天气：昼夜温差大，天气变化快，长衣长裤必备。 防晒：气候干燥，紫外线强，携带防晒品。 高原反应：景区海拔3000m以上，最好携带抗高反药品（如携氧片、红景天等），特别是上了年纪的人。 拍照：由于多需要拍远景，手机拍照显得有点相形见绌，所以想要拍出美丽的照片，相机就显得非常有必要。 旅行是一场考验体力和财力的视觉盛宴，小伙伴且行且珍惜。]]></content>
       <categories>
-        <category>旅游攻略</category>
+        <category>Travel</category>
       </categories>
       <tags>
         <tag>青海湖</tag>
-        <tag>二郎剑</tag>
-        <tag>黑马河</tag>
         <tag>茶卡盐湖</tag>
-        <tag>环湖西路</tag>
       </tags>
   </entry>
   <entry>
@@ -45,7 +42,7 @@
         <category>JavaSE</category>
       </categories>
       <tags>
-        <tag>JDK</tag>
+        <tag>Guide</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +53,7 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
-        <tag>Script</tag>
+        <tag>QuickStart</tag>
       </tags>
   </entry>
   <entry>
@@ -65,7 +61,7 @@
     <url>%2F2018%2F11%2F06%2F%E7%BC%96%E7%A8%8B%E4%B8%89%E5%A4%A7%E5%88%A9%E5%99%A8%E5%8F%8A%E5%9B%9B%E6%AD%A5%E8%B5%B0%E6%88%98%E7%95%A5%2F</url>
     <content type="text"><![CDATA[编程三大利器Google 互联网时代，不学编程，搜索也应是必备技能。知之为知之，不知Google知 Google + Wikipedia + English = Almost Everything 科学上网，请自行百度蓝灯之类，或者可访问getlantern Stack OverflowGoogle编程问题，遇见的一直都是他。所以有新闻吐槽到，「计算机编程铁律」将会被正式命名为「Google 一下，然后 Stack Overflow」 Stack Overflow（堆栈溢出）是一个面向程序员的问答网站，2015 年时每天有 760 万的访问量，是当时世界上访问量第 57 位的网站。对在编程中遇到困难的人来说，Stack Overflow 就是庇护所。无论新手还是老手，都把 Stack Overflow 作为一个主要的资源网站。不确定如何解决一个难题？把这个问题放在 Stack Overflow 上。一般来讲，半个小时之内这个问题就会被其他的用户解决（免费）。但切记，如果你不想让你的问题被草草地浏览，请把你的问题写清晰明了。（引自Stack Overflow 与全民编程时代） Github 截止到2015年，GitHub已经有超过九百万注册用户和2110万代码库。事实上已经成为了世界上最大的代码存放网站和开源社区。GitHub除了托管代码功能之外，它也提供了一些协同开发的功能，包括允许追踪其他用户、组织、软件库的动态，对软件代码的改动和bug提出评论等。GitHub也提供了图表功能，用于概观显示开发者们怎样在代码库上工作以及软件的开发活跃程度。（引自维基百科GitHub） 编程四步走 有问题Google一下 打开Stack Overflow找代码 复制&amp;粘贴代码 运行代码123如果代码不能运行： 返回第2步否则：返回第1步 FAQ Q：如果找不到代码咋办？ A：不可能，继续找。(引自漫画：如何编程？四步走，So easy！)]]></content>
       <categories>
-        <category>QucikStart</category>
+        <category>Guide</category>
       </categories>
       <tags>
         <tag>Google</tag>
@@ -81,9 +77,7 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>Package</tag>
+        <tag>Guide</tag>
       </tags>
   </entry>
   <entry>
@@ -95,8 +89,6 @@
       </categories>
       <tags>
         <tag>QuickStart</tag>
-        <tag>Stylesheet</tag>
-        <tag>Style</tag>
       </tags>
   </entry>
   <entry>
@@ -108,9 +100,6 @@
       </categories>
       <tags>
         <tag>QuickStart</tag>
-        <tag>Div</tag>
-        <tag>Span</tag>
-        <tag>Form</tag>
       </tags>
   </entry>
   <entry>
@@ -121,10 +110,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>QuickStart</tag>
+        <tag>Guide</tag>
         <tag>Ubuntu</tag>
-        <tag>Shortcuts</tag>
-        <tag>Atom</tag>
       </tags>
   </entry>
   <entry>
@@ -132,10 +119,10 @@
     <url>%2F2018%2F10%2F31%2FSublime-Text-3-%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B1%87%E6%80%BB%2F</url>
     <content type="text"><![CDATA[本文摘录自Sublime Text 3 快捷键总结（拿走），Sublime Text 3 常用快捷键大概分为四类： 选择 编辑 搜索 显示 选择类Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。 Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。 Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。 Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。 Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。 Ctrl+M 光标移动至括号内结束或开始的位置。 Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。 Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。 Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。 Ctrl+Shift+] 选中代码，按下快捷键，展开代码。 Ctrl+K+0 展开所有折叠代码。 Ctrl+← 向左单位性地移动光标，快速移动光标。 Ctrl+→ 向右单位性地移动光标，快速移动光标。 shift+↑ 向上选中多行。 shift+↓ 向下选中多行。 Shift+← 向左选中文本。 Shift+→ 向右选中文本。 Ctrl+Shift+← 向左单位性地选中文本。 Ctrl+Shift+→ 向右单位性地选中文本。 Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。 Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。 Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。 Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。 编辑类Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。 Ctrl+Shift+D 复制光标所在整行，插入到下一行。 Tab 向右缩进。 Shift+Tab 向左缩进。 Ctrl+K+K 从光标处开始删除代码至行尾。 Ctrl+Shift+K 删除整行。 Ctrl+/ 注释单行。 Ctrl+Shift+/ 注释多行。 Ctrl+K+U 转换大写。 Ctrl+K+L 转换小写。 Ctrl+Z 撤销。 Ctrl+Y 恢复撤销。 Ctrl+U 软撤销，感觉和 Ctrl+Z 一样。 Ctrl+F2 设置书签 Ctrl+T 左右字母互换。 F6 单词检测拼写 搜索类Ctrl+F 打开底部搜索框，查找关键字。 Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。 Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。 Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。 Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。 Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。 Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。 Esc 退出光标多行选择，退出搜索框，命令框等。 显示类Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。 Ctrl+PageDown 向左切换当前窗口的标签页。 Ctrl+PageUp 向右切换当前窗口的标签页。 Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字） Alt+Shift+2 左右分屏-2列 Alt+Shift+3 左右分屏-3列 Alt+Shift+4 左右分屏-4列 Alt+Shift+5 等分4屏 Alt+Shift+8 垂直分屏-2屏 Alt+Shift+9 垂直分屏-3屏 Ctrl+K+B 开启/关闭侧边栏。 F11 全屏模式 Shift+F11 免打扰模式]]></content>
       <categories>
-        <category>Sublime</category>
+        <category>Guide</category>
       </categories>
       <tags>
-        <tag>Shortcuts</tag>
+        <tag>Sublime</tag>
       </tags>
   </entry>
   <entry>
@@ -146,7 +133,6 @@
         <category>Wins</category>
       </categories>
       <tags>
-        <tag>Shortcuts</tag>
         <tag>DOS</tag>
       </tags>
   </entry>
@@ -158,8 +144,7 @@
         <category>Wins</category>
       </categories>
       <tags>
-        <tag>Shortcuts</tag>
-        <tag>ChongBuLuo</tag>
+        <tag>Guide</tag>
       </tags>
   </entry>
   <entry>
@@ -170,8 +155,7 @@
         <category>MyQueen</category>
       </categories>
       <tags>
-        <tag>Picture</tag>
-        <tag>Music</tag>
+        <tag>Image</tag>
       </tags>
   </entry>
   <entry>
@@ -182,7 +166,6 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>QuickStart</tag>
         <tag>Hexo</tag>
         <tag>NexT</tag>
       </tags>
@@ -198,7 +181,6 @@
         <tag>QuickStart</tag>
         <tag>Hexo</tag>
         <tag>Git</tag>
-        <tag>GitHub</tag>
         <tag>Markdown</tag>
       </tags>
   </entry>
@@ -207,12 +189,10 @@
     <url>%2F2018%2F10%2F24%2F%E7%8E%A9%E8%BD%ACSci-Hub%2F</url>
     <content type="text"><![CDATA[挣扎许久，终于下定决心给看看英文文献，可是搜了一篇又一篇SCI文献，学校图书馆都没有购买，怎么破？假如你也遇到如此尬境，可以尝试一下SCI免费下载神器：Sci-Hub，如不可用，可尝试以下网址，或前往维基百科查看最新可用网址Sci-hub(维基百科) Sci-Hub可用网址(2018.10.24测试可用) sci-hub.tw 80.82.77.83 80.82.77.84 首先需要说明的是： Sci-Hub只支持精确匹配，不支持模糊匹配。这就意味着，搜索结果只有两种：返回目标文献或搜索结果为空。而不会像度娘或谷歌那样支持模糊匹配，返回多个搜索结果。这就要求查找文献之前，必须要提前知道目标查找文献的下列信息之一： 文献标题(String) 文献地址(URL) 文献DOI(数字对象唯一标识符)： 文献PMID(PubMed唯一标识码，生命科学或医学领域) 以下面这篇文献为例，进行介绍： Kubiak W. Completion time variance minimization on a single machine is difficult [J]. Operations Research Letters, 1993, 14(1):49-59. 使用文献标题搜索Sci-Hub搜索框键入文章标题： Completion time variance minimization on a single machine is difficult 返回结果如下图，即没有搜索到我想要的文献。不过，别急着放弃，再尝试使用文献地址(URL)、DOI、PMID进行搜索。 使用文献地址或DOI搜索首先，用度娘查找文献地址、DOI等信息： 在度娘输入文献标题搜索，并在搜索页面依次进入：百度学术-&gt;爱思唯尔(Elsevier)，即可抵达如下页面 页面最下方即为文献地址：https://doi.org/10.1016/0167-6377(93)90019-D(及文献DOI：10.1016/0167-6377(93)90019-D) 文献在百度学术通常有多个文献来源，通常任意文献来源进入之后都可以找到文献DOI，如下图所示： 然后，在Sci-Hub搜索框输入文献地址(URL)或DOI等信息，开始搜索，返回结果页如下，成功返回我想要的文献。 最后，点击右上角的下载箭头，下载文献即可。 可能涉及科学上网Sci-Hub网站涉及版权问题，某些网址可能无法使用，如遇此情况，可访问sci-hub维基百科词条查看可用网址。 如需科学上网，出门左转访问getlantern(蓝灯)下载安装即可使用。]]></content>
       <categories>
-        <category>Research</category>
+        <category>Guide</category>
       </categories>
       <tags>
-        <tag>QuickStart</tag>
         <tag>Sci-Hub</tag>
-        <tag>Lantern</tag>
       </tags>
   </entry>
   <entry>
@@ -223,7 +203,7 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>Picture</tag>
+        <tag>Image</tag>
       </tags>
   </entry>
   <entry>
@@ -231,10 +211,11 @@
     <url>%2F2018%2F10%2F17%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Blog</category>
       </categories>
       <tags>
         <tag>QuickStart</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
