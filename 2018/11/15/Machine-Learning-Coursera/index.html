@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/alphabet_x_72px_1066579_easyicon.net.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/alphabet_x_32px_1066579_easyicon.net.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/alphabet_x_16px_1066579_easyicon.net.png?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="Coursera,Andrew Ng," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xu's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Source: Coursera: Machine Learning &amp;amp; Stanford-CS229A-Fall2011  L1 机器学习概述：应用、定义、分类机器学习分类：监督学习，非监督学习。其他如，增强学习，推荐系统等。  监督学习：有标签； 非监督学习：无标签。  监督学习（有标签） 回归：预测连续结果，如房价、股价等； 分类：预测离散结果，如是否患有癌症、是否是垃圾邮件等。">
+<meta name="keywords" content="Coursera,Andrew Ng">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning-Coursera">
+<meta property="og:url" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/index.html">
+<meta property="og:site_name" content="Xu&#39;s Blog">
+<meta property="og:description" content="Source: Coursera: Machine Learning &amp;amp; Stanford-CS229A-Fall2011  L1 机器学习概述：应用、定义、分类机器学习分类：监督学习，非监督学习。其他如，增强学习，推荐系统等。  监督学习：有标签； 非监督学习：无标签。  监督学习（有标签） 回归：预测连续结果，如房价、股价等； 分类：预测离散结果，如是否患有癌症、是否是垃圾邮件等。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/cover_machine_learning.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/cost-function.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/gradient-descent.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/logistic-regression.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/neural_network_cost_function.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/NN-1.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/NN-2.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/SVM.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/logistics_regression_VS_SVM.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/K-means.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/K-means_Cost.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/PCA.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/PCA-k.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/Multivariate_Gaussian.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/recommendation_algorithm.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/collaborative_filtering_cost.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/collaborative_filtering_algorithm.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/batch_vs_stochastic.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/mini-batch.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/stochastic_gradient_descent.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/ceiling_analysis_photo_OCR.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/ceiling_analysis_face_recognition.jpg">
+<meta property="og:updated_time" content="2018-11-15T14:49:40.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Machine Learning-Coursera">
+<meta name="twitter:description" content="Source: Coursera: Machine Learning &amp;amp; Stanford-CS229A-Fall2011  L1 机器学习概述：应用、定义、分类机器学习分类：监督学习，非监督学习。其他如，增强学习，推荐系统等。  监督学习：有标签； 非监督学习：无标签。  监督学习（有标签） 回归：预测连续结果，如房价、股价等； 分类：预测离散结果，如是否患有癌症、是否是垃圾邮件等。">
+<meta name="twitter:image" content="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/cover_machine_learning.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: 'F7F5A1HBKU',
+      apiKey: 'dba72259ca9d5fce1b629081e70947d0',
+      indexName: 'zsx',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/"/>
+
+
+
+
+
+  <title>Machine Learning-Coursera | Xu's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/zhaoshengxu" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Live&Learn</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoShengxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/gedi1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Machine Learning-Coursera</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T22:19:49+08:00">
+                2018-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/15/Machine-Learning-Coursera/" class="leancloud_visitors" data-flag-title="Machine Learning-Coursera">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/11/15/Machine-Learning-Coursera/cover_machine_learning.jpg" alt="cover_machine_learning"></p>
+<blockquote>
+<p>Source: <a href="https://www.coursera.org/learn/machine-learning/home/welcome" target="_blank" rel="noopener">Coursera: Machine Learning</a> &amp; Stanford-CS229A-Fall2011</p>
+</blockquote>
+<h2 id="L1-机器学习概述：应用、定义、分类"><a href="#L1-机器学习概述：应用、定义、分类" class="headerlink" title="L1 机器学习概述：应用、定义、分类"></a>L1 机器学习概述：应用、定义、分类</h2><p>机器学习分类：监督学习，非监督学习。其他如，增强学习，推荐系统等。</p>
+<ul>
+<li>监督学习：有标签；</li>
+<li>非监督学习：无标签。</li>
+</ul>
+<h3 id="监督学习（有标签）"><a href="#监督学习（有标签）" class="headerlink" title="监督学习（有标签）"></a>监督学习（有标签）</h3><ul>
+<li>回归：预测连续结果，如房价、股价等；</li>
+<li>分类：预测离散结果，如是否患有癌症、是否是垃圾邮件等。</li>
+</ul>
+<h3 id="非监督学习（无标签）"><a href="#非监督学习（无标签）" class="headerlink" title="非监督学习（无标签）"></a>非监督学习（无标签）</h3><ul>
+<li>聚类热点新闻</li>
+<li>社交网络分析</li>
+<li>市场划分等</li>
+</ul>
+<h2 id="L2-机器学习模型"><a href="#L2-机器学习模型" class="headerlink" title="L2 机器学习模型"></a>L2 机器学习模型</h2><p>以单因素线性回归为例，预测房价</p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/cost-function.jpg" alt="cost-function"><br><img src="/2018/11/15/Machine-Learning-Coursera/gradient-descent.jpg" alt="gradient-descent"></p>
+<ul>
+<li>同步更新假设中的所有参数</li>
+<li>学习速度小，则梯度下降速度慢；学习速度大，则可能错过最小值，可能不收敛，甚至发散。</li>
+<li>凸函数，碗状，全局最优，不出现局部最优</li>
+<li>批量梯度下降法：每次梯度下降，使用所有的训练样本</li>
+</ul>
+<h2 id="L3-线性代数：矩阵、向量及其运算"><a href="#L3-线性代数：矩阵、向量及其运算" class="headerlink" title="L3 线性代数：矩阵、向量及其运算"></a>L3 线性代数：矩阵、向量及其运算</h2><p>加法、乘法、求逆、转置</p>
+<h2 id="L4-多变量线性回归"><a href="#L4-多变量线性回归" class="headerlink" title="L4 多变量线性回归"></a>L4 多变量线性回归</h2><p>与单个变量的模型及求解方法相似</p>
+<h3 id="特征缩放：均值归一化"><a href="#特征缩放：均值归一化" class="headerlink" title="特征缩放：均值归一化"></a>特征缩放：均值归一化</h3><ul>
+<li>特征缩放，保证特征在相似范围内，加速梯度下降，如[-3, 3]或[-1/3, 1/3]</li>
+<li>均值归一化，样本值减去均值，除以标准差或级差</li>
+</ul>
+<h3 id="选择学习速度"><a href="#选择学习速度" class="headerlink" title="选择学习速度"></a>选择学习速度</h3><blockquote>
+<p>尝试不同学习速度：0.001，0.003，0.01，0.03，0.1，0.3，1，…</p>
+<ul>
+<li>足够小的学习速度，代价函数随迭代次数降低。</li>
+<li>学习速度太小，则梯度下降的收敛速度慢。太大，则可能不收敛，甚至发散。</li>
+</ul>
+</blockquote>
+<h3 id="梯度下降法VS标准方程法"><a href="#梯度下降法VS标准方程法" class="headerlink" title="梯度下降法VS标准方程法"></a>梯度下降法VS标准方程法</h3><ol>
+<li><strong>梯度下降法</strong></li>
+</ol>
+<ul>
+<li>选择学习速度</li>
+<li>多次迭代计算</li>
+<li>特征非常多（n非常大，如10^6）时计算速度也很快</li>
+</ul>
+<ol start="2">
+<li><strong>标准方程法</strong></li>
+</ol>
+<ul>
+<li>无需选择学习速度；</li>
+<li>无需多次迭代计算；</li>
+<li>需要计算n×n矩阵的逆矩阵，计算复杂度O(n^3)；</li>
+<li>特征非常多（n非常大,如100,1000,10000）时，计算速度非常慢；</li>
+</ul>
+<h3 id="不可逆矩阵求逆"><a href="#不可逆矩阵求逆" class="headerlink" title="不可逆矩阵求逆"></a>不可逆矩阵求逆</h3><ul>
+<li>Octave：<br>函数pinv()可求解伪逆矩阵，即便矩阵不可逆。<br>函数inv()求解逆矩阵，只有在矩阵可逆才能使用。</li>
+</ul>
+<p><strong>矩阵不可逆原因及对策</strong></p>
+<ul>
+<li>特征冗余，存在特征线性相关，如不同单位表示的房屋面积；</li>
+<li>特征数量太多，如特征数量多余样品数量。对策，删除部分特征，正则化处理。</li>
+</ul>
+<h2 id="L5-Octave教程"><a href="#L5-Octave教程" class="headerlink" title="L5 Octave教程"></a>L5 Octave教程</h2><ul>
+<li>基本操作</li>
+<li>数据移动</li>
+<li>数据计算</li>
+<li>数据可视化：作图</li>
+<li>控制语句：for，while，if</li>
+<li>向量化应用</li>
+</ul>
+<h2 id="L6-逻辑回归：预测离散结果"><a href="#L6-逻辑回归：预测离散结果" class="headerlink" title="L6 逻辑回归：预测离散结果"></a>L6 逻辑回归：预测离散结果</h2><p><img src="/2018/11/15/Machine-Learning-Coursera/logistic-regression.jpg" alt="logistic-regression"></p>
+<h3 id="二元分类（0-or-1）"><a href="#二元分类（0-or-1）" class="headerlink" title="二元分类（0 or 1）"></a>二元分类（0 or 1）</h3><p>是否为垃圾邮件、线上交易是否为诈骗、恶性or良性肿瘤</p>
+<ol>
+<li>模型假设：基于输入参数，预测输出结果为真(y=1)的可能性</li>
+<li>S形函数</li>
+<li>决策边界</li>
+<li>代价函数</li>
+<li>高级优化算法。<br>一般常用算法为梯度下降法，高级算法无需手动选择学习速度，通常比梯度下降法的速度要快，但是比较复杂。包含以下几种方法：</li>
+</ol>
+<ul>
+<li>共轭梯度</li>
+<li>BFGS</li>
+<li>L-BFGS</li>
+</ul>
+<h3 id="多元分类：one-vs-all"><a href="#多元分类：one-vs-all" class="headerlink" title="多元分类：one vs. all"></a>多元分类：one vs. all</h3><p>拆成多个二元分类进行处理，取最大可能性</p>
+<ul>
+<li>邮件分组：工作、朋友、家庭、爱好</li>
+<li>病情诊断：没病、感冒、流感</li>
+<li>天气：晴天、多云、下雨、下雪</li>
+</ul>
+<h2 id="L7-正则化：应对过拟合问题"><a href="#L7-正则化：应对过拟合问题" class="headerlink" title="L7 正则化：应对过拟合问题"></a>L7 正则化：应对过拟合问题</h2><p>选用过多输入特征（变量），模型假设用训练集拟合非常好，而用测试集预测效果差</p>
+<p>解决过拟合问题的对策：</p>
+<ul>
+<li>减少特征数量：手动挑选特征，调整模型算法</li>
+<li>正则化：保留所有特征，适当减小参数值，特征很多时依然可行</li>
+</ul>
+<p>代价函数及其梯度引入正则化项，lambda非常大，参数接近零，则导致模型假设欠拟合</p>
+<h2 id="L8-神经网络：正向传播"><a href="#L8-神经网络：正向传播" class="headerlink" title="L8 神经网络：正向传播"></a>L8 神经网络：正向传播</h2><p>起源：模拟大脑的算法</p>
+<p>应用：80年代和90年代早期广泛应用，90年代末热度下降，近些年重新变得热门，得到广泛应用</p>
+<p>神经网络结构：</p>
+<ul>
+<li>输入层</li>
+<li>隐藏层（中间层）</li>
+<li>输出层</li>
+</ul>
+<p>神经网络学习生成自己的特征（隐藏层）</p>
+<p>应用举例</p>
+<ul>
+<li>以逻辑运算或（or）、与（and）、非（not）模拟同或（xnor，输入相同为真）</li>
+<li>手写数字分类</li>
+</ul>
+<h2 id="L9-神经网络：反向传播"><a href="#L9-神经网络：反向传播" class="headerlink" title="L9 神经网络：反向传播"></a>L9 神经网络：反向传播</h2><p><strong>代价函数</strong></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/neural_network_cost_function.jpg" alt="neural_network_cost_function"></p>
+<p><strong>应用细节</strong></p>
+<ul>
+<li>矩阵展开为列向量，matrix(:)</li>
+<li>列向量转换成矩阵，reshape(vector, num_rows, num_columns)</li>
+<li>梯度检查：数值计算估计梯度</li>
+<li>随机初始化theta</li>
+</ul>
+<p><strong>神经网络算法</strong></p>
+<ul>
+<li>随机初始化theta</li>
+<li>正向传播神经网络计算代价函数</li>
+<li>反向传播神经网络计算梯度</li>
+<li>数值模拟检查梯度，检查完毕关闭梯度</li>
+<li>使用高级优化算法fminuc或计算梯度结合反向传播神经网络计算theta</li>
+</ul>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/NN-1.jpg" alt="NN-1"><br><img src="/2018/11/15/Machine-Learning-Coursera/NN-2.jpg" alt="NN-2"></p>
+<p>反向传播神经网络应用实例：自动驾驶</p>
+<h2 id="L10-应用机器学习的建议"><a href="#L10-应用机器学习的建议" class="headerlink" title="L10 应用机器学习的建议"></a>L10 应用机器学习的建议</h2><h3 id="评价模型假设"><a href="#评价模型假设" class="headerlink" title="评价模型假设"></a>评价模型假设</h3><ul>
+<li>数据集划分：70%训练集，30%测试集</li>
+<li>利用训练集得到theta</li>
+<li>计算测试集误差</li>
+<li>或计算分类错误比例</li>
+</ul>
+<h3 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h3><ul>
+<li>数据集划分：60%训练集，20%交叉验证集，20%测试集</li>
+<li>利用训练集得到theta</li>
+<li>利用交叉验证集选择最优模型（最高幂次）</li>
+<li>利用测试集检查模型泛化能力</li>
+</ul>
+<h3 id="诊断偏差vs方差"><a href="#诊断偏差vs方差" class="headerlink" title="诊断偏差vs方差"></a>诊断偏差vs方差</h3><ol>
+<li>选择模型幂次</li>
+</ol>
+<ul>
+<li>模型幂次低，欠拟合，高偏差，训练集误差和交叉验证集误差都很高且相近</li>
+<li>模型幂次高，过度拟合，高方差，训练集误差小，交叉验证集误差大</li>
+</ul>
+<ol start="2">
+<li>选择正则化参数lambda：<br>已基于交叉验证集选择模型幂次，增加正则化项应对过度拟合问题。</li>
+</ol>
+<ul>
+<li>逐个试验选择合适lambda：0，0.01，0.02，0.04，…，10</li>
+<li>lambda小，过度拟合，高方差，训练集误差小，测试集误差大</li>
+<li>lambda大，欠拟合，高偏差，训练集误差和测试集误差都很高且相近</li>
+</ul>
+<ol start="3">
+<li>学习曲线</li>
+</ol>
+<ul>
+<li>增加样本数量对高方差有效，而对于高偏差则帮助不大</li>
+</ul>
+<h3 id="应对策略"><a href="#应对策略" class="headerlink" title="应对策略"></a>应对策略</h3><ul>
+<li>增加样本数量，适合高方差，过度拟合</li>
+<li>减少特征数量，适合高方差，过度拟合</li>
+<li>增加特征数量，适合高偏差，欠拟合</li>
+<li>增加多项式特征，适合高偏差，欠拟合</li>
+<li>降低lambda，适合高偏差，欠拟合</li>
+<li>增大lambda，适合高方差，过度拟合</li>
+</ul>
+<h2 id="L11-机器学习系统设计"><a href="#L11-机器学习系统设计" class="headerlink" title="L11 机器学习系统设计"></a>L11 机器学习系统设计</h2><ul>
+<li>以垃圾邮件分类为例</li>
+<li>选择训练集中出现频率最高的n个词语（10000-50000）作为垃圾邮件特征</li>
+</ul>
+<h3 id="推荐的系统设计思路"><a href="#推荐的系统设计思路" class="headerlink" title="推荐的系统设计思路"></a>推荐的系统设计思路</h3><ul>
+<li>首先建立可以快速应用的简单模型，利用交叉验证集进行验证</li>
+<li>绘制学习曲线，确定是否需要更多的样本、特性等</li>
+<li>误差分析，手动分析算法出错的样本（交叉验证集），识别这些样本的类型以及有助于算法改进的特征</li>
+</ul>
+<p>量化评价的重要性</p>
+<ul>
+<li>误差分析并不能帮助确定使用词干提取软件能否改进算法表现，唯一的办法就是尝试</li>
+<li>通过量化比较算法在不使用与使用词干提取软件时的表现，确定是否采用词干提取软件</li>
+</ul>
+<h3 id="歪斜样本的误差量化"><a href="#歪斜样本的误差量化" class="headerlink" title="歪斜样本的误差量化"></a>歪斜样本的误差量化</h3><p>训练集中，有些样本非常多，有些样本非常少，样本分布不均匀。如癌症分类算法，样本中患癌症的病人非常少，绝大多数正常</p>
+<ul>
+<li>预测准确度precision：预测为真的样本中确实为真的比例(P)</li>
+<li>召回率recall：确实为真的样本中预测为真的比例(R)</li>
+<li>F1：权衡预测准确度和召回率</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F1 = 2*PR/(P+R)</span><br></pre></td></tr></table></figure>
+<p><strong>设计一个高准确度的学习算法</strong></p>
+<ul>
+<li>有非常多参数（许多特征，有很多隐藏层的神经网络）</li>
+<li>有非常大样本（不存在过度拟合）</li>
+<li>训练集和测试集误差相近，测试集误差小，低方差</li>
+</ul>
+<h2 id="L12-支持向量机"><a href="#L12-支持向量机" class="headerlink" title="L12 支持向量机"></a>L12 支持向量机</h2><p><img src="/2018/11/15/Machine-Learning-Coursera/SVM.jpg" alt="SVM"></p>
+<p>核函数与相似度</p>
+<ul>
+<li>基于样本，选择地标，将m个样本赋给m个地标</li>
+<li>利用核函数计算相似度</li>
+</ul>
+<p>SVM参数</p>
+<ul>
+<li>C：C大，高方差；C小，高偏差。</li>
+<li>sigma^2：sigma^2大，高偏差；sigma^2小，高方差</li>
+</ul>
+<p>使用SVM软件包</p>
+<ul>
+<li>选择参数C</li>
+<li>选择核函数：无核函数（线性核函数），高斯核函数（选择sigma^2，特征缩放）</li>
+</ul>
+<p>多元分类</p>
+<ul>
+<li>许多SVM软件包内置多元分类函数</li>
+<li>使用 one VS all方法，训练多个SVM</li>
+</ul>
+<p><strong>逻辑回归vs支持向量机</strong></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/logistics_regression_VS_SVM.jpg" alt="logistics_regression_VS_SVM"></p>
+<h2 id="L13-非监督学习：聚类"><a href="#L13-非监督学习：聚类" class="headerlink" title="L13 非监督学习：聚类"></a>L13 非监督学习：聚类</h2><h3 id="K-均值算法"><a href="#K-均值算法" class="headerlink" title="K-均值算法"></a>K-均值算法</h3><ol>
+<li>随机初始化K个聚类中心。<br> 聚类中心数目小于样本数，随机选取K个训练样本，作为K个聚类中心</li>
+<li>将样本分别分配到相应的聚类中心</li>
+<li>计算每个聚类中心所属样本的均值</li>
+<li>重复步骤2和3，移动聚类中心位置，使得代价函数全局最小</li>
+</ol>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/K-means.jpg" alt="K-means"><br><img src="/2018/11/15/Machine-Learning-Coursera/K-means_Cost.jpg" alt="K-means_Cost"></p>
+<h3 id="K值的选择"><a href="#K值的选择" class="headerlink" title="K值的选择"></a>K值的选择</h3><ul>
+<li><strong>肘部法</strong>，曲线变化趋势缓慢，没有明确的分界点</li>
+<li>根据算法所要实现效果的好坏，选取合适的K值</li>
+</ul>
+<h2 id="L14-降维：主成分分析（PCA）"><a href="#L14-降维：主成分分析（PCA）" class="headerlink" title="L14 降维：主成分分析（PCA）"></a>L14 降维：主成分分析（PCA）</h2><h3 id="数据压缩及数据可视化"><a href="#数据压缩及数据可视化" class="headerlink" title="数据压缩及数据可视化"></a>数据压缩及数据可视化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[nD] --&gt; |降维| B[3D立体]</span><br><span class="line">B --&gt; |降维| C[2D平面]</span><br><span class="line">C --&gt; |降维| D[1D线段]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[多指标] --&gt; |降维| B[三指标]</span><br><span class="line">B --&gt; |降维| C[二指标]</span><br><span class="line">C --&gt; |降维| D[单指标]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>二维数据降至一维数据</strong>：寻找一个向量，样本在其方向上的投影误差最小</li>
+<li><strong>n维数据降至k维数据</strong>：寻找k个向量，样本在其方向上的投影误差最小</li>
+<li><strong>主成分分析不是线性回归</strong></li>
+</ul>
+<h3 id="主成分分析（PCA）算法"><a href="#主成分分析（PCA）算法" class="headerlink" title="主成分分析（PCA）算法"></a>主成分分析（PCA）算法</h3><ol>
+<li><strong>数据预处理</strong>：均值归一化，有选择地特征缩放</li>
+<li>算法主体：</li>
+</ol>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/PCA.jpg" alt="PCA"></p>
+<ol start="3">
+<li>由压缩模型重建原始模型</li>
+</ol>
+<h3 id="选择主成分数量"><a href="#选择主成分数量" class="headerlink" title="选择主成分数量"></a>选择主成分数量</h3><p><img src="/2018/11/15/Machine-Learning-Coursera/PCA-k.jpg" alt="PCA-k"></p>
+<h3 id="主成分分析（PCA）应用建议"><a href="#主成分分析（PCA）应用建议" class="headerlink" title="主成分分析（PCA）应用建议"></a>主成分分析（PCA）应用建议</h3><ul>
+<li>加速监督学习，提取浓缩输入，减少矩阵的维度</li>
+<li>数据压缩，减少存储数据占用的内存和磁盘</li>
+<li>数据可视化</li>
+<li>防止过度拟合（不正确的应用）</li>
+</ul>
+<hr>
+<h2 id="L15-异常检测"><a href="#L15-异常检测" class="headerlink" title="L15 异常检测"></a>L15 异常检测</h2><p><strong>问题产生</strong></p>
+<ul>
+<li>制造业产品质检，如飞行器发动机</li>
+<li>网络欺诈检测</li>
+<li>监测数据中心的电脑</li>
+</ul>
+<h3 id="高斯（正态）分布"><a href="#高斯（正态）分布" class="headerlink" title="高斯（正态）分布"></a>高斯（正态）分布</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x ~ (μ, σ^2)</span><br></pre></td></tr></table></figure>
+<h3 id="异常检测算法"><a href="#异常检测算法" class="headerlink" title="异常检测算法"></a>异常检测算法</h3><ol>
+<li>选择你认为能够表征异常样本的特征</li>
+</ol>
+<ul>
+<li>选择不经常出现的大数值或小数值作为特征</li>
+<li>如果已有特征不服从高斯分布，可通过取对数、开平方等，使其符合</li>
+</ul>
+<ol start="2">
+<li>拟合各个特征的均值和标准差</li>
+<li>给定新样本，计算相应概率，概率小于临界值即为异常样本</li>
+</ol>
+<h3 id="开发-评价异常检测算法"><a href="#开发-评价异常检测算法" class="headerlink" title="开发|评价异常检测算法"></a>开发|评价异常检测算法</h3><ul>
+<li>将样本分为训练集，交叉验证集，测试集</li>
+<li>利用训练集拟合均值和标准差参数，计算样本异常概率，建立异常检测模型</li>
+<li>利用交叉验证集或测试集，计算F1评价算法异常检测效果</li>
+<li>利用交叉验证集或测试集，选择异常临界值ε</li>
+</ul>
+<h3 id="异常检测vs监督学习"><a href="#异常检测vs监督学习" class="headerlink" title="异常检测vs监督学习"></a>异常检测vs监督学习</h3><p><strong>异常检测</strong></p>
+<ol>
+<li>异常样本(y=1)较少，通常0-20个</li>
+<li>大量的正常样本(y=0)，</li>
+<li>异常类型很多，算法很难从已有异常样本中学习到异常的特征，未来出现的异常可能与我们目前见过的异常大不相同。</li>
+<li>异常检测算法应用：欺诈检测，产品质检，监测数据中心中的机器…</li>
+</ol>
+<p><strong>监督学习</strong></p>
+<ol>
+<li>正面与反面样本都很多</li>
+<li>有足够的反面样本让算法学习反面样本的特征，未来的算法检测结果可能与训练集中的情况相似</li>
+<li>监督学习算法应用：垃圾邮件分类，天气预报，癌症分类…</li>
+</ol>
+<h3 id="多元高斯分布"><a href="#多元高斯分布" class="headerlink" title="多元高斯分布"></a>多元高斯分布</h3><p>综合所有特征建立一个异常检测模型，不再为每个特征分别建立模型</p>
+<p><strong>一元高斯分布vs多元高斯分布</strong></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/Multivariate_Gaussian.jpg" alt="Multivariate_Gaussian"></p>
+<hr>
+<h2 id="L16-推荐系统"><a href="#L16-推荐系统" class="headerlink" title="L16 推荐系统"></a>L16 推荐系统</h2><p>问题产生：预测电影评分，用户给电影打分，从一星到五星。</p>
+<h3 id="基于内容的推荐算法"><a href="#基于内容的推荐算法" class="headerlink" title="基于内容的推荐算法"></a>基于内容的推荐算法</h3><p><img src="/2018/11/15/Machine-Learning-Coursera/recommendation_algorithm.jpg" alt="recommendation_algorithm"></p>
+<h3 id="协同过滤算法"><a href="#协同过滤算法" class="headerlink" title="协同过滤算法"></a>协同过滤算法</h3><p><img src="/2018/11/15/Machine-Learning-Coursera/collaborative_filtering_cost.jpg" alt="collaborative_filtering_cost"></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/collaborative_filtering_algorithm.jpg" alt="collaborative_filtering_algorithm"></p>
+<p>向量化：低秩矩阵分解</p>
+<p>寻找相关电影，最相似的5部电影</p>
+<p>应用细节：均值归一化</p>
+<hr>
+<h2 id="L17-大型机器学习"><a href="#L17-大型机器学习" class="headerlink" title="L17 大型机器学习"></a>L17 大型机器学习</h2><p>大数据集机器学习</p>
+<h3 id="随机梯度下降法"><a href="#随机梯度下降法" class="headerlink" title="随机梯度下降法"></a>随机梯度下降法</h3><p><strong>批量梯度下降vs随机梯度下降</strong></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/batch_vs_stochastic.jpg" alt="batch_vs_stochastic"></p>
+<h3 id="微型批量梯度下降"><a href="#微型批量梯度下降" class="headerlink" title="微型批量梯度下降"></a>微型批量梯度下降</h3><p><img src="/2018/11/15/Machine-Learning-Coursera/mini-batch.jpg" alt="mini-batch"></p>
+<p><strong>三种梯度下降法对比</strong></p>
+<ul>
+<li><strong>批量梯度下降</strong>：每次迭代使用训练集所有样本</li>
+<li><strong>随机梯度下降</strong>：每次迭代使用训练集1个样本</li>
+<li><strong>微型批量梯度下降</strong>：每次迭代使用训练集部分样本（2~100）</li>
+</ul>
+<p>检查梯度下降是否收敛</p>
+<ul>
+<li><strong>批量梯度下降</strong>，绘制代价函数随迭代次数的变化曲线</li>
+<li><strong>随机梯度下降</strong>，每迭代1000次，计算前面1000次迭代的代价函数均值。在更新参数theta之前计算代价函数。<blockquote>
+<p>如果出现代价函数随迭代次数上升，则应使用更小的学习速度</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>随机梯度下降算法</strong></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/stochastic_gradient_descent.jpg" alt="stochastic_gradient_descent"></p>
+<h3 id="线上学习"><a href="#线上学习" class="headerlink" title="线上学习"></a>线上学习</h3><ul>
+<li>网上邮寄，根据用户特点、包裹从哪到哪等信息，实现最优价格</li>
+<li>网上产品搜索，推荐最符合描述的产品</li>
+<li>个性化推荐工作、新闻、产品等</li>
+</ul>
+<h3 id="映射规约和并行计算"><a href="#映射规约和并行计算" class="headerlink" title="映射规约和并行计算"></a>映射规约和并行计算</h3><ul>
+<li>将训练集分为若干部分，分别由若干台机器同时计算，最后一台机器对上述所有机器的计算结果进行整合</li>
+<li>许多学习算法都可以表示为，计算函数和（关于训练集）的形式</li>
+<li>多核计算机，可利用多核实现并行计算</li>
+</ul>
+<h2 id="L18-应用实例：Photo-OCR"><a href="#L18-应用实例：Photo-OCR" class="headerlink" title="L18 应用实例：Photo OCR"></a>L18 应用实例：Photo OCR</h2><p><strong>问题描述及处理流程</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[图片]--&gt;B[文本检测]</span><br><span class="line">B --&gt; C[字符分割]</span><br><span class="line">C --&gt; D[字符识别]</span><br></pre></td></tr></table></figure>
+<p>检测滑行窗口文本、行人</p>
+<h3 id="人工合成数据，获取大量数据"><a href="#人工合成数据，获取大量数据" class="headerlink" title="人工合成数据，获取大量数据"></a>人工合成数据，获取大量数据</h3><ol>
+<li>引入“<strong>扭曲</strong>”合成数据</li>
+</ol>
+<ul>
+<li>以演讲识别为例，引入的“扭曲”应该代表噪音的类型或是测试集中存在的“扭曲”，如背景噪声、连接信号差等</li>
+<li>通常添加纯粹随机或者无意义的噪音对数据合成帮助不大</li>
+<li>在做更多的工作之前，确保你有一个低偏差的分类器，例如增加特征数量或是神经网络隐藏层的数量，直到得到一个低偏差的分类器</li>
+</ul>
+<ol start="2">
+<li>获取10倍于当前的数据，需要花费什么样的努力？</li>
+</ol>
+<ul>
+<li>人工合成数据</li>
+<li>自己收集或标记数据</li>
+<li>众筹，如Amazon Mechanical Turk</li>
+</ul>
+<h3 id="上限分析：定位关键环节"><a href="#上限分析：定位关键环节" class="headerlink" title="上限分析：定位关键环节"></a>上限分析：定位关键环节</h3><p><img src="/2018/11/15/Machine-Learning-Coursera/ceiling_analysis_photo_OCR.jpg" alt="ceiling_analysis_photo_OCR"></p>
+<p><img src="/2018/11/15/Machine-Learning-Coursera/ceiling_analysis_face_recognition.jpg" alt="ceiling_analysis_face_recognition"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    ZhaoShengxu
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/" title="Machine Learning-Coursera">http://zsx-cup.top/2018/11/15/Machine-Learning-Coursera/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Coursera/" rel="tag"># Coursera</a>
+          
+            <a href="/tags/Andrew-Ng/" rel="tag"># Andrew Ng</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/14/溶液粘度/" rel="next" title="溶液粘度">
+                <i class="fa fa-chevron-left"></i> 溶液粘度
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5be6edb19005d167" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDY2OS8xNzE5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/gedi1.jpg"
+                alt="ZhaoShengxu" />
+            
+              <p class="site-author-name" itemprop="name">ZhaoShengxu</p>
+              <p class="site-description motion-element" itemprop="description">Hope is a good thing</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhaoshengxu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/zhaoshengxu" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zsx20110821@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.dlutkn.top/" title="Ning's Notes" target="_blank">Ning's Notes</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://gedi2357.github.io" title="Di's Blog" target="_blank">Di's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn" title="W3School" target="_blank">W3School</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com" title="NexT" target="_blank">NexT</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#L1-机器学习概述：应用、定义、分类"><span class="nav-number">1.</span> <span class="nav-text">L1 机器学习概述：应用、定义、分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监督学习（有标签）"><span class="nav-number">1.1.</span> <span class="nav-text">监督学习（有标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非监督学习（无标签）"><span class="nav-number">1.2.</span> <span class="nav-text">非监督学习（无标签）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L2-机器学习模型"><span class="nav-number">2.</span> <span class="nav-text">L2 机器学习模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L3-线性代数：矩阵、向量及其运算"><span class="nav-number">3.</span> <span class="nav-text">L3 线性代数：矩阵、向量及其运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L4-多变量线性回归"><span class="nav-number">4.</span> <span class="nav-text">L4 多变量线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特征缩放：均值归一化"><span class="nav-number">4.1.</span> <span class="nav-text">特征缩放：均值归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择学习速度"><span class="nav-number">4.2.</span> <span class="nav-text">选择学习速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度下降法VS标准方程法"><span class="nav-number">4.3.</span> <span class="nav-text">梯度下降法VS标准方程法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可逆矩阵求逆"><span class="nav-number">4.4.</span> <span class="nav-text">不可逆矩阵求逆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L5-Octave教程"><span class="nav-number">5.</span> <span class="nav-text">L5 Octave教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L6-逻辑回归：预测离散结果"><span class="nav-number">6.</span> <span class="nav-text">L6 逻辑回归：预测离散结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二元分类（0-or-1）"><span class="nav-number">6.1.</span> <span class="nav-text">二元分类（0 or 1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多元分类：one-vs-all"><span class="nav-number">6.2.</span> <span class="nav-text">多元分类：one vs. all</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L7-正则化：应对过拟合问题"><span class="nav-number">7.</span> <span class="nav-text">L7 正则化：应对过拟合问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L8-神经网络：正向传播"><span class="nav-number">8.</span> <span class="nav-text">L8 神经网络：正向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L9-神经网络：反向传播"><span class="nav-number">9.</span> <span class="nav-text">L9 神经网络：反向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L10-应用机器学习的建议"><span class="nav-number">10.</span> <span class="nav-text">L10 应用机器学习的建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#评价模型假设"><span class="nav-number">10.1.</span> <span class="nav-text">评价模型假设</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型选择"><span class="nav-number">10.2.</span> <span class="nav-text">模型选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#诊断偏差vs方差"><span class="nav-number">10.3.</span> <span class="nav-text">诊断偏差vs方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应对策略"><span class="nav-number">10.4.</span> <span class="nav-text">应对策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L11-机器学习系统设计"><span class="nav-number">11.</span> <span class="nav-text">L11 机器学习系统设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐的系统设计思路"><span class="nav-number">11.1.</span> <span class="nav-text">推荐的系统设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#歪斜样本的误差量化"><span class="nav-number">11.2.</span> <span class="nav-text">歪斜样本的误差量化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L12-支持向量机"><span class="nav-number">12.</span> <span class="nav-text">L12 支持向量机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L13-非监督学习：聚类"><span class="nav-number">13.</span> <span class="nav-text">L13 非监督学习：聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#K-均值算法"><span class="nav-number">13.1.</span> <span class="nav-text">K-均值算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K值的选择"><span class="nav-number">13.2.</span> <span class="nav-text">K值的选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L14-降维：主成分分析（PCA）"><span class="nav-number">14.</span> <span class="nav-text">L14 降维：主成分分析（PCA）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据压缩及数据可视化"><span class="nav-number">14.1.</span> <span class="nav-text">数据压缩及数据可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主成分分析（PCA）算法"><span class="nav-number">14.2.</span> <span class="nav-text">主成分分析（PCA）算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择主成分数量"><span class="nav-number">14.3.</span> <span class="nav-text">选择主成分数量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主成分分析（PCA）应用建议"><span class="nav-number">14.4.</span> <span class="nav-text">主成分分析（PCA）应用建议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L15-异常检测"><span class="nav-number">15.</span> <span class="nav-text">L15 异常检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯（正态）分布"><span class="nav-number">15.1.</span> <span class="nav-text">高斯（正态）分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常检测算法"><span class="nav-number">15.2.</span> <span class="nav-text">异常检测算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发-评价异常检测算法"><span class="nav-number">15.3.</span> <span class="nav-text">开发|评价异常检测算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常检测vs监督学习"><span class="nav-number">15.4.</span> <span class="nav-text">异常检测vs监督学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多元高斯分布"><span class="nav-number">15.5.</span> <span class="nav-text">多元高斯分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L16-推荐系统"><span class="nav-number">16.</span> <span class="nav-text">L16 推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于内容的推荐算法"><span class="nav-number">16.1.</span> <span class="nav-text">基于内容的推荐算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协同过滤算法"><span class="nav-number">16.2.</span> <span class="nav-text">协同过滤算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L17-大型机器学习"><span class="nav-number">17.</span> <span class="nav-text">L17 大型机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降法"><span class="nav-number">17.1.</span> <span class="nav-text">随机梯度下降法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微型批量梯度下降"><span class="nav-number">17.2.</span> <span class="nav-text">微型批量梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线上学习"><span class="nav-number">17.3.</span> <span class="nav-text">线上学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射规约和并行计算"><span class="nav-number">17.4.</span> <span class="nav-text">映射规约和并行计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L18-应用实例：Photo-OCR"><span class="nav-number">18.</span> <span class="nav-text">L18 应用实例：Photo OCR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#人工合成数据，获取大量数据"><span class="nav-number">18.1.</span> <span class="nav-text">人工合成数据，获取大量数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上限分析：定位关键环节"><span class="nav-number">18.2.</span> <span class="nav-text">上限分析：定位关键环节</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhaoShengxu</span>
+  
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">34.4k</span>
+  
+</div>
+
+<div class="powered">
+  
+    <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Unique Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Page View
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+    
+
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("BOjbNcH6AEoag5puDWx8PM0u-gzGzoHsz", "rxLBXHN3XieC2JKayxAE51pr");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
