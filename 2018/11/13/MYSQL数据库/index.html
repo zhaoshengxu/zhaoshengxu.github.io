@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="MySQL数据库是一个小型关系型数据库管理系统，开发者为瑞典MySQL AB公司。在2008年1月16号被Sun公司收购。而2009年，Sun公司又被Oracle公司收购。目前MySQL被广泛地应用在Internet上的中小型网站中。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，许多中小型网站为了降低网站总体拥有成本而选择了MySQL作为网站数据库。 MySQL数据库的下载安装My">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-14T12:50:35.818Z">
+<meta property="og:updated_time" content="2018-11-17T04:34:19.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据库">
 <meta name="twitter:description" content="MySQL数据库是一个小型关系型数据库管理系统，开发者为瑞典MySQL AB公司。在2008年1月16号被Sun公司收购。而2009年，Sun公司又被Oracle公司收购。目前MySQL被广泛地应用在Internet上的中小型网站中。由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，许多中小型网站为了降低网站总体拥有成本而选择了MySQL作为网站数据库。 MySQL数据库的下载安装My">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.9k
+                  2.3k
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  9
                 </span>
               
             </div>
@@ -469,15 +469,25 @@ HAVING 条件
 <li>having是在分组后对数据进行过滤，where是在分组前对数据进行过滤  </li>
 <li>having后面可以使用分组函数(统计函数)，where后面不可以使用分组函数。</li>
 </ol>
-<h2 id="多表设计"><a href="#多表设计" class="headerlink" title="多表设计"></a>多表设计</h2><ol>
-<li>一对多 </li>
-</ol>
-<p>在进行表设计时，如果存在一对多关系，要求在多的一方加入一个外键，用于描述它来自于一方的主键。</p>
-<ol start="2">
-<li>多对多</li>
-</ol>
-<p>存在多对多关系，进行表设计时，产生一个中间的关系表，来描述关系。       </p>
 <h2 id="操作数据库的客户端"><a href="#操作数据库的客户端" class="headerlink" title="操作数据库的客户端"></a>操作数据库的客户端</h2><p>在dos命令中操作数据库有很多不方便，用数据库客户端软件Navicat操作数据库。</p>
+<h2 id="多表设计"><a href="#多表设计" class="headerlink" title="多表设计"></a>多表设计</h2><ol>
+<li><p>一对一：<br>如同身份证，一个人和唯一身份证绑定。实际中，不太常用。</p>
+</li>
+<li><p>一对多：<br>在进行表设计时，如果存在一对多关系，要求在多的一方加入一个外键，用于描述它来自于一方的主键。</p>
+</li>
+<li><p>多对多：<br>存在多对多关系，进行表设计时，产生一个中间的关系表，来描述关系。       </p>
+</li>
+</ol>
+<h2 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h2><p>表与表之间的关系也包括：一对一，一对多，多对多。而表与表之间关系是通过外键来维护的。将两张表关联起来，让表和表发生关系。<br>外键约束特性如下：</p>
+<ul>
+<li>外键必须是另一表或自身表的主键的值；</li>
+<li>外键可以重复；</li>
+<li>外键可以为空；</li>
+<li>一张表中可以有多个外键。</li>
+</ul>
+<p><strong>外键约束作用:可以保证数据的完整性。</strong><br>以用户与订单（一对多）进行说明，创建外键约束有两种方式：</p>
+<h3 id="先建表后添加外键"><a href="#先建表后添加外键" class="headerlink" title="先建表后添加外键"></a>先建表后添加外键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">-- 用户表</span><br><span class="line">CREATE TABLE USER(</span><br><span class="line">    uid INT PRIMARY KEY AUTO_INCREMENT, -- 用户编号</span><br><span class="line">    NAME VARCHAR(20)  -- 用户姓名</span><br><span class="line">);</span><br><span class="line">-- 用户表插入数据</span><br><span class="line">INSERT INTO USER VALUES(NULL,&quot;tom&quot;);</span><br><span class="line">INSERT INTO USER VALUES(NULL,&quot;fox&quot;);</span><br><span class="line"></span><br><span class="line">-- 订单表</span><br><span class="line">CREATE TABLE orders(</span><br><span class="line">    id INT PRIMARY KEY AUTO_INCREMENT, -- 订单编号</span><br><span class="line">    money DOUBLE, -- 订单总价</span><br><span class="line">    receiveraddress VARCHAR(50), -- 订单收货地址</span><br><span class="line">    uid INT  -- 用户id</span><br><span class="line">);</span><br><span class="line">-- 订单表插入数据</span><br><span class="line">INSERT INTO orders VALUES(NULL,1000,&quot;北京&quot;,1);</span><br><span class="line">INSERT INTO orders VALUES(NULL,2000,&quot;上海&quot;,1);</span><br><span class="line">INSERT INTO orders VALUES(NULL,3000,&quot;广州&quot;,2);</span><br><span class="line">INSERT INTO orders VALUES(NULL,4000,&quot;深圳&quot;,2);</span><br><span class="line"></span><br><span class="line">-- 表创建后添加外键</span><br><span class="line">ALTER TABLE orders ADD CONSTRAINT FK_UID  FOREIGN KEY(uid) REFERENCES USER(uid);</span><br></pre></td></tr></table></figure>
+<h3 id="创建表时指定外键"><a href="#创建表时指定外键" class="headerlink" title="创建表时指定外键"></a>创建表时指定外键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-- 用户表</span><br><span class="line">CREATE TABLE USER(</span><br><span class="line">    uid INT PRIMARY KEY AUTO_INCREMENT, -- 用户编号</span><br><span class="line">    NAME VARCHAR(20)  -- 用户姓名</span><br><span class="line">);</span><br><span class="line">-- 用户表插入数据</span><br><span class="line">INSERT INTO USER VALUES(NULL,&quot;tom&quot;);</span><br><span class="line">INSERT INTO USER VALUES(NULL,&quot;fox&quot;);</span><br><span class="line"></span><br><span class="line">-- 创建表时指定外键</span><br><span class="line">CREATE TABLE orders(</span><br><span class="line">    id INT PRIMARY KEY AUTO_INCREMENT, -- 订单id</span><br><span class="line">    money DOUBLE, -- 订单总价</span><br><span class="line">    receiveraddress VARCHAR(50), -- 订单收货地址</span><br><span class="line">    uid INT, -- 用户id</span><br><span class="line">    CONSTRAINT FK_UID FOREIGN KEY orders(uid) REFERENCES USER(uid)  </span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 订单表插入数据</span><br><span class="line">INSERT INTO orders VALUES(NULL,1000,&quot;北京&quot;,1);</span><br><span class="line">INSERT INTO orders VALUES(NULL,2000,&quot;上海&quot;,1);</span><br><span class="line">INSERT INTO orders VALUES(NULL,3000,&quot;广州&quot;,2);</span><br><span class="line">INSERT INTO orders VALUES(NULL,4000,&quot;深圳&quot;,2);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -624,7 +634,7 @@ HAVING 条件
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -740,7 +750,7 @@ HAVING 条件
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL数据库的下载安装"><span class="nav-number">1.</span> <span class="nav-text">MySQL数据库的下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库和表的操作"><span class="nav-number">2.</span> <span class="nav-text">数据库和表的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的操作"><span class="nav-number">2.1.</span> <span class="nav-text">数据库的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表的操作"><span class="nav-number">2.2.</span> <span class="nav-text">表的操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数据进行操作"><span class="nav-number">3.</span> <span class="nav-text">对数据进行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加数据"><span class="nav-number">3.1.</span> <span class="nav-text">增加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据"><span class="nav-number">3.2.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据"><span class="nav-number">3.3.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">3.4.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">3.5.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚合函数"><span class="nav-number">3.6.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子查询"><span class="nav-number">3.7.</span> <span class="nav-text">子查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组"><span class="nav-number">3.8.</span> <span class="nav-text">分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多表设计"><span class="nav-number">4.</span> <span class="nav-text">多表设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数据库的客户端"><span class="nav-number">5.</span> <span class="nav-text">操作数据库的客户端</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL数据库的下载安装"><span class="nav-number">1.</span> <span class="nav-text">MySQL数据库的下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库和表的操作"><span class="nav-number">2.</span> <span class="nav-text">数据库和表的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的操作"><span class="nav-number">2.1.</span> <span class="nav-text">数据库的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表的操作"><span class="nav-number">2.2.</span> <span class="nav-text">表的操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对数据进行操作"><span class="nav-number">3.</span> <span class="nav-text">对数据进行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加数据"><span class="nav-number">3.1.</span> <span class="nav-text">增加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据"><span class="nav-number">3.2.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改数据"><span class="nav-number">3.3.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">3.4.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">3.5.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚合函数"><span class="nav-number">3.6.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子查询"><span class="nav-number">3.7.</span> <span class="nav-text">子查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组"><span class="nav-number">3.8.</span> <span class="nav-text">分组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数据库的客户端"><span class="nav-number">4.</span> <span class="nav-text">操作数据库的客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多表设计"><span class="nav-number">5.</span> <span class="nav-text">多表设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外键约束"><span class="nav-number">6.</span> <span class="nav-text">外键约束</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先建表后添加外键"><span class="nav-number">6.1.</span> <span class="nav-text">先建表后添加外键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表时指定外键"><span class="nav-number">6.2.</span> <span class="nav-text">创建表时指定外键</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -776,7 +786,7 @@ HAVING 条件
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">37.5k</span>
+    <span title="Site words total count">38.4k</span>
   
 </div>
 
