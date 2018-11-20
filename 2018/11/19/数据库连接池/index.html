@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="数据库连接池数据库连接池（Data Base Connection Pooling，简称DBCP）是程序启动时建立足够的数据库连接，并将这些连接组成一个连接池，由程序动态地对池中的连接进行申请，使用，释放。优点：  节省创建连接与释放连接的性能消耗  连接池中连接起到复用的作用，提高程序性能  数据库连接池的运行机制：  程序初始化时，创建连接池 使用时，向连接池申请可用连接 使用完毕，将连接返还">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-19T16:01:48.525Z">
+<meta property="og:updated_time" content="2018-11-20T13:22:49.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库连接池">
 <meta name="twitter:description" content="数据库连接池数据库连接池（Data Base Connection Pooling，简称DBCP）是程序启动时建立足够的数据库连接，并将这些连接组成一个连接池，由程序动态地对池中的连接进行申请，使用，释放。优点：  节省创建连接与释放连接的性能消耗  连接池中连接起到复用的作用，提高程序性能  数据库连接池的运行机制：  程序初始化时，创建连接池 使用时，向连接池申请可用连接 使用完毕，将连接返还">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  169
+                  582
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -433,6 +433,13 @@
 <li>使用完毕，将连接返还给连接池</li>
 <li>程序退出时，断开所有连接，并释放资源</li>
 </ol>
+<h2 id="数据库连接池的使用"><a href="#数据库连接池的使用" class="headerlink" title="数据库连接池的使用"></a>数据库连接池的使用</h2><p>首先，导入jar包：</p>
+<pre><code>commons-dbcp-1.4.jar
+commons-pool-1.5.6.jar
+mysql-connector-java-5.0.4-bin.jar
+</code></pre><h3 id="手动方式"><a href="#手动方式" class="headerlink" title="手动方式"></a>手动方式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dbcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.dbcp.BasicDataSource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;</span><br><span class="line"><span class="comment">//手动方式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取数据库连接池对象</span></span><br><span class="line">        BasicDataSource basicDataSource = <span class="keyword">new</span> BasicDataSource();</span><br><span class="line">        <span class="comment">// 设置四大参数</span></span><br><span class="line">        basicDataSource.setDriverClassName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line">        basicDataSource.setUrl(<span class="string">"jdbc:mysql://localhost:3306/mydb"</span>);</span><br><span class="line">        basicDataSource.setUsername(<span class="string">"root"</span>);</span><br><span class="line">        basicDataSource.setPassword(<span class="string">"zsx"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取连接</span></span><br><span class="line">        Connection connection = basicDataSource.getConnection();</span><br><span class="line">        <span class="comment">// 获取发送执行sql语句的PreparedStatement</span></span><br><span class="line">        String sql = <span class="string">"select * from user"</span>;</span><br><span class="line">        PreparedStatement statement = connection.prepareStatement(sql);</span><br><span class="line">        <span class="comment">// 执行sql语句，如果是查询返回结果集</span></span><br><span class="line">        ResultSet resultSet = statement.executeQuery();</span><br><span class="line">        <span class="comment">// 遍历查询返回的结果集</span></span><br><span class="line">        <span class="keyword">while</span> (resultSet.next()) &#123;</span><br><span class="line">            System.out.println(resultSet.getString(<span class="string">"uid"</span>));</span><br><span class="line">            System.out.println(resultSet.getString(<span class="string">"NAME"</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="半自动方式"><a href="#半自动方式" class="headerlink" title="半自动方式"></a>半自动方式</h3><p>配置文件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件名 dbcp.properties</span></span><br><span class="line"><span class="comment">// 配置文件在src下，key不能改</span></span><br><span class="line">driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">url=jdbc:mysql:<span class="comment">//localhost:3306/mydb?characterEncoding=UTF-8</span></span><br><span class="line">username=root</span><br><span class="line">password=zsx</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dbcp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.dbcp.BasicDataSourceFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 半自动方式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//获取数据库连接工厂对象</span></span><br><span class="line">        BasicDataSourceFactory basicDataSourceFactory = <span class="keyword">new</span> BasicDataSourceFactory();</span><br><span class="line">        <span class="comment">//加载配置文件</span></span><br><span class="line">        FileInputStream inputStream = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(<span class="string">"src/dbcp.properties"</span>));</span><br><span class="line">        Properties p = <span class="keyword">new</span> Properties();</span><br><span class="line">        p.load(inputStream);</span><br><span class="line">        <span class="comment">//创建数据源</span></span><br><span class="line">        DataSource dataSource = basicDataSourceFactory.createDataSource(p);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取连接</span></span><br><span class="line">        Connection connection = dataSource.getConnection();</span><br><span class="line">        <span class="comment">// 获取发送执行sql语句的PreparedStatement</span></span><br><span class="line">        String sql = <span class="string">"select * from user"</span>;</span><br><span class="line">        PreparedStatement statement = connection.prepareStatement(sql);</span><br><span class="line">        <span class="comment">// 执行sql语句，如果是查询返回结果集</span></span><br><span class="line">        ResultSet resultSet = statement.executeQuery();</span><br><span class="line">        <span class="comment">// 遍历查询返回的结果集</span></span><br><span class="line">        <span class="keyword">while</span> (resultSet.next()) &#123;</span><br><span class="line">            System.out.println(resultSet.getString(<span class="string">"uid"</span>));</span><br><span class="line">            System.out.println(resultSet.getString(<span class="string">"NAME"</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -484,6 +491,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/20/c3p0及事务/" rel="prev" title="C3p0及事务">
+                C3p0及事务 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -575,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -691,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.</span> <span class="nav-text">数据库连接池</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接池"><span class="nav-number">1.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库连接池的使用"><span class="nav-number">2.</span> <span class="nav-text">数据库连接池的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动方式"><span class="nav-number">2.1.</span> <span class="nav-text">手动方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半自动方式"><span class="nav-number">2.2.</span> <span class="nav-text">半自动方式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -727,7 +738,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">39.7k</span>
+    <span title="Site words total count">40.7k</span>
   
 </div>
 
