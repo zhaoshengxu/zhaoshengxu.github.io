@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Tomcat]]></title>
+    <url>%2F2018%2F11%2F21%2FTomcat%2F</url>
+    <content type="text"><![CDATA[Tomcat服务器目前最为流行的web服务器，Tomcat服务器是Apache-Jarkarta开源项目中的一个子项目，是一个小型、轻量级的支持JSP和Servlet技术的Web服务器，也是初学者学习开发JSP应用的首选。 Tomcat下载Tomcat下载链接：Tomcat官方下载 Tomcat有安装版和解压版（绿色版） 安装版，以.exe形式的安装包，双击安装到电脑上，用的比较少。 解压版，即绿色版，解压后直接使用，用的比较多。 Tomcat在eclipse中发布web项目 添加服务器运行环境 Window/Preferences/Server/Runtime Environmen/Add/Apache Tomcat v8.0 设置服务器安装目录 D:\tool\apache-tomcat-8.0.53 显示服务器 Window/Show View/Other/Server/Servers 修改Tomcat发布位置 双击Tomcat v8.0 Server at localhost/Use Tomcat installtion 创建web项目 New/Project/Web/Dynamic Web Project/项目名称/Dynamic web module version 改为2.5 右击Tomcat v8.0 Server at localhost/Add and Remove/添加上面建立的项目 请求的流程用户登录示例 HTML登录页面。包括form action method 创建服务器。接收页面的参数：name，passsword 查询数据库。拿到表单中的输入数据后，去数据库中查询。有数据 ，则登录成功，否则失败 跳转页面。登录成功跳转登录成功页面，登录失败则跳转登录页面 登录成功页面HTML 核心代码：1234567891011121314151617181920212223242526/** * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse * response) */protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; try &#123; // 接收页面参数 String username = request.getParameter("username"); String pwd = request.getParameter("pwd"); // 操作数据库 ，jar:驱动|c3p0|pool|dbutils ComboPooledDataSource dataSource = new ComboPooledDataSource(); QueryRunner runner = new QueryRunner(dataSource); String sql = "select * from user2 where name=? and password=?"; User user = runner.query(sql, new BeanHandler&lt;User&gt;(User.class), username, pwd); if (null != user) &#123;// 不为空表明登录成功 response.sendRedirect("/webday06/hello.html"); &#125; else &#123; response.sendRedirect("/webday06/login.html"); &#125; &#125; catch (SQLException e) &#123; // TODO Auto-generated catch block e.printStackTrace(); &#125;&#125; 登录页面:123456789101112131415&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;title&gt;Login&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;h1&gt;登录页面&lt;/h1&gt; &lt;form action="/webday06/MyServlet" method="get"&gt; 用户名：&lt;input type="text" name="username"&gt; &lt;br/&gt; 密码：&lt;input type="password" name="pwd"&gt; &lt;br/&gt; &lt;input type="submit" value="登录"&gt; &lt;/form&gt;&lt;/body&gt;&lt;/html&gt; 登录成功页面:1234567891011121314&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;title&gt;Insert title here&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;h1&gt;winter is coming!&lt;/h1&gt; &lt;p&gt; 目前最为流行的Tomcat服务器是Apache-Jarkarta开源项目中的一个子项目， 是一个小型、轻量级的支持JSP和Servlet 技术的Web服务器，也是初学者学习开发JSP应用的首选。 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt; User:12345678910111213141516171819202122232425262728package com.web;public class User &#123; private String name; private String password; public String getName() &#123; return name; &#125; public void setName(String name) &#123; this.name = name; &#125; public String getPassword() &#123; return password; &#125; public void setPassword(String password) &#123; this.password = password; &#125; @Override public String toString() &#123; return "User [name=" + name + ", password=" + password + "]"; &#125;&#125;]]></content>
+      <categories>
+        <category>JavaWeb</category>
+      </categories>
+      <tags>
+        <tag>Tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C3p0及事务]]></title>
     <url>%2F2018%2F11%2F20%2Fc3p0%E5%8F%8A%E4%BA%8B%E5%8A%A1%2F</url>
     <content type="text"><![CDATA[C3p0导入jar包c3p0-0.9.1.2.jar commons-dbutils-1.4.jar commons-pool-1.5.6.jar mysql-connector-java-5.0.4-bin.jar 配置文件123456// 文件名 c3p0.properties// 配置文件在src下，也可以建立Source Folderc3p0.driverClass=com.mysql.jdbc.Driverc3p0.jdbcUrl=jdbc:mysql:///mydb1?characterEncoding=UTF-8c3p0.user=rootc3p0.password=root C3p0代码示例12345678910111213141516171819202122package com.c3p0;import java.sql.SQLException;import java.util.List;import org.apache.commons.dbutils.QueryRunner;import org.apache.commons.dbutils.handlers.BeanListHandler;import com.mchange.v2.c3p0.ComboPooledDataSource;public class Demo1 &#123; public static void main(String[] args) throws SQLException &#123; //获取数据库连接池对象 ComboPooledDataSource dataSource = new ComboPooledDataSource(); //创建工具类，参数：数据库连接池对象 QueryRunner runner = new QueryRunner(dataSource); //执行sql语句 封装结果集 String sql = "select * from user"; List&lt;User&gt; query = runner.query(sql, new BeanListHandler&lt;User&gt;(User.class)); System.out.println(query); &#125;&#125; 结果集的实际映射是根据sql语句来进行映射的，不是按照表中原有名称进行映射的。代码示例如下： 12345678910select uid 'id',NAME 'name' from user--返回结果id name1 tom2 fox-- 原表useruid NAME1 tom2 fox 条件查询123456789101112131415161718192021package com.c3p0;import java.sql.SQLException;import org.apache.commons.dbutils.QueryRunner;import org.apache.commons.dbutils.handlers.BeanHandler;import com.mchange.v2.c3p0.ComboPooledDataSource;public class Demo2 &#123; public static void main(String[] args) throws SQLException &#123; //获取数据库连接池对象 ComboPooledDataSource dataSource = new ComboPooledDataSource(); //创建工具类，参数：数据库连接池对象 QueryRunner runner = new QueryRunner(dataSource); //执行sql语句，返回查询结果 String sql = "select * from user where uid=? and name=?"; User query = runner.query(sql, new BeanHandler&lt;User&gt;(User.class), 1,"tom"); System.out.println(query); &#125;&#125; 事务 一致性：事务中的SQL语句要么同时执行，要么都不执行。如代码示例中的价格一増一减，保持总和不变；如果中途出错，则都不变。 持久性：事务中的数据提交之后，可以持久存储查询。 原子性：不可再分。 隔离性：互不影响，避免混淆。 代码示例：12345678910111213141516171819202122232425262728293031323334353637383940package com.c3p0;import java.sql.Connection;import java.sql.PreparedStatement;import java.sql.SQLException;public class Demo3 &#123; // 事务 public static void main(String[] args) throws SQLException &#123; Connection connection = null; PreparedStatement statement = null; try &#123; connection = MyDbUtil.getConnection(); // 事务的开启：关闭mysql的事务自动提交 connection.setAutoCommit(false); // 上海减1000 String sql1 = "update orders set money=money+1000 where id=2 "; statement = connection.prepareStatement(sql1); statement.executeUpdate(); // bug // int i = 1/0; // 广州加1000 String sql2 = "update orders set money=money-1000 where id=3 "; statement = connection.prepareStatement(sql2); statement.executeUpdate(); // 事务的关闭 connection.commit(); &#125; catch (SQLException e) &#123; // 回滚 connection.rollback(); e.printStackTrace(); &#125; &#125;&#125;]]></content>
       <categories>
         <category>DataBase</category>
       </categories>
+      <tags>
+        <tag>c3p0</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[数据库连接池]]></title>
@@ -15,6 +29,9 @@
       <categories>
         <category>DataBase</category>
       </categories>
+      <tags>
+        <tag>DBCP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[JDBC快速入门]]></title>
