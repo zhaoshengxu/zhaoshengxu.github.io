@@ -90,18 +90,22 @@
 
 
 
-<meta name="description" content="交叉连接在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y={0,1,2}，则两个集合的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。可以扩展到多个集合的情况。 交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它">
+<meta name="description" content="交叉连接交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它把表看作是行记录的集合，交叉连接即返回这两个集合的笛卡尔积。这其实等价于内连接的连接条件始终为”真”，或连接条件不存在。 笛卡尔积引用自数学，在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y=">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL多表操作">
 <meta property="og:url" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
-<meta property="og:description" content="交叉连接在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y={0,1,2}，则两个集合的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。可以扩展到多个集合的情况。 交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它">
+<meta property="og:description" content="交叉连接交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它把表看作是行记录的集合，交叉连接即返回这两个集合的笛卡尔积。这其实等价于内连接的连接条件始终为”真”，或连接条件不存在。 笛卡尔积引用自数学，在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y=">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/cross_join.jpg">
-<meta property="og:updated_time" content="2018-12-09T16:14:02.479Z">
+<meta property="og:image" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/inner_join_on.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/inner_join_using.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/left_outer_join_on.jpg">
+<meta property="og:image" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/right_outer_join_on.jpg">
+<meta property="og:updated_time" content="2018-12-10T14:41:55.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL多表操作">
-<meta name="twitter:description" content="交叉连接在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y={0,1,2}，则两个集合的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。可以扩展到多个集合的情况。 交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它">
+<meta name="twitter:description" content="交叉连接交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它把表看作是行记录的集合，交叉连接即返回这两个集合的笛卡尔积。这其实等价于内连接的连接条件始终为”真”，或连接条件不存在。 笛卡尔积引用自数学，在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y=">
 <meta name="twitter:image" content="http://zsx-cup.top/2018/12/09/MySQL多表操作/cross_join.jpg">
 
 
@@ -386,7 +390,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  170
+                  948
                 </span>
               
 
@@ -402,7 +406,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -423,9 +427,34 @@
       
 
       
-        <h2 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h2><p>在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y={0,1,2}，则两个集合的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。可以扩展到多个集合的情况。</p>
-<p>交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它把表看作是行记录的集合，交叉连接即返回这两个集合的笛卡尔积。这其实等价于内连接的连接条件始终为”真”，或连接条件不存在。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--交叉连接</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> orders</span><br></pre></td></tr></table></figure></p>
+        <h2 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h2><p>交叉连接(cross join)，又称笛卡尔连接(cartesian join)或叉乘(Product)，它是所有类型内连接的基础。它把表看作是行记录的集合，交叉连接即返回这两个集合的笛卡尔积。这其实等价于内连接的连接条件始终为”真”，或连接条件不存在。</p>
+<p>笛卡尔积引用自数学，在数学中，两个集合X和Y的笛卡尔积（Cartesian product），又称直积。假设集合X={a,b}，集合Y={0,1,2}，则两个集合的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。可以扩展到多个集合的情况。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--交叉连接</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> orders</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/12/09/MySQL多表操作/cross_join.jpg" alt="cross_join"></p>
+<h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><h3 id="inner-join-on"><a href="#inner-join-on" class="headerlink" title="inner join on"></a>inner join on</h3><p>通过on后面的条件，将两张表中的数据过滤。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--inner join on</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> user.uid=orders.uid</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/12/09/MySQL多表操作/inner_join_on.jpg" alt="inner_join_on"></p>
+<h3 id="inner-join-using："><a href="#inner-join-using：" class="headerlink" title="inner join using："></a>inner join using：</h3><p>通过指定两张表中比较的字段来进行等式消除迪卡尔积<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--inner join using</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">USING</span>(uid)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/12/09/MySQL多表操作/inner_join_using.jpg" alt="inner_join_using"></p>
+<p>在inner join on和inner join using中，可以将inner省略，因为join默认就是内连接(inner join)，省略inner后的查询语句如下，效果与有inner是一样的。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--省略inner</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span>  <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> user.uid=orders.uid;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span>  <span class="keyword">JOIN</span> orders <span class="keyword">USING</span>(uid);</span><br></pre></td></tr></table></figure></p>
+<h3 id="隐式内连接"><a href="#隐式内连接" class="headerlink" title="隐式内连接"></a>隐式内连接</h3><p>在实际开发中，使用最多的一种内连接叫做隐式内连接，其实就是将inner join省略，也不在使用on进行条件过滤，而是直接使用where进行过滤，查询语句如下，结果与inner join on一样。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--隐式内连接</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span>,orders <span class="keyword">WHERE</span> user.uid=orders.uid;</span><br></pre></td></tr></table></figure></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>cross join 只是将两个表连接起来，产生笛卡尔积。</li>
+<li>natural join 使用表中主外键关联来消除迪卡尔积。</li>
+<li>inner join using 可省略inner，在using后直接书写比较的字段名称，注意要加括号。</li>
+<li>inner join on 可省略inner,在on后面直接书写比较条件，通过条件来消除迪卡尔积。</li>
+<li>隐式内连接，在开发应用比较多，可以省略inner join，表与表之间用逗号分开，通过where条件来消除迪卡尔积。</li>
+</ul>
+<h2 id="外链接"><a href="#外链接" class="headerlink" title="外链接"></a>外链接</h2><p>内连接只是将两个或多个表中有关联的数据集查询出来，而没有关联的数据（只有一个表中有，而另外一个表中没有的数据）则无法查询出来。如果在开发中需要将所有用户及其订单查询出来，如果用户没有订单，也要查询出用户信息。那么，使用内连接显然是做不到的，这时就需要使用外连接。</p>
+<p>外连接并不要求连接的两表的每一条记录在对方表中都一条匹配的记录。连接表保留所有记录，甚至某条记录没有匹配的记录也要保留.，外连接可依据连接表保留左表、右表或全部表的行而进一步分为左外连接、右外连接和全连接。注意：mysql只支持左外连接与右外连接，而不支持全连接。</p>
+<ul>
+<li>左外连接：left outer join on 注意 outer 可以省略</li>
+<li>右外连接：right outer join on 注意 outer可以省略</li>
+</ul>
+<p>执行下面sql语句查询结果如下:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> user.uid=orders.uid;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/12/09/MySQL多表操作/left_outer_join_on.jpg" alt="left_outer_join_on.jpg"></p>
+<p>可以看出，即便mike和marry没有订单，其orders表中的数据以null显示出来。</p>
+<p>上述sql语句使用的是左外连接，也就是说以user表为准，保留user表中所有数据，右表orders中没有关联的数据，以null关联显示出来。右外连接也是同理，执行下面sql语句查询结果如下:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> orders <span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> <span class="keyword">user</span> <span class="keyword">ON</span> orders.uid=user.uid</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/12/09/MySQL多表操作/right_outer_join_on.jpg" alt="right_outer_join_on.jpg"></p>
 
       
     </div>
@@ -684,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉连接"><span class="nav-number">1.</span> <span class="nav-text">交叉连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉连接"><span class="nav-number">1.</span> <span class="nav-text">交叉连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内连接"><span class="nav-number">2.</span> <span class="nav-text">内连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inner-join-on"><span class="nav-number">2.1.</span> <span class="nav-text">inner join on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inner-join-using："><span class="nav-number">2.2.</span> <span class="nav-text">inner join using：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐式内连接"><span class="nav-number">2.3.</span> <span class="nav-text">隐式内连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">2.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外链接"><span class="nav-number">3.</span> <span class="nav-text">外链接</span></a></li></ol></div>
             
 
           </div>
@@ -720,7 +749,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">54.5k</span>
+    <span title="Site words total count">55.3k</span>
   
 </div>
 
