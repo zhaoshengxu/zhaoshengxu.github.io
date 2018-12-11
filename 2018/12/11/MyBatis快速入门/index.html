@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Framework," />
 
 
 
@@ -90,16 +90,18 @@
 
 
 
-<meta name="description" content="Hope is a good thing">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xu&#39;s Blog">
-<meta property="og:url" content="http://zsx-cup.top/archives/2018/11/page/2/index.html">
+<meta name="description" content="JAVAEE开发的三大框架：ssm、ssh（前几年常用）。  Spring MVC：用来封装servlet编程的一个框架（struts2）； Spring：体系整合框架，其他框架的粘合剂； Mybatis：封装jdbc访问代码的一个框架（hibernate），ORM对象关系映射  框架及其优点：框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法; 另一">
+<meta name="keywords" content="Framework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis快速入门">
+<meta property="og:url" content="http://zsx-cup.top/2018/12/11/MyBatis快速入门/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
-<meta property="og:description" content="Hope is a good thing">
+<meta property="og:description" content="JAVAEE开发的三大框架：ssm、ssh（前几年常用）。  Spring MVC：用来封装servlet编程的一个框架（struts2）； Spring：体系整合框架，其他框架的粘合剂； Mybatis：封装jdbc访问代码的一个框架（hibernate），ORM对象关系映射  框架及其优点：框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法; 另一">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T15:17:56.181Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xu&#39;s Blog">
-<meta name="twitter:description" content="Hope is a good thing">
+<meta name="twitter:title" content="MyBatis快速入门">
+<meta name="twitter:description" content="JAVAEE开发的三大框架：ssm、ssh（前几年常用）。  Spring MVC：用来封装servlet编程的一个框架（struts2）； Spring：体系整合框架，其他框架的粘合剂； Mybatis：封装jdbc访问代码的一个框架（hibernate），ORM对象关系映射  框架及其优点：框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法; 另一">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://zsx-cup.top/archives/2018/11/page/2/"/>
+  <link rel="canonical" href="http://zsx-cup.top/2018/12/11/MyBatis快速入门/"/>
 
 
 
 
 
-  <title>Archive | Xu's Blog</title>
+  <title>MyBatis快速入门 | Xu's Blog</title>
   
 
 
@@ -154,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/zhaoshengxu" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
 
@@ -297,410 +299,238 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 44 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zsx-cup.top/2018/12/11/MyBatis快速入门/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoShengxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/gedi1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu's Blog">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">MyBatis快速入门</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T22:47:47+08:00">
+                2018-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/12/11/MyBatis快速入门/" class="leancloud_visitors" data-flag-title="MyBatis快速入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/19/数据库连接池/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">数据库连接池</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  756
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-19T23:58:10+08:00"
-              content="2018-11-19" >
-          11-19
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/17/JDBC快速入门/" itemprop="url">
-              
-                <span itemprop="name">JDBC快速入门</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-17T12:39:01+08:00"
-              content="2018-11-17" >
-          11-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/16/北京主要景点参观指南/" itemprop="url">
-              
-                <span itemprop="name">北京主要景点参观指南</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-16T23:31:01+08:00"
-              content="2018-11-16" >
-          11-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>JAVAEE开发的三大框架：ssm、ssh（前几年常用）。</p>
+<ul>
+<li>Spring MVC：用来封装servlet编程的一个框架（struts2）；</li>
+<li>Spring：体系整合框架，其他框架的粘合剂；</li>
+<li>Mybatis：封装jdbc访问代码的一个框架（hibernate），ORM对象关系映射</li>
+</ul>
+<h2 id="框架及其优点："><a href="#框架及其优点：" class="headerlink" title="框架及其优点："></a>框架及其优点：</h2><p>框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法; 另一种定义认为，框架是可被应用开发者定制的应用骨架。是用框架可以提高程序复用性和系统的可扩充性，以缩短大型应用软件系统的开发周期，提高开发质量。框架的优点表现在：</p>
+<ol>
+<li>灵活可配置：将程序中写死的代码（硬编码）可以写到配置文件中。</li>
+<li>代码复用性高：将程序中反复要写的代码（套路代码）进行抽取封装，提高代码的复用性。</li>
+<li>简化开发：框架将底层复杂的细节进行了封装，并提供了方便调用的API，使得开发人员将工作的重点转移到实际业务中，大大提高了项目的开发效率。</li>
+</ol>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><blockquote>
+<p>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。    MyBatis是一个优秀的持久层(DAO)框架，它对jdbc的操作数据库的过程进行封装，使开发者只需要关注 SQL 本身，而不需要花费精力去处理例如注册驱动、创建connection、创建statement、手动设置参数、结果集检索等jdbc繁杂的过程代码。</p>
+</blockquote>
+<p>Mybatis通过xml或注解的方式将要执行的各种statement（statement、preparedStatemnt、CallableStatement）配置起来，并通过java对象和statement中的sql进行映射生成最终执行的sql语句，最后由mybatis框架执行sql并将结果映射成java对象并返回。</p>
+<h2 id="回顾JDBC编程"><a href="#回顾JDBC编程" class="headerlink" title="回顾JDBC编程"></a>回顾JDBC编程</h2><h3 id="jdbc编程步骤："><a href="#jdbc编程步骤：" class="headerlink" title="jdbc编程步骤："></a>jdbc编程步骤：</h3><ol>
+<li>注册驱动；</li>
+<li>创建并获取数据库链接；</li>
+<li>创建jdbc statement对象；</li>
+<li>设置sql语句及其参数(使用preparedStatement)；</li>
+<li>通过statement执行sql并获取结果；</li>
+<li>对sql执行结果进行解析处理；</li>
+<li>释放资源(resultSet、preparedstatement、connection)。</li>
+</ol>
+<h3 id="jdbc存在的问题"><a href="#jdbc存在的问题" class="headerlink" title="jdbc存在的问题"></a>jdbc存在的问题</h3><p>1、  数据库连接创建、释放频繁造成系统资源浪费从而影响系统性能，如果使用数据库连接池可解决此问题。<br>2、  Sql语句在代码中硬编码，造成代码不易维护，实际应用sql变化的可能较大，sql变动需要改变java代码。<br>3、  使用preparedStatement向占位符号传参数存在硬编码，因为sql语句的where条件不一定，可能多也可能少，修改sql还要修改代码，系统不易维护。<br>对结果集解析存在硬编码（查询列名），sql变化导致解析代码变化，系统不易维护，如果能将数据库记录封装成pojo对象解析比较方便。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/15/Machine-Learning-Coursera/" itemprop="url">
-              
-                <span itemprop="name">Machine Learning-Coursera</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-15T22:19:49+08:00"
-              content="2018-11-15" >
-          11-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/14/溶液粘度/" itemprop="url">
-              
-                <span itemprop="name">溶液粘度</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-14T23:57:06+08:00"
-              content="2018-11-14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/14/岩心驱替实验流程及注意事项/" itemprop="url">
-              
-                <span itemprop="name">岩心驱替实验流程及注意事项</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-14T23:47:56+08:00"
-              content="2018-11-14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/14/哈克流变仪粘度测量步骤及注意事项/" itemprop="url">
-              
-                <span itemprop="name">哈克流变仪粘度测量步骤及注意事项</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-14T23:23:32+08:00"
-              content="2018-11-14" >
-          11-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/13/MYSQL数据库/" itemprop="url">
-              
-                <span itemprop="name">MySQL数据库</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-13T23:45:49+08:00"
-              content="2018-11-13" >
-          11-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/12/Bootstrap快速入门/" itemprop="url">
-              
-                <span itemprop="name">Bootstrap快速入门</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-12T23:31:38+08:00"
-              content="2018-11-12" >
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/12/MCGS组态工程安装及注意事项/" itemprop="url">
-              
-                <span itemprop="name">MCGS组态工程安装及注意事项</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-12T00:27:13+08:00"
-              content="2018-11-12" >
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    ZhaoShengxu
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://zsx-cup.top/2018/12/11/MyBatis快速入门/" title="MyBatis快速入门">http://zsx-cup.top/2018/12/11/MyBatis快速入门/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Framework/" rel="tag"># Framework</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/09/MySQL多表操作/" rel="next" title="MySQL多表操作">
+                <i class="fa fa-chevron-left"></i> MySQL多表操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/11/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/11/page/3/">3</a><a class="page-number" href="/archives/2018/11/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/11/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5be6edb19005d167" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -708,6 +538,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDY2OS8xNzE5Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -728,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -854,6 +702,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#框架及其优点："><span class="nav-number">1.</span> <span class="nav-text">框架及其优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MyBatis"><span class="nav-number">2.</span> <span class="nav-text">MyBatis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾JDBC编程"><span class="nav-number">3.</span> <span class="nav-text">回顾JDBC编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdbc编程步骤："><span class="nav-number">3.1.</span> <span class="nav-text">jdbc编程步骤：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jdbc存在的问题"><span class="nav-number">3.2.</span> <span class="nav-text">jdbc存在的问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1047,6 +911,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1075,6 +943,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1239,26 +1118,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

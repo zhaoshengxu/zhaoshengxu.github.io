@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zsx-cup.top/"/>
-  <updated>2018-12-10T14:41:55.321Z</updated>
+  <updated>2018-12-11T15:17:56.181Z</updated>
   <id>http://zsx-cup.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyBatis快速入门</title>
+    <link href="http://zsx-cup.top/2018/12/11/MyBatis%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+    <id>http://zsx-cup.top/2018/12/11/MyBatis快速入门/</id>
+    <published>2018-12-11T14:47:47.000Z</published>
+    <updated>2018-12-11T15:17:56.181Z</updated>
+    
+    <content type="html"><![CDATA[<p>JAVAEE开发的三大框架：ssm、ssh（前几年常用）。</p><ul><li>Spring MVC：用来封装servlet编程的一个框架（struts2）；</li><li>Spring：体系整合框架，其他框架的粘合剂；</li><li>Mybatis：封装jdbc访问代码的一个框架（hibernate），ORM对象关系映射</li></ul><h2 id="框架及其优点："><a href="#框架及其优点：" class="headerlink" title="框架及其优点："></a>框架及其优点：</h2><p>框架（Framework）是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法; 另一种定义认为，框架是可被应用开发者定制的应用骨架。是用框架可以提高程序复用性和系统的可扩充性，以缩短大型应用软件系统的开发周期，提高开发质量。框架的优点表现在：</p><ol><li>灵活可配置：将程序中写死的代码（硬编码）可以写到配置文件中。</li><li>代码复用性高：将程序中反复要写的代码（套路代码）进行抽取封装，提高代码的复用性。</li><li>简化开发：框架将底层复杂的细节进行了封装，并提供了方便调用的API，使得开发人员将工作的重点转移到实际业务中，大大提高了项目的开发效率。</li></ol><h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><blockquote><p>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。2013年11月迁移到Github。    MyBatis是一个优秀的持久层(DAO)框架，它对jdbc的操作数据库的过程进行封装，使开发者只需要关注 SQL 本身，而不需要花费精力去处理例如注册驱动、创建connection、创建statement、手动设置参数、结果集检索等jdbc繁杂的过程代码。</p></blockquote><p>Mybatis通过xml或注解的方式将要执行的各种statement（statement、preparedStatemnt、CallableStatement）配置起来，并通过java对象和statement中的sql进行映射生成最终执行的sql语句，最后由mybatis框架执行sql并将结果映射成java对象并返回。</p><h2 id="回顾JDBC编程"><a href="#回顾JDBC编程" class="headerlink" title="回顾JDBC编程"></a>回顾JDBC编程</h2><h3 id="jdbc编程步骤："><a href="#jdbc编程步骤：" class="headerlink" title="jdbc编程步骤："></a>jdbc编程步骤：</h3><ol><li>注册驱动；</li><li>创建并获取数据库链接；</li><li>创建jdbc statement对象；</li><li>设置sql语句及其参数(使用preparedStatement)；</li><li>通过statement执行sql并获取结果；</li><li>对sql执行结果进行解析处理；</li><li>释放资源(resultSet、preparedstatement、connection)。</li></ol><h3 id="jdbc存在的问题"><a href="#jdbc存在的问题" class="headerlink" title="jdbc存在的问题"></a>jdbc存在的问题</h3><p>1、  数据库连接创建、释放频繁造成系统资源浪费从而影响系统性能，如果使用数据库连接池可解决此问题。<br>2、  Sql语句在代码中硬编码，造成代码不易维护，实际应用sql变化的可能较大，sql变动需要改变java代码。<br>3、  使用preparedStatement向占位符号传参数存在硬编码，因为sql语句的where条件不一定，可能多也可能少，修改sql还要修改代码，系统不易维护。<br>对结果集解析存在硬编码（查询列名），sql变化导致解析代码变化，系统不易维护，如果能将数据库记录封装成pojo对象解析比较方便。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;JAVAEE开发的三大框架：ssm、ssh（前几年常用）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring MVC：用来封装servlet编程的一个框架（struts2）；&lt;/li&gt;
+&lt;li&gt;Spring：体系整合框架，其他框架的粘合剂；&lt;/li&gt;
+&lt;li&gt;Mybatis：封装jd
+      
+    
+    </summary>
+    
+      <category term="JavaEE" scheme="http://zsx-cup.top/categories/JavaEE/"/>
+    
+    
+      <category term="Framework" scheme="http://zsx-cup.top/tags/Framework/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL多表操作</title>
@@ -506,40 +535,6 @@
         &lt;h2 id=&quot;岩心驱替实验流程&quot;&gt;&lt;a href=&quot;#岩心驱替实验流程&quot; class=&quot;headerlink&quot; title=&quot;岩心驱替实验流程&quot;&gt;&lt;/a&gt;岩心驱替实验流程&lt;/h2&gt;&lt;p&gt;岩心驱替实验的流程主要包括如下6个步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;抽真空造束缚水&lt;/li&gt;
-      
-    
-    </summary>
-    
-      <category term="Research" scheme="http://zsx-cup.top/categories/Research/"/>
-    
-    
-      <category term="Guide" scheme="http://zsx-cup.top/tags/Guide/"/>
-    
-      <category term="Petroleum" scheme="http://zsx-cup.top/tags/Petroleum/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>哈克流变仪粘度测量步骤及注意事项</title>
-    <link href="http://zsx-cup.top/2018/11/14/%E5%93%88%E5%85%8B%E6%B5%81%E5%8F%98%E4%BB%AA%E7%B2%98%E5%BA%A6%E6%B5%8B%E9%87%8F%E6%AD%A5%E9%AA%A4%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
-    <id>http://zsx-cup.top/2018/11/14/哈克流变仪粘度测量步骤及注意事项/</id>
-    <published>2018-11-14T15:23:32.000Z</published>
-    <updated>2018-11-14T15:52:09.946Z</updated>
-    
-    <content type="html"><![CDATA[<p>聚合物溶液流变性（如粘度）测量仪器为HAKKE RS6000旋转流变仪，流变仪由4部分组成：</p><ol><li>空气压缩机；</li><li>温控系统；</li><li>流变测量系统；</li><li>软件系统（控制-测量-数据处理）。</li></ol><h2 id="液体粘度测量的操作步骤："><a href="#液体粘度测量的操作步骤：" class="headerlink" title="液体粘度测量的操作步骤："></a>液体粘度测量的操作步骤：</h2><ol><li>开机，其顺序为：空气压缩机→温控仪→测量系统→电脑控制系统。</li><li>根据被测样品及其测量条件，选择安装合适的转子系统和温控器，并在测量程序中首先选择对应的转子和温控器。</li><li>新建测量文件（Job），文件包含常规要素（General elements）、测量要素（Measurement elements）、评价要素（Evaluation elements）3个部分。<strong>通常测量，只需将温度模块和测量方法两个模块拖至右侧，并进行简单设置即可（温度、剪切速率上下限）。</strong></li><li>测量台调平。使测量台处于水平状态。</li><li>校零（Zero point）。校准上下椎板的距离。</li><li>加样，用移液管向下椎板中心部位移取1.5mL左右的待测溶液。</li><li>开始测量，点击Start按钮开始测量，测量结束输入文件名保存文件。</li><li>分离并清洗上下椎板，并导出测量数据（数据全选复制到Excel表格中）。</li><li>关机，关机顺序与开机顺序刚好相反。</li></ol><h2 id="相关注意事项"><a href="#相关注意事项" class="headerlink" title="相关注意事项"></a>相关注意事项</h2><h3 id="设置剪切速率"><a href="#设置剪切速率" class="headerlink" title="设置剪切速率"></a>设置剪切速率</h3><p>在设置剪切速率时，首先需要选中测量模式的CR（控制剪切速率）才进行设置（CS是表示控制应力）。而且，除了设置上下限，还有剪切速率是以ln还是log进行分布，两者的区别在于：</p><ul><li><strong>ln模式</strong>：测量点在剪切速率上限附近多，下限附近稀疏，<strong>适合目标剪切速率较大的测量。</strong></li><li><strong>log模式</strong>：与ln模式相反，测量点在剪切速率上限附近稀疏，下限附近多，<strong>适合目标剪切速率较小（如7.34s-1）的测量。</strong></li></ul><h3 id="设置测量步数及单步测量停止条件"><a href="#设置测量步数及单步测量停止条件" class="headerlink" title="设置测量步数及单步测量停止条件"></a>设置测量步数及单步测量停止条件</h3><p>测量步数需要结合剪切速率上下限进行设置，以保证剪切速率与目标值尽可能接近，例如聚合物粘度测量常用的剪切速率0.1~1000，100个测量点，log模式，剪切速率目标值7.34s-1，实际值7.221-1很接近。</p><p><strong>单步测量停止条件</strong>：默认每个剪切速率测量30s时间，然后改变剪切速率再次测量，直到最后。测量步数和单步测量时间决定了每个样品的测试时间。以剪切速率0.1~1000,100步，单步测量时间30s，一个样品耗时3300s，即55min。样品量少，如果测量温度较高，则测量时间不能太久，否则样品挥发，导致测量失败。所以在不影响测量结果情况下，适当减少测量步数，缩短单步测量时间（如10s），以及设置限制条件gradient =0.5都可减少测量时间。</p><p>如果常用某种测量模式（JOB），新建并设置测量文件后，可保存并命名该测量文件，以便下次测试时直接调用。</p><h3 id="常见异常及处理"><a href="#常见异常及处理" class="headerlink" title="常见异常及处理"></a>常见异常及处理</h3><ol><li><strong>测量过程中，弹出温控系统Timeout错误信息。</strong> 需检查各插头连接是否良好，并重启温控系统重新测量。</li><li><p><strong>当测量出现粘度非常大（几十万），粘度及应力曲线出现异常的杂峰状况</strong>：</p><ul><li>一种情况，空气压缩机未打开，打开后再次测量即可。</li><li>第二种情况，测量台未处于水平状态（即把水平仪放置于测量台上，其中气泡偏离正常区域），可通过调节流变仪底座的四个支点使其处于水平状态，再次进行测量。</li><li><strong>另外，注意每次实验前必须检查测量台是否处于水平状态，然后进行归零校准！！！</strong></li></ul></li><li><p><strong>控制流变仪的电脑故障：主机指示灯状态为3和4，显示屏无法显示</strong>。请按照下图提示自行解决：<br><img src="/2018/11/14/哈克流变仪粘度测量步骤及注意事项/Bug.jpg" alt="Bug">“</p></li></ol><hr><p>这篇文章的 PRESS.one 签名:<br>“<a href="https://press.one/file/v?s=518e1251f8cf0d964dc9cb4b67f622974412f2cbad579673390d04c8671f03ec8e7f2e152ede080fc663f06eeb47db76f269ff3100f9da3eaa3fe17839f02e3f0&amp;h=8638863ba0c65b8bad2edeef7c0205fadb0a7eecdec5cfa0f528aedff9da4c7d&amp;a=5fff08474362b1e48d72b083abf18d2360881d5e&amp;f=P1&amp;v=2" target="_blank" rel="noopener">https://press.one/file/v?s=518e1251f8cf0d964dc9cb4b67f622974412f2cbad579673390d04c8671f03ec8e7f2e152ede080fc663f06eeb47db76f269ff3100f9da3eaa3fe17839f02e3f0&amp;h=8638863ba0c65b8bad2edeef7c0205fadb0a7eecdec5cfa0f528aedff9da4c7d&amp;a=5fff08474362b1e48d72b083abf18d2360881d5e&amp;f=P1&amp;v=2</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;聚合物溶液流变性（如粘度）测量仪器为HAKKE RS6000旋转流变仪，流变仪由4部分组成：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;空气压缩机；&lt;/li&gt;
-&lt;li&gt;温控系统；&lt;/li&gt;
-&lt;li&gt;流变测量系统；&lt;/li&gt;
-&lt;li&gt;软件系统（控制-测量-数据处理）。&lt;/li&gt;
-&lt;/ol&gt;
-
       
     
     </summary>
