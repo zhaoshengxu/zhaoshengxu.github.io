@@ -106,8 +106,8 @@
         <category>JavaWeb</category>
       </categories>
       <tags>
-        <tag>Application</tag>
         <tag>JSP</tag>
+        <tag>Application</tag>
         <tag>Servlet</tag>
       </tags>
   </entry>
