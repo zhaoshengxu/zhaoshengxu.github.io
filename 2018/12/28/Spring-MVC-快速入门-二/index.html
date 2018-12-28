@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="SpringMVC," />
 
 
 
@@ -90,16 +90,20 @@
 
 
 
-<meta name="description" content="Hope is a good thing">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xu&#39;s Blog">
-<meta property="og:url" content="http://zsx-cup.top/tags/CSS/index.html">
+<meta name="description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。  Dao层：引入mybatis">
+<meta name="keywords" content="SpringMVC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring MVC 快速入门(二)">
+<meta property="og:url" content="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
-<meta property="og:description" content="Hope is a good thing">
+<meta property="og:description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。  Dao层：引入mybatis">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/config.jpg">
+<meta property="og:updated_time" content="2018-12-28T16:25:49.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xu&#39;s Blog">
-<meta name="twitter:description" content="Hope is a good thing">
+<meta name="twitter:title" content="Spring MVC 快速入门(二)">
+<meta name="twitter:description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。  Dao层：引入mybatis">
+<meta name="twitter:image" content="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/config.jpg">
 
 
 
@@ -129,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://zsx-cup.top/tags/CSS/"/>
+  <link rel="canonical" href="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/"/>
 
 
 
 
 
-  <title>Tag: CSS | Xu's Blog</title>
+  <title>Spring MVC 快速入门(二) | Xu's Blog</title>
   
 
 
@@ -154,7 +158,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/zhaoshengxu" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
 
@@ -297,54 +301,235 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>CSS<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoShengxu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/gedi1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/04/CSS快速入门/" itemprop="url">
-              
-                <span itemprop="name">CSS快速入门</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Spring MVC 快速入门(二)</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-04T23:46:30+08:00"
-              content="2018-11-04" >
-          11-04
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-28T23:53:14+08:00">
+                2018-12-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/12/28/Spring-MVC-快速入门-二/" class="leancloud_visitors" data-flag-title="Spring MVC 快速入门(二)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  309
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p>该部分主要内容：</p>
+<ol>
+<li>Spring MVC整合mybatis；</li>
+<li>Spring MVC参数绑定方式。</li>
+</ol>
+<p>将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。</p>
+<h2 id="工程搭建"><a href="#工程搭建" class="headerlink" title="工程搭建"></a>工程搭建</h2><p>需求：实现商品查询列表，从mysql数据库查询商品信息。</p>
+<h3 id="整合思路"><a href="#整合思路" class="headerlink" title="整合思路"></a>整合思路</h3><ol>
+<li><p>导入jar包：springmvc（包括spring）、mybatis、jsp等。</p>
+</li>
+<li><p>Dao层：引入mybatis，并修改其配置文件。</p>
+</li>
+<li><p>Service层：建立接口包及其实现类包。</p>
+</li>
+<li><p>控制层：引入的springmvc框架，建立controller包，配制springmvc.xml及web.xml文件</p>
+</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="Dao层"><a href="#Dao层" class="headerlink" title="Dao层"></a>Dao层</h4><p>接口：Mapper.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ProductMapper</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Product&gt; <span class="title">productList</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>映射文件：Mapper.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.cosl.sm.dao.ProductMapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"productList"</span> <span class="attr">resultMap</span>=<span class="string">"BaseResultMap"</span>&gt;</span></span><br><span class="line">        select * from product</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Service层"><a href="#Service层" class="headerlink" title="Service层"></a>Service层</h4><p>service接口及其实现类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ProductService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Product&gt; <span class="title">productList</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductServiceImpl</span> <span class="keyword">implements</span> <span class="title">ProductService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Product&gt; <span class="title">productList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SqlSession session = MybatisUtil.factory.openSession();</span><br><span class="line">        ProductMapper productMapper = session.getMapper(ProductMapper.class);</span><br><span class="line">        <span class="keyword">return</span> productMapper.productList();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Controller层"><a href="#Controller层" class="headerlink" title="Controller层"></a>Controller层</h4><p>采用注解开发Controller类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProductController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/productList.shtml"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">productList</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        ProductService ps = <span class="keyword">new</span> ProductServiceImpl();</span><br><span class="line">        List&lt;Product&gt; productList = ps.productList();</span><br><span class="line">        request.setAttribute(<span class="string">"list"</span>, productList);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"products"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>SpringMVC及MyBatis的配置文件如下图所示，配置内容与前文基本相同。</p>
+<p><img src="/2018/12/28/Spring-MVC-快速入门-二/config.jpg" alt="config.jpg"></p>
+<h2 id="Spring-MVC参数绑定方式"><a href="#Spring-MVC参数绑定方式" class="headerlink" title="Spring MVC参数绑定方式"></a>Spring MVC参数绑定方式</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    ZhaoShengxu
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/" title="Spring MVC 快速入门(二)">http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringMVC/" rel="tag"># SpringMVC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/27/SpringMVC快速入门/" rel="next" title="Spring MVC 快速入门(一)">
+                <i class="fa fa-chevron-left"></i> Spring MVC 快速入门(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5be6edb19005d167" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +537,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDY2OS8xNzE5Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -372,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +701,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工程搭建"><span class="nav-number">1.</span> <span class="nav-text">工程搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整合思路"><span class="nav-number">1.1.</span> <span class="nav-text">整合思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dao层"><span class="nav-number">1.2.1.</span> <span class="nav-text">Dao层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service层"><span class="nav-number">1.2.2.</span> <span class="nav-text">Service层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Controller层"><span class="nav-number">1.2.3.</span> <span class="nav-text">Controller层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件"><span class="nav-number">1.2.4.</span> <span class="nav-text">配置文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-MVC参数绑定方式"><span class="nav-number">2.</span> <span class="nav-text">Spring MVC参数绑定方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -691,6 +910,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -719,6 +942,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -883,26 +1117,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

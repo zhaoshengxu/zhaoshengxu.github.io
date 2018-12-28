@@ -93,7 +93,7 @@
 <meta name="description" content="Spring MVC 是一个封装sevlet层的框架。有了这个框架，写JAVAEE程序时，就不再需要自己去写sevlet，springmvc提供了一个总的sevlet：dispatcherServlet，只需要写普通的类和方法即可。 Spring Web MVC和Struts2都属于表现层的框架，它是Spring框架的一部分，我们可以从Spring的整体结构中看得出来：  SpringMVC入门程">
 <meta name="keywords" content="SpringMVC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring MVC 快速入门">
+<meta property="og:title" content="Spring MVC 快速入门(一)">
 <meta property="og:url" content="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
 <meta property="og:description" content="Spring MVC 是一个封装sevlet层的框架。有了这个框架，写JAVAEE程序时，就不再需要自己去写sevlet，springmvc提供了一个总的sevlet：dispatcherServlet，只需要写普通的类和方法即可。 Spring Web MVC和Struts2都属于表现层的框架，它是Spring框架的一部分，我们可以从Spring的整体结构中看得出来：  SpringMVC入门程">
@@ -101,9 +101,10 @@
 <meta property="og:image" content="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/Spring.png">
 <meta property="og:image" content="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/flowmap.jpg">
 <meta property="og:image" content="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/flowmap2.png">
-<meta property="og:updated_time" content="2018-12-27T15:36:27.279Z">
+<meta property="og:image" content="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/flowmap3.jpg">
+<meta property="og:updated_time" content="2018-12-28T15:51:59.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring MVC 快速入门">
+<meta name="twitter:title" content="Spring MVC 快速入门(一)">
 <meta name="twitter:description" content="Spring MVC 是一个封装sevlet层的框架。有了这个框架，写JAVAEE程序时，就不再需要自己去写sevlet，springmvc提供了一个总的sevlet：dispatcherServlet，只需要写普通的类和方法即可。 Spring Web MVC和Struts2都属于表现层的框架，它是Spring框架的一部分，我们可以从Spring的整体结构中看得出来：  SpringMVC入门程">
 <meta name="twitter:image" content="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/Spring.png">
 
@@ -141,7 +142,7 @@
 
 
 
-  <title>Spring MVC 快速入门 | Xu's Blog</title>
+  <title>Spring MVC 快速入门(一) | Xu's Blog</title>
   
 
 
@@ -334,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring MVC 快速入门</h1>
+          <h1 class="post-title" itemprop="name headline">Spring MVC 快速入门(一)</h1>
         
 
         <div class="post-meta">
@@ -364,7 +365,7 @@
 
           
           
-             <span id="/2018/12/27/SpringMVC快速入门/" class="leancloud_visitors" data-flag-title="Spring MVC 快速入门">
+             <span id="/2018/12/27/SpringMVC快速入门/" class="leancloud_visitors" data-flag-title="Spring MVC 快速入门(一)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,7 +390,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  908
+                  1.4k
                 </span>
               
 
@@ -405,7 +406,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  6
                 </span>
               
             </div>
@@ -450,14 +451,31 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 类名查找：Web App Libraries/spring-webmvc/ org.springframework.web.servlet/ </span></span><br><span class="line"><span class="comment">            DispatcherServlet.class --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:springmvc1.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.shtml<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="SpringMVC处理流程"><a href="#SpringMVC处理流程" class="headerlink" title="SpringMVC处理流程"></a>SpringMVC处理流程</h3><p>SpringMVC简单处理流程：</p>
-<p><img src="/2018/12/27/SpringMVC快速入门/flowmap.jpg" alt="flowmap.jpg"></p>
-<p>SpringMVC完整处理流程：</p>
+<h3 id="入门程序处理流程"><a href="#入门程序处理流程" class="headerlink" title="入门程序处理流程"></a>入门程序处理流程</h3><p><img src="/2018/12/27/SpringMVC快速入门/flowmap.jpg" alt="flowmap.jpg"></p>
+<h2 id="Springmvc架构"><a href="#Springmvc架构" class="headerlink" title="Springmvc架构"></a>Springmvc架构</h2><h3 id="SpringMVC处理流程"><a href="#SpringMVC处理流程" class="headerlink" title="SpringMVC处理流程"></a>SpringMVC处理流程</h3><p>SpringMVC简化处理流程：</p>
 <p><img src="/2018/12/27/SpringMVC快速入门/flowmap2.png" alt="flowmap2"></p>
-<h2 id="非注解开发"><a href="#非注解开发" class="headerlink" title="非注解开发"></a>非注解开发</h2><p>上述入门程序配置了dispatchServlet和Controller，其余采用的是默认配置。根据SpringMVC完整处理流程可知，需要配置的五个部分为：总控制器dispatchServlet、处理器Handler、处理器映射器handlerMapping、处理器适配器handlerAdapter、视图解析器viewResolver。</p>
+<p>SpringMVC完整处理流程：</p>
+<p><img src="/2018/12/27/SpringMVC快速入门/flowmap3.jpg" alt="flowmap.jpg"></p>
+<h3 id="组件说明"><a href="#组件说明" class="headerlink" title="组件说明"></a>组件说明</h3><p>以下组件通常使用框架提供实现：</p>
+<h4 id="DispatcherServlet：前端控制器"><a href="#DispatcherServlet：前端控制器" class="headerlink" title="DispatcherServlet：前端控制器"></a>DispatcherServlet：前端控制器</h4><p>用户请求到达前端控制器，它就相当于mvc模式中的c，dispatcherServlet是整个流程控制的中心，由它调用其它组件处理用户的请求，dispatcherServlet的存在降低了组件之间的耦合性。</p>
+<h4 id="HandlerMapping：处理器映射器"><a href="#HandlerMapping：处理器映射器" class="headerlink" title="HandlerMapping：处理器映射器"></a>HandlerMapping：处理器映射器</h4><p>HandlerMapping负责根据用户请求找到Handler即处理器，springmvc提供了不同的映射器实现不同的映射方式，例如：配置文件方式，实现接口方式，注解方式等。</p>
+<h4 id="Handler：处理器"><a href="#Handler：处理器" class="headerlink" title="Handler：处理器"></a>Handler：处理器</h4><p>Handler 是继DispatcherServlet前端控制器的后端控制器，在DispatcherServlet的控制下Handler对具体的用户请求进行处理。</p>
+<blockquote>
+<p>由于Handler涉及到具体的用户业务请求，所以一般情况需要程序员根据业务需求开发Handler。</p>
+</blockquote>
+<h4 id="HandlAdapter：处理器适配器"><a href="#HandlAdapter：处理器适配器" class="headerlink" title="HandlAdapter：处理器适配器"></a>HandlAdapter：处理器适配器</h4><p>通过HandlerAdapter对处理器进行执行，这是适配器模式的应用，通过扩展适配器可以对更多类型的处理器进行执行。</p>
+<h4 id="View-Resolver：视图解析器"><a href="#View-Resolver：视图解析器" class="headerlink" title="View Resolver：视图解析器"></a>View Resolver：视图解析器</h4><p>View Resolver负责将处理结果生成View视图，View Resolver首先根据逻辑视图名解析成物理视图名即具体的页面地址，再生成View视图对象，最后对View进行渲染将处理结果通过页面展示给用户。 </p>
+<h4 id="View：视图"><a href="#View：视图" class="headerlink" title="View：视图"></a>View：视图</h4><p>springmvc框架提供了很多的View视图类型的支持，包括：jstlView、freemarkerView、pdfView等。我们最常用的视图就是jsp。</p>
+<blockquote>
+<p>一般情况下需要通过页面标签或页面模版技术将模型数据通过页面展示给用户，需要由程序员根据业务需求开发具体的页面。</p>
+</blockquote>
+<blockquote>
+<p>在springmvc的各个组件中，处理器映射器、处理器适配器、视图解析器称为springmvc的三大组件。<br>需要用户开发的组件有handler、view。</p>
+</blockquote>
+<h3 id="非注解开发"><a href="#非注解开发" class="headerlink" title="非注解开发"></a>非注解开发</h3><p>上述入门程序配置了dispatchServlet和Controller，其余采用的是默认配置。根据SpringMVC完整处理流程可知，需要配置部分为：总控制器dispatchServlet、处理器Handler、处理器映射器handlerMapping、处理器适配器handlerAdapter、视图解析器viewResolver。</p>
 <p>下面采用非注解开发方式，在springmvc.xml中，对其他进行配置：处理器映射器、处理器适配器、视图解析器。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 非注解开发 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 默认配置：Web App Libraries/spring-webmvc/ org.springframework.web.servlet/ </span></span><br><span class="line"><span class="comment">    DispatcherServlet.properties --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 非注解处理器映射器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 非注解处理器适配器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 非注解控制器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">name</span>=<span class="string">"/first.shtml"</span> <span class="attr">class</span>=<span class="string">"controller.FirstController"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 非注解视图解析器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h2><p>非注解开发方式并不常用，用的比较多的是注解开发。</p>
+<h3 id="注解开发"><a href="#注解开发" class="headerlink" title="注解开发"></a>注解开发</h3><p>非注解开发方式并不常用，用的比较多的是注解开发。</p>
 <ol>
 <li><p>创建Controller</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SecondController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/second.shtml"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">second</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">        request.setAttribute(<span class="string">"str"</span>, <span class="string">"这是注解开发的 "</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"/index.jsp"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -488,7 +506,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/" title="Spring MVC 快速入门">http://zsx-cup.top/2018/12/27/SpringMVC快速入门/</a>
+    <a href="http://zsx-cup.top/2018/12/27/SpringMVC快速入门/" title="Spring MVC 快速入门(一)">http://zsx-cup.top/2018/12/27/SpringMVC快速入门/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -525,6 +543,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/28/Spring-MVC-快速入门-二/" rel="prev" title="Spring MVC 快速入门(二)">
+                Spring MVC 快速入门(二) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -616,7 +638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -732,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC入门程序"><span class="nav-number">1.</span> <span class="nav-text">SpringMVC入门程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境"><span class="nav-number">1.1.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发步骤"><span class="nav-number">1.2.</span> <span class="nav-text">开发步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC处理流程"><span class="nav-number">1.3.</span> <span class="nav-text">SpringMVC处理流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非注解开发"><span class="nav-number">2.</span> <span class="nav-text">非注解开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解开发"><span class="nav-number">3.</span> <span class="nav-text">注解开发</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC入门程序"><span class="nav-number">1.</span> <span class="nav-text">SpringMVC入门程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境"><span class="nav-number">1.1.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发步骤"><span class="nav-number">1.2.</span> <span class="nav-text">开发步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入门程序处理流程"><span class="nav-number">1.3.</span> <span class="nav-text">入门程序处理流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Springmvc架构"><span class="nav-number">2.</span> <span class="nav-text">Springmvc架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC处理流程"><span class="nav-number">2.1.</span> <span class="nav-text">SpringMVC处理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件说明"><span class="nav-number">2.2.</span> <span class="nav-text">组件说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DispatcherServlet：前端控制器"><span class="nav-number">2.2.1.</span> <span class="nav-text">DispatcherServlet：前端控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerMapping：处理器映射器"><span class="nav-number">2.2.2.</span> <span class="nav-text">HandlerMapping：处理器映射器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Handler：处理器"><span class="nav-number">2.2.3.</span> <span class="nav-text">Handler：处理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlAdapter：处理器适配器"><span class="nav-number">2.2.4.</span> <span class="nav-text">HandlAdapter：处理器适配器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View-Resolver：视图解析器"><span class="nav-number">2.2.5.</span> <span class="nav-text">View Resolver：视图解析器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#View：视图"><span class="nav-number">2.2.6.</span> <span class="nav-text">View：视图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非注解开发"><span class="nav-number">2.3.</span> <span class="nav-text">非注解开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解开发"><span class="nav-number">2.4.</span> <span class="nav-text">注解开发</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -768,7 +790,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">64.5k</span>
+    <span title="Site words total count">65.3k</span>
   
 </div>
 
