@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。  Dao层：引入mybatis">
+<meta name="description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。 Dao层：引入mybatis，">
 <meta name="keywords" content="SpringMVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring MVC 快速入门(二)">
 <meta property="og:url" content="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/index.html">
 <meta property="og:site_name" content="Xu&#39;s Blog">
-<meta property="og:description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。  Dao层：引入mybatis">
+<meta property="og:description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。 Dao层：引入mybatis，">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/config.jpg">
-<meta property="og:updated_time" content="2018-12-28T16:25:49.392Z">
+<meta property="og:updated_time" content="2019-01-16T04:43:22.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring MVC 快速入门(二)">
-<meta name="twitter:description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。  Dao层：引入mybatis">
+<meta name="twitter:description" content="该部分主要内容：  Spring MVC整合mybatis； Spring MVC参数绑定方式。  将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。 工程搭建需求：实现商品查询列表，从mysql数据库查询商品信息。 整合思路 导入jar包：springmvc（包括spring）、mybatis、jsp等。 Dao层：引入mybatis，">
 <meta name="twitter:image" content="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/config.jpg">
 
 
@@ -318,7 +318,7 @@
     <link itemprop="mainEntityOfPage" href="http://zsx-cup.top/2018/12/28/Spring-MVC-快速入门-二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhaoShengxu">
+      <meta itemprop="name" content="ZSX">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/gedi1.jpg">
     </span>
@@ -432,14 +432,10 @@
 <p>将Spring MVC和MyBatis进行整合，控制层采用Spring MVC，持久层使用MyBatis实现。</p>
 <h2 id="工程搭建"><a href="#工程搭建" class="headerlink" title="工程搭建"></a>工程搭建</h2><p>需求：实现商品查询列表，从mysql数据库查询商品信息。</p>
 <h3 id="整合思路"><a href="#整合思路" class="headerlink" title="整合思路"></a>整合思路</h3><ol>
-<li><p>导入jar包：springmvc（包括spring）、mybatis、jsp等。</p>
-</li>
-<li><p>Dao层：引入mybatis，并修改其配置文件。</p>
-</li>
-<li><p>Service层：建立接口包及其实现类包。</p>
-</li>
-<li><p>控制层：引入的springmvc框架，建立controller包，配制springmvc.xml及web.xml文件</p>
-</li>
+<li>导入jar包：springmvc（包括spring）、mybatis、jsp等。</li>
+<li>Dao层：引入mybatis，并修改其配置文件。</li>
+<li>Service层：建立接口包及其实现类包。</li>
+<li>控制层：引入的springmvc框架，建立controller包，配制springmvc.xml及web.xml文件</li>
 </ol>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="Dao层"><a href="#Dao层" class="headerlink" title="Dao层"></a>Dao层</h4><p>接口：Mapper.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ProductMapper</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Product&gt; <span class="title">productList</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>映射文件：Mapper.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.cosl.sm.dao.ProductMapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"productList"</span> <span class="attr">resultMap</span>=<span class="string">"BaseResultMap"</span>&gt;</span></span><br><span class="line">        select * from product</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -463,7 +459,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>Post author:</strong>
-    ZhaoShengxu
+    ZSX
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
@@ -586,9 +582,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/gedi1.jpg"
-                alt="ZhaoShengxu" />
+                alt="ZSX" />
             
-              <p class="site-author-name" itemprop="name">ZhaoShengxu</p>
+              <p class="site-author-name" itemprop="name">ZSX</p>
               <p class="site-description motion-element" itemprop="description">Hope is a good thing</p>
           </div>
 
@@ -599,7 +595,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -751,7 +747,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">69.5k</span>
+    <span title="Site words total count">71.2k</span>
   
 </div>
 
